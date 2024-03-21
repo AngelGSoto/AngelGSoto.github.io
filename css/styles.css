@@ -9,7 +9,6 @@
 /* Style list items */
 .nav li {
     display: inline-block;
-    margin-right: 20px;
 }
 
 /* Style links */
@@ -24,24 +23,15 @@
     border: 1px solid #ccc; /* Border for tabs */
 }
 
+/* Add space between tabs */
+.nav li:not(:last-child) {
+    margin-right: 20px;
+}
+
 /* Hover effect */
 .nav li a:hover {
     background-color: #007bff;
     color: #fff;
 }
 
-/* Style main content sections */
-section {
-    padding: 20px;
-    margin: 20px 0;
-    background-color: #fff; /* Background color for content sections */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Style section headings */
-section h2 {
-    margin-top: 0;
-    color: #333;
-}
 
