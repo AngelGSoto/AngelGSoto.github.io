@@ -1,58 +1,44 @@
-/* Reset default margin and padding */
-body, h1, h2, h3, p, ul, li {
+/* Reset default margin and padding for the list */
+.nav {
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: center; /* Center the navigation menu */
 }
 
-/* Body and header styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #007bff; /* Change to your preferred header background color */
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-/* Navigation menu styles */
-nav ul {
-    list-style-type: none;
-}
-
+/* Style list items */
 .nav li {
     display: inline-block;
     margin-right: 20px;
 }
 
+/* Style links */
 .nav li a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
     font-weight: bold;
-    transition: color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
+/* Hover effect */
 .nav li a:hover {
-    color: #ffd700; /* Change to your preferred hover color */
+    background-color: #007bff;
+    color: #fff;
 }
 
-/* Main section styles */
-main {
-    padding: 20px;
-}
-
+/* Style main content sections */
 section {
-    margin-bottom: 30px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Style section headings */
 section h2 {
-    margin-bottom: 10px;
+    margin-top: 0;
+    color: #333;
 }
-
