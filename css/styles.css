@@ -34,4 +34,26 @@
     color: #fff;
 }
 
+/* Style header */
+header {
+    background-color: #007bff; /* Nice color for the header background */
+    color: #fff; /* Text color for the header */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style main content sections */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9; /* Background color for content sections */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style section headings */
+section h2 {
+    margin-top: 0;
+    color: #333;
+}
 
