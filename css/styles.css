@@ -5,12 +5,21 @@
     padding: 0;
 }
 
-/* Style list items as inline elements to make them appear horizontally */
+/* Style list items */
 .nav li {
-    display: inline;
+    display: inline-block;
+    margin-right: 20px;
 }
 
-/* Add some spacing between list items */
-.nav li:not(:last-child) {
-    margin-right: 20px;
+/* Style links */
+.nav li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav li a:hover {
+    color: #007bff; /* Change to your preferred hover color */
 }
