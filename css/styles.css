@@ -1,0 +1,16 @@
+/* Reset default margin and padding for the list */
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style list items as inline elements to make them appear horizontally */
+.nav li {
+    display: inline;
+}
+
+/* Add some spacing between list items */
+.nav li:not(:last-child) {
+    margin-right: 20px;
+}
