@@ -46,7 +46,6 @@ header {
 section {
     padding: 20px;
     margin: 20px 0;
-    background-color: #f9f9f9; /* Background color for content sections */
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -57,3 +56,11 @@ section h2 {
     color: #333;
 }
 
+/* Different background color for odd and even content sections */
+section:nth-child(odd) {
+    background-color: #f9f9f9; /* Light background color for odd sections */
+}
+
+section:nth-child(even) {
+    background-color: #e9e9e9; /* Slightly darker background color for even sections */
+}
