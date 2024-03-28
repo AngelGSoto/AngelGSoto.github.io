@@ -1,67 +1,57 @@
 /* Reset default margin and padding for the list */
-.nav {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center; /* Center the navigation menu */
-}
-
-/* Style list items */
-.nav li {
-    display: inline-block;
 }
 
 /* Style links */
-.nav li a {
+nav a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-/* Add space between tabs */
-.nav li:not(:last-child) {
-    margin-right: 20px;
-}
-
 /* Hover effect */
-.nav li a:hover {
+nav a:hover {
     background-color: #007bff;
-    color: #fff;
 }
 
 /* Style header */
 header {
     background-color: #007bff; /* Nice color for the header background */
     color: #fff; /* Text color for the header */
-    padding: 20px;
+    padding: 20px 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Style hero section */
+.hero {
+    background-image: url('../Images/mariposas.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
     text-align: center;
+    padding: 100px 0;
 }
 
 /* Style main content sections */
-section {
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-size: cover; /* Cover the entire section */
+.section {
+    padding: 50px 0;
 }
 
-/* Style section headings */
-section h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-/* Different background color for odd and even content sections */
-section:nth-child(odd) {
-    background-color: #f9f9f9; /* Light background color for odd sections */
-    background-image: url('../Images/mariposas.jpg'); /* Background image for odd sections */
-}
-
-section:nth-child(even) {
-    background-color: #e9e9e9; /* Slightly darker background color for even sections */
-    background-image: url('../Images/52551161139_deec534918_o.png'); /* Background image for even sections */
+/* Style footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
 }
