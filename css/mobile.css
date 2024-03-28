@@ -1,26 +1,20 @@
 /* Mobile Styles */
 
-/* Example: Adjust font size for smaller screens */
+/* Adjust font sizes */
 body {
-    font-size: 14px;
+    font-size: 16px; /* Adjust as needed */
 }
 
-/* Example: Adjust padding for smaller screens */
-.section {
+/* Adjust padding and margins */
+.header {
     padding: 10px;
 }
 
-/* Example: Hide certain elements on smaller screens */
-.menu {
-    display: none;
+.footer {
+    padding: 10px;
 }
 
-/* Example: Center align text on smaller screens */
-.title {
-    text-align: center;
-}
-
-/* Example: Make images responsive on smaller screens */
+/* Make images responsive */
 img {
     max-width: 100%;
     height: auto;
