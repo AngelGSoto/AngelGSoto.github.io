@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Angel Gutiérrez Soto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <script src="js/mobile.js"></script>
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div>
+                <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo"></a>
+                <ul id="navigation">
+                    <li class="selected"><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li class="menu"><a href="#research">Research</a></li>
+                    <li class="menu"><a href="papers.html">Papers</a></li>
+                    <li class="menu"><a href="talks.html">Talks</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="body" class="home">
+            <div class="header">
+                <div>
+                    <img src="images/TaniaSerrano.png" alt="Satellite" class="satellite">
+                    <h1>Luis Angel Gutiérrez Soto</h1>
+                    <p style="text-align: right;">Personal Website</p>
+                    <!-- Add research section -->
+                    <a name="research" id="research"></a>
+                    <h3>RESEARCH</h3>
+                    <ul>
+                        <li><img src="images/project-image1.jpg" alt="Project 1"></li>
+                        <li><img src="images/project-image2.jpg" alt="Project 2"></li>
+                        <li><img src="images/project-image3.jpg" alt="Project 3"></li>
+                        <li><img src="images/project-image4.jpg" alt="Project 4"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="body">
+                <div>
+                    <h1>About Me</h1>
+                    <p>I study protoplanetary disks (dust and gas properties) from a theoretical point of view (analytical
+                        models, simulations) and from observations (millimeter interferometric data with ALMA and VLA).
+                        I am especially interested in disks with vortices, spiral arms, and/or rings structures, where dust grains can be trapped and grow.
+                        My work has focused on the study of dust opacity properties and dust continuum emission,
+                        in particular, for radiative transfer models where scattering is taken into account.
+                        From these analyses, the dust surface density, temperature, and the size of the dust grains can be determined from multi-wavelength observations.
+                        Once the dust properties are determined, I have used simple analytical models and simulations in order
+                        to explain the inferred structures.</p>
+                    <br>
+                    <p> See the full list of refereed publications: <a href="papers.html">Papers</a></p>
+                    <p> ADS: author="Gutiérrez Soto, Luis Angel"</p>
+                    <br>
+                </div>
+            </div>
+
+            <a name="about" id="about"></a>
+            <div class="footer">
+                <div>
+                    <ul>
+                        <li>
+                            <h1>Luis Angel Gutiérrez Soto</h1>
+                            <img src="images/foto_lw.jpeg" alt="Photo">
+                        </li>
+                        <li>
+                            <h1>About me</h1>
+                            <ul>
+                                <li>
+                                    <a href="docs/curriculum.pdf" target="_blank"><img src="images/cv.png" alt="Curriculum Vitae"></a>
+                                    <h1>Curriculum Vitae</h1>
+                                    <a href="docs/curriculum.pdf" target="_blank" class="more">Download CV</a>
+                                    <span>Posdoctoral Researcher <br> Departamento de Astronomía <br> Universidad de Chile </span>
+                                </li>
+                                <li>
+                                    <h1>Education</h1>
+                                    <span>- <b>Posdoctoral Researcher (Astrophysics)</b> <br> [2022-2024] <br> Fondecyt-Postdoctorado</span>
+                                    <span>- <b>Posdoctoral Researcher (Astrophysics)</b> <br> [2020-2022] <br> Universidad de Chile </span>
+                                    <span>- <b>PhD in Sciences (Astrophysics)</b> <br> [2016-2019] <br> Universidad Autónoma de México</span>
+                                    <span>- <b>Master in Sciences (Astrophysics)</b> <br> [2014-2015] <br> Universidad Autónoma de México</span>
+                                    <span>- <b>Bachelor in Physics</b> <br> [2008-2013] <br> Universidad de San Carlos de Guatemala</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="connect">
+                <div>
+                    <h1>FOLLOW ME ON</h1>
+                    <div>
+                        <a href="http://twitter.com" class="twitter" target="_blank">twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footnote">
+                <div>
+                    <p>&copy; Web Design: SPACE PROSPECTION | ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
