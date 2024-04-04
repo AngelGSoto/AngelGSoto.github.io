@@ -65,3 +65,18 @@ section:nth-child(even) {
     background-color: #e9e9e9; /* Slightly darker background color for even sections */
     background-image: url('../Images/52551161139_deec534918_o.png'); /* Background image for even sections */
 }
+
+/* Media query for smaller screens (such as mobile phones) */
+@media (max-width: 767px) {
+    /* Adjust styles as needed for smaller screens */
+    header {
+        padding: 10px;
+    }
+    .nav li a {
+        padding: 8px 10px;
+    }
+    section {
+        padding: 10px;
+        margin: 10px 0;
+    }
+}
