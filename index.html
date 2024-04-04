@@ -73,11 +73,11 @@
             background-color: rgba(20, 20, 20, 0.7); /* Even darker background color for even sections */
         }
 
-        /* Set background image for the html element */
-        html {
+        /* Set background image for the body */
+        body {
             background-image: url('Images/JWT_PN_image.png'); /* Background image for the body */
-            background-size: 100% 100%; /* Ensure the image covers the entire body */
-            background-repeat: no-repeat; /* Ensure the image is not repeated */
+            background-size: contain; /* Ensure the image fits the entire body without cropping */
+            color: #eee; /* Text color for body */
         }
     </style>
 </head>
@@ -97,7 +97,7 @@
     <!-- Add sections for each tab/page -->
     <section id="home">
         <h2>Home</h2>
-        <p>Embark on a journey through my digital universe!</p>
+        <p>"Welcome to my webpage!"</p>
     </section>
 
     <section id="about">
