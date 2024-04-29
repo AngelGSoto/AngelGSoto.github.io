@@ -40,18 +40,13 @@ header {
     text-align: center;
 }
 
-/* Style profile picture container */
-.profile-picture {
-    max-width: 200px; /* Adjust the maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
-    border-radius: 50%; /* Make the container round */
-    overflow: hidden; /* Hide overflowing parts of the image */
-}
-
 /* Style profile image */
-.profile-picture img {
-    width: 100%; /* Ensure the image fills the container */
+header img {
+    max-width: 200px; /* Adjust the maximum width of the image */
     height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image round */
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 0 auto; /* Center the image horizontally */
 }
 
 /* Style main content sections */
