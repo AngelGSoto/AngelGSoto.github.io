@@ -38,18 +38,15 @@ header {
     color: #fff; /* Text color for the header */
     padding: 20px;
     text-align: center;
-    position: relative; /* Add position relative to allow absolute positioning of the image */
 }
 
 /* Style profile image */
 header img {
-    max-width: 20px; /* Adjust the maximum width of the image */
+    max-width: 150px; /* Adjust the maximum width of the image */
     height: auto; /* Maintain aspect ratio */
-    position: absolute; /* Position the image relative to the header */
-    top: 20px; /* Adjust top position */
-    left: 20px; /* Adjust left position */
     border-radius: 50%; /* Make the image round */
 }
+
 
 /* Style main content sections */
 section {
