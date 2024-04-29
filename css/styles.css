@@ -45,7 +45,7 @@ header {
 
 /* Style profile picture */
 .profile-picture img {
-    width: 200px; /* Adjust the width of the image */
+    max-width: 100%; /* Set maximum width to 100% of its container */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Make the image round */
 }
@@ -57,33 +57,25 @@ section {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: #eee; /* Text color for sections */
-    position: relative; /* Positioning context for pseudo-element */
-    z-index: 1; /* Ensure text is on top of pseudo-element */
-    font-family: Arial, sans-serif; /* Sans-serif font */
 }
 
 /* Style section headings */
 section h2 {
     margin-top: 0;
-    color: #fff; /* White color for headings */
 }
 
-/* Make text in the body slightly bigger and bold */
-body p {
-    font-size: 1.2em; /* Slightly larger font size */
-    font-weight: bold; /* Bold text */
+/* Different background color for odd and even content sections */
+section:nth-child(odd) {
+    background-color: rgba(30, 30, 30, 0.7); /* Darker background color for odd sections */
 }
 
-/* Style pseudo-element to create rectangle background */
-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffd700; /* Light shade of yellow or gold */
-    opacity: 0.7; /* Adjust transparency as needed */
-    z-index: -1; /* Behind the text */
-    border-radius: 5px; /* Rounded corners */
+section:nth-child(even) {
+    background-color: rgba(20, 20, 20, 0.7); /* Even darker background color for even sections */
+}
+
+/* Set background image for the body */
+body {
+    background-image: url('Images/JWT_PN_image.png'); /* Background image for the body */
+    background-size: contain; /* Ensure the image fits the entire body without cropping */
+    color: #eee; /* Text color for body */
 }
