@@ -64,6 +64,8 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             color: #eee; /* Text color for sections */
+            display: flex;
+            align-items: center;
         }
 
         /* Style section headings */
@@ -92,6 +94,12 @@
             font-size: 1.1em;
             font-weight: bold;
         }
+
+        /* Style the text beside the profile picture */
+        .text-beside-profile {
+            flex: 1; /* Take up remaining space */
+            padding-left: 20px; /* Add some space between the picture and text */
+        }
     </style>
 </head>
 <body>
@@ -115,20 +123,19 @@
         <div class="profile-picture">
             <img src="Images/Luis_image.jpeg" alt="Luis Angel Gutiérrez Soto" width="200" height="200">
         </div>
-        <!-- Introduction -->
-        <p>Welcome to my website! I'm Luis Angel Gutiérrez Soto, an astronomer interested in science, literature, and philosophy. I was born in Valledupar, Cesar, Colombia, and grew up between Manaure, Cesar, and the Serranía del Perijá.</p>
-        <!-- About Me -->
-<h3>About Me</h3>
-<p>I am Luis Angel Gutiérrez Soto, an astronomer with extensive experience in observational astrophysics. Currently, I am a postdoctoral researcher at the Instituto de Astrofísica de La Plata, CONICET -- UNLP, in La Plata, Argentina.</p>
-<p>Previously, I held a postdoctoral position at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG), Universidade de São Paulo, Brazil.</p>
-<p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRYA), Universidad Nacional Autónoma de México (UNAM), Morelia, Michoacán, Mexico.</p>
-<p>My academic journey began with a Bachelor of Education in Mathematics and Physics from Universidad Popular del Cesar (UPC), Valledupar, Cesar, Colombia. I also obtained a degree as a Superior Normalist with Emphasis in Spanish Language from Escuela Normal Superior María Inmaculada, Manaure, Cesar, Colombia.</p>
-<!-- Call to Action -->
-<!-- Call to Action -->
-<!-- Call to Action -->
-<p>Ready to collaborate? Check out my <a href="#research" style="color: #007bff;">research</a> to see some of my latest projects, or <a href="mailto:gsoto.angel@gmail.com" style="color: #007bff;">contact me</a> to discuss potential collaborations or opportunities.</p>
-
-
+        <!-- Text beside the profile picture -->
+        <div class="text-beside-profile">
+            <!-- Introduction -->
+            <p>Welcome to my website! I'm Luis Angel Gutiérrez Soto, an astronomer interested in science, literature, and philosophy. I was born in Valledupar, Cesar, Colombia, and grew up between Manaure, Cesar, and the Serranía del Perijá.</p>
+            <!-- About Me -->
+            <h3>About Me</h3>
+            <p>I am Luis Angel Gutiérrez Soto, an astronomer with extensive experience in observational astrophysics. Currently, I am a postdoctoral researcher at the Instituto de Astrofísica de La Plata, CONICET -- UNLP, in La Plata, Argentina.</p>
+            <p>Previously, I held a postdoctoral position at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG), Universidade de São Paulo, Brazil.</p>
+            <p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRYA), Universidad Nacional Autónoma de México (UNAM), Morelia, Michoacán, Mexico.</p>
+            <p>My academic journey began with a Bachelor of Education in Mathematics and Physics from Universidad Popular del Cesar (UPC), Valledupar, Cesar, Colombia. I also obtained a degree as a Superior Normalist with Emphasis in Spanish Language from Escuela Normal Superior María Inmaculada, Manaure, Cesar, Colombia.</p>
+            <!-- Call to Action -->
+            <p>Ready to collaborate? Check out my <a href="#research" style="color: #007bff;">research</a> to see some of my latest projects, or <a href="mailto:gsoto.angel@gmail.com" style="color: #007bff;">contact me</a> to discuss potential collaborations or opportunities.</p>
+        </div>
     </section>
 
     <section id="research">
