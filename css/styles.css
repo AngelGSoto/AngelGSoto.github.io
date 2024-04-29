@@ -42,7 +42,7 @@ header {
 
 /* Style profile image */
 header img {
-    width: 150px; /* Adjust the width of the image */
+    width: 15px; /* Adjust the width of the image */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Make the image round */
 }
