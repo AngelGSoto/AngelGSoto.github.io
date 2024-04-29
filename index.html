@@ -50,6 +50,13 @@
             text-align: center;
         }
 
+        /* Style profile picture */
+        .profile-picture img {
+            width: 200px; /* Adjust the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%; /* Make the image round */
+        }
+
         /* Style main content sections */
         section {
             padding: 20px;
@@ -84,13 +91,8 @@
 <body>
 
     <header>
-       <h1>Luis Angel Gutiérrez Soto</h1>
-       <div class="profile-picture">
-           <!-- Specify the width and height of the image directly -->
-           <img src="Images/Luis_image.jpeg" alt="Luis Angel Gutiérrez Soto" width="200" height="200">
-       </div>
-   </header>
-
+        <h1>Luis Angel Gutiérrez Soto</h1>
+    </header>
 
     <ul class="nav">
         <li><a href="#home">Home</a></li>
@@ -102,6 +104,10 @@
     <!-- Add sections for each tab/page -->
     <section id="home">
         <h2>Home</h2>
+        <!-- Profile picture moved here -->
+        <div class="profile-picture">
+            <img src="Images/Luis_image.jpeg" alt="Luis Angel Gutiérrez Soto" width="200" height="200">
+        </div>
         <p>"Welcome to my webpage!"</p>
     </section>
 
