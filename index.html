@@ -55,6 +55,8 @@
             width: 200px; /* Adjust the width of the image */
             height: auto; /* Maintain aspect ratio */
             border-radius: 50%; /* Make the image round */
+            float: left; /* Float the image to the left */
+            margin-right: 20px; /* Add some space between the picture and text */
         }
 
         /* Style main content sections */
@@ -64,6 +66,7 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             color: #eee; /* Text color for sections */
+            clear: both; /* Clear the float to prevent overlapping */
         }
 
         /* Style section headings */
@@ -91,12 +94,6 @@
         body p {
             font-size: 1.1em;
             font-weight: bold;
-        }
-
-        /* Style the text beside the profile picture in the Home section */
-        #home .text-beside-profile {
-            flex: 1; /* Take up remaining space */
-            padding-left: 20px; /* Add some space between the picture and text */
         }
 
         /* Style the Home section title */
