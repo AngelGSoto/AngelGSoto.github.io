@@ -64,91 +64,93 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             color: #eee; /* Text color for sections */
-            position: relative; /* Positioning context for pseudo-element */
-            z-index: 1; /* Ensure text is on top of pseudo-element */
-            font-family: Arial, sans-serif; /* Sans-serif font */
         }
 
         /* Style section headings */
         section h2 {
             margin-top: 0;
-            color: #fff; /* White color for headings */
+        }
+
+        /* Different background color for odd and even content sections */
+        section:nth-child(odd) {
+            background-color: rgba(30, 30, 30, 0.7); /* Darker background color for odd sections */
+        }
+
+        section:nth-child(even) {
+            background-color: rgba(20, 20, 20, 0.7); /* Even darker background color for even sections */
+        }
+
+        /* Set background image for the body */
+        body {
+            background-image: url('Images/JWT_PN_image.png'); /* Background image for the body */
+            background-size: cover; /* Ensure the image fits the entire body without cropping */
+            color: #eee; /* Text color for body */
         }
 
         /* Make text in the body slightly bigger and bold */
         body p {
-            font-size: 1.2em; /* Slightly larger font size */
-            font-weight: bold; /* Bold text */
-        }
-
-        /* Style pseudo-element to create rectangle background */
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffd700; /* Light shade of yellow or gold */
-            opacity: 0.7; /* Adjust transparency as needed */
-            z-index: -1; /* Behind the text */
-            border-radius: 5px; /* Rounded corners */
+            font-size: 1.1em;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Luis Angel Gutiérrez Soto</h1>
-</header>
+    <header>
+        <h1>Luis Angel Gutiérrez Soto</h1>
+    </header>
 
-<ul class="nav">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#publications">Publications & CV</a></li>
-    <li><a href="#courses">Courses</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
+    <ul class="nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications & CV</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-<!-- Combined Home and About Me section -->
-<section id="home">
-    <h2>Home</h2>
-    <!-- Profile picture -->
-    <div class="profile-picture">
-        <img src="Images/Luis_image.jpeg" alt="Luis Angel Gutiérrez Soto" width="200" height="200">
-    </div>
-    <!-- Introduction -->
-    <p>Welcome to my website! I'm Luis Angel Gutiérrez Soto, an astronomer interested in science, literature, and philosophy. I was born in Valledupar, Cesar, Colombia, and grew up between Manaure, Cesar, and the Serranía del Perijá.</p>
-    <!-- About Me -->
-    <!-- About Me -->
-    <h3>About Me</h3>
-    <p>I am Luis Angel Gutiérrez Soto, an astronomer with extensive experience in observational astrophysics. Currently, I am a postdoctoral researcher at the Instituto de Astrofísica de La Plata, CONICET -- UNLP, in La Plata, Argentina.</p>
-    <p>Previously, I held a postdoctoral position at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG), Universidade de São Paulo, Brazil.</p>
-    <p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRYA), Universidad Nacional Autónoma de México (UNAM), Morelia, Michoacán, Mexico.</p>
-    <p>My academic journey began with a Bachelor of Education in Mathematics and Physics from Universidad Popular del Cesar (UPC), Valledupar, Cesar, Colombia. I also obtained a degree as a Superior Normalist with Emphasis in Spanish Language from Escuela Normal Superior María Inmaculada, Manaure, Cesar, Colombia.</p>
-    <!-- Call to Action -->
-    <p>Ready to collaborate? Check out my <a href="#research" style="color: #007bff;">research</a> to see some of my latest projects, or <a href="mailto:gsoto.angel@gmail.com" style="color: #007bff;">contact me</a> to discuss potential collaborations or opportunities.</p>
-</section>
+    <!-- Combined Home and About Me section -->
+    <section id="home">
+        <h2>Home</h2>
+        <!-- Profile picture -->
+        <div class="profile-picture">
+            <img src="Images/Luis_image.jpeg" alt="Luis Angel Gutiérrez Soto" width="200" height="200">
+        </div>
+        <!-- Introduction -->
+        <p>Welcome to my website! I'm Luis Angel Gutiérrez Soto, an astronomer interested in science, literature, and philosophy. I was born in Valledupar, Cesar, Colombia, and grew up between Manaure, Cesar, and the Serranía del Perijá.</p>
+        <!-- About Me -->
+<h3>About Me</h3>
+<p>I am Luis Angel Gutiérrez Soto, an astronomer with extensive experience in observational astrophysics. Currently, I am a postdoctoral researcher at the Instituto de Astrofísica de La Plata, CONICET -- UNLP, in La Plata, Argentina.</p>
+<p>Previously, I held a postdoctoral position at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG), Universidade de São Paulo, Brazil.</p>
+<p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRYA), Universidad Nacional Autónoma de México (UNAM), Morelia, Michoacán, Mexico.</p>
+<p>My academic journey began with a Bachelor of Education in Mathematics and Physics from Universidad Popular del Cesar (UPC), Valledupar, Cesar, Colombia. I also obtained a degree as a Superior Normalist with Emphasis in Spanish Language from Escuela Normal Superior María Inmaculada, Manaure, Cesar, Colombia.</p>
+<!-- Call to Action -->
+<!-- Call to Action -->
+<!-- Call to Action -->
+<p>Ready to collaborate? Check out my <a href="#research" style="color: #007bff;">research</a> to see some of my latest projects, or <a href="mailto:gsoto.angel@gmail.com" style="color: #007bff;">contact me</a> to discuss potential collaborations or opportunities.</p>
 
-<section id="research">
-    <h2>Research</h2>
-    <p>Under construction!</p>
-</section>
 
-<section id="publications">
-    <h2>Publications & CV</h2>
-    <p>Explore my published papers and articles, as well as my <a href="Documents/cv_Luis_Angel-ingles.pdf" target="_blank" style="color: #007bff;">Curriculum Vitae</a>.</p>
-</section>
+    </section>
 
-<section id="courses">
-    <h2>Courses</h2>
-    <p>Under construction!</p>
-</section>
+    <section id="research">
+        <h2>Research</h2>
+        <p>Under construction!</p>
+    </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Under construction!</p>
-</section>
+    <section id="publications">
+        <h2>Publications & CV</h2>
+        <p>Explore my published papers and articles, as well as my <a href="Documents/cv_Luis_Angel-ingles.pdf" target="_blank" style="color: #007bff;">Curriculum Vitae</a>.</p>
+    </section>
+
+
+    <section id="courses">
+        <h2>Courses</h2>
+        <p>Under construction!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Under construction!</p>
+    </section>
 
 </body>
 </html>
