@@ -62,6 +62,10 @@ section {
 /* Style section headings */
 section h2 {
     margin-top: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Use a sans-serif font */
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the title bold */
+    text-transform: uppercase; /* Convert text to uppercase for emphasis */
 }
 
 /* Different background color for odd and even content sections */
@@ -78,4 +82,7 @@ body {
     background-image: url('Images/JWT_PN_image.png'); /* Background image for the body */
     background-size: contain; /* Ensure the image fits the entire body without cropping */
     color: #eee; /* Text color for body */
+    font-family: Arial, sans-serif; /* Use Arial or a sans-serif font */
+    font-size: 16px; /* Adjust the font size as needed */
+    line-height: 1.6; /* Set line height for better readability */
 }
