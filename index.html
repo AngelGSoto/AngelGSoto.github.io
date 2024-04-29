@@ -64,8 +64,6 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             color: #eee; /* Text color for sections */
-            display: flex;
-            align-items: center;
         }
 
         /* Style section headings */
@@ -95,10 +93,15 @@
             font-weight: bold;
         }
 
-        /* Style the text beside the profile picture */
-        .text-beside-profile {
+        /* Style the text beside the profile picture in the Home section */
+        #home .text-beside-profile {
             flex: 1; /* Take up remaining space */
             padding-left: 20px; /* Add some space between the picture and text */
+        }
+
+        /* Style the Home section title */
+        #home h2 {
+            text-align: left; /* Align the title to the left */
         }
     </style>
 </head>
