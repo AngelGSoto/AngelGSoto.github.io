@@ -64,6 +64,8 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             color: #eee; /* Text color for sections */
+            position: relative; /* Positioning context for pseudo-element */
+            z-index: 1; /* Ensure text is on top of pseudo-element */
         }
 
         /* Style section headings */
@@ -78,6 +80,20 @@
 
         section:nth-child(even) {
             background-color: rgba(20, 20, 20, 0.7); /* Even darker background color for even sections */
+        }
+
+        /* Style pseudo-element to create purple rectangle background */
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #800080; /* Purple color */
+            opacity: 0.5; /* Adjust transparency as needed */
+            z-index: -1; /* Behind the text */
+            border-radius: 5px; /* Rounded corners */
         }
 
         /* Set background image for the body */
