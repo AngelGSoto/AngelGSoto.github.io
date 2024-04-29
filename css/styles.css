@@ -42,12 +42,9 @@ header {
 
 /* Style profile image */
 header img {
-    max-width: 150px; /* Adjust the maximum width of the image */
-    width: 100%; /* Ensure the image fills its container */
+    width: 150px; /* Adjust the width of the image */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Make the image round */
-    display: block; /* Ensure the image is treated as a block element */
-    margin: 0 auto; /* Center the image horizontally */
 }
 
 /* Style main content sections */
