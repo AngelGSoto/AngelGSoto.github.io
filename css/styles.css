@@ -45,7 +45,7 @@ header {
 
 /* Style profile picture */
 .profile-picture img {
-    max-width: 100%; /* Set maximum width to 100% of its container */
+    max-width: 10%; /* Set maximum width to 100% of its container */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Make the image round */
 }
