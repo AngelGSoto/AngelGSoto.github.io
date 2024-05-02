@@ -101,8 +101,25 @@
         #home h2 {
             text-align: left; /* Align the title to the left */
         }
+
+        /* Responsive styles for small screens */
+        @media screen and (max-width: 600px) {
+            /* Adjust profile picture width for smaller screens */
+            .profile-picture img {
+                width: 150px;
+            }
+
+            /* Adjust navigation menu for smaller screens */
+            .nav {
+                display: block;
+            }
+
+            .nav li {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
     </style>
-    <link rel="stylesheet" type="text/css" href="mobile.css">
 </head>
 <body>
 
