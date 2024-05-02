@@ -134,15 +134,13 @@
 
         /* Mobile menu button */
         .menu-btn {
-            display: none;
+            text-align: center; /* Center the button */
+            margin-top: 20px; /* Adjust top margin as needed */
         }
 
         @media only screen and (max-width: 959px) {
             .menu-btn {
                 display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
                 cursor: pointer;
             }
         }
@@ -150,6 +148,11 @@
         .menu-btn img {
             width: 30px;
             height: auto;
+        }
+
+        /* Adjust navigation menu position */
+        .nav-below-header {
+            margin-top: 20px; /* Adjust top margin as needed */
         }
     </style>
 </head>
@@ -164,13 +167,16 @@
     <img src="menu-icon.png" alt="Menu">
 </div>
 
-<ul class="nav">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#publications">Publications & CV</a></li>
-    <li><a href="#courses">Courses</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
+<!-- Navigation menu below header -->
+<div class="nav-below-header">
+    <ul class="nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications & CV</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</div>
 
 <!-- Combined Home and About Me section -->
 <section id="home">
