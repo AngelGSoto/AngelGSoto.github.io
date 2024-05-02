@@ -134,14 +134,15 @@
                 text-align: center;
             }
             
-            /* Hide menu icon on smaller screens */
+            /* Show menu icon on smaller screens */
             .menu-icon {
-                display: none;
+                display: block;
             }
         }
 
         /* Style for the menu icon */
         .menu-icon {
+            display: none; /* Hide the menu icon by default */
             width: 40px; /* Adjust the width of the icon */
             height: 38px; /* Maintain aspect ratio */
             cursor: pointer;
@@ -230,7 +231,6 @@
         });
     });
 </script>
-
 
 </body>
 </html>
