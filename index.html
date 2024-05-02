@@ -133,7 +133,7 @@
             }
         }
 
-        /* Mobile menu button */
+        /* Classic button style for the menu button */
         .menu-btn {
             text-align: center; /* Center the button */
             margin-top: 20px; /* Adjust top margin as needed */
@@ -142,20 +142,20 @@
             right: 20px; /* Adjust right position as needed */
             cursor: pointer;
             z-index: 1001; /* Ensure the button appears above other elements */
+            width: 40px; /* Set width of the button */
+            height: 40px; /* Set height of the button */
+            background-color: #007bff; /* Button background color */
+            border: 2px solid #007bff; /* Button border */
+            border-radius: 5px; /* Button border radius */
+            color: #fff; /* Button text color */
+            line-height: 40px; /* Center the text vertically */
+            font-size: 20px; /* Set font size */
+            font-weight: bold; /* Set font weight */
         }
 
-        .menu-btn img {
-            width: 30px;
-            height: auto;
-        }
-
-        /* Adjust navigation menu position */
-        .nav-below-header {
-            margin-top: 20px; /* Adjust top margin as needed */
-            position: absolute; /* Position the menu */
-            top: 100px; /* Adjust top position as needed */
-            width: 100%; /* Full width */
-            z-index: 1000; /* Ensure the menu appears above other elements */
+        /* Adjust hover effect for the classic button */
+        .menu-btn:hover {
+            background-color: #0056b3; /* Darker background color on hover */
         }
     </style>
 </head>
@@ -163,9 +163,9 @@
 
 <header>
     <h1>Luis Angel Gutiérrez Soto</h1>
-    <!-- Mobile menu button with square box icon -->
+    <!-- Mobile menu button -->
     <div class="menu-btn">
-        &#9635; <!-- Unicode character for a square -->
+        <img src="menu-icon.png" alt="Menu">
     </div>
 </header>
 
