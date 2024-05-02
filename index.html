@@ -168,11 +168,11 @@
     <div class="menu-btn" onclick="toggleNav()">Menu</div>
 
     <ul class="nav">
-        <li><a href="#home" onclick="toggleNav()">Home</a></li>
-        <li><a href="#research" onclick="toggleNav()">Research</a></li>
-        <li><a href="#publications" onclick="toggleNav()">Publications & CV</a></li>
-        <li><a href="#courses" onclick="toggleNav()">Courses</a></li>
-        <li><a href="#contact" onclick="toggleNav()">Contact</a></li>
+        <li><a href="#home" onclick="handleNavLink(event)">Home</a></li>
+        <li><a href="#research" onclick="handleNavLink(event)">Research</a></li>
+        <li><a href="#publications" onclick="handleNavLink(event)">Publications & CV</a></li>
+        <li><a href="#courses" onclick="handleNavLink(event)">Courses</a></li>
+        <li><a href="#contact" onclick="handleNavLink(event)">Contact</a></li>
     </ul>
 
     <!-- Combined Home and About Me section -->
@@ -232,6 +232,21 @@
             } else {
                 nav.style.display = "block";
                 overlay.style.display = "block";
+            }
+        }
+
+        // Function to handle clicks on menu links
+        function handleNavLink(event) {
+            if (window.innerWidth <= 600) {
+                event.preventDefault(); // Prevent default link behavior
+                var targetId = event.target.getAttribute('href').substring(1); // Get the target section id
+                var targetSection = document.getElementById(targetId); // Get the target section
+                var offsetTop = targetSection.offsetTop; // Get the top offset of the target section
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth' // Smooth scroll to the target section
+                });
+                toggleNav(); // Close the navigation menu
             }
         }
     </script>
