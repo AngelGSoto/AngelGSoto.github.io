@@ -30,13 +30,13 @@ header {
     padding: 0 20px; /* Add padding to the sides */
 }
 
-/* Adjust nav styles for mobile */
+/* Adjust nav styles */
 .nav {
     text-align: center;
     padding: 10px 0; /* Add padding above and below the nav */
 }
 
-/* Adjust nav item styles for mobile */
+/* Adjust nav item styles */
 .nav li {
     display: inline-block;
     margin: 0 10px; /* Add space around nav items */
@@ -53,30 +53,13 @@ section h2 {
     text-align: center;
 }
 
-/* Adjust link padding for mobile */
+/* Adjust link padding */
 .nav li a {
     padding: 10px 15px; /* Restore padding for links */
 }
 
 /* Mobile Styles */
-/* Adjust font sizes */
 @media screen and (max-width: 600px) {
-    body {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
-
-    /* Adjust padding and margins */
-    .header,
-    .footer {
-        padding: 10px;
-    }
-
-    /* Make images responsive */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
     /* Adjust nav styles for smaller screens */
     .nav {
         display: block;
