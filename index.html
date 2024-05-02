@@ -128,16 +128,40 @@
 
             .nav li a {
                 display: block;
-                padding: 10px;
+                padding: 15px; /* Adjust the padding as needed */
                 text-align: center;
             }
         }
 
-        /* Style for the menu icon */
-        .menu-icon {
-            width: 40px; /* Adjust the width of the icon */
-            height: auto; /* Maintain aspect ratio */
+        /* Mobile menu button */
+        .menu-btn {
+            text-align: center; /* Center the button */
+            margin-top: 20px; /* Adjust top margin as needed */
+            position: absolute; /* Position the button */
+            top: 20px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
             cursor: pointer;
+            z-index: 1001; /* Ensure the button appears above other elements */
+            width: 40px; /* Set width of the button */
+            height: 40px; /* Set height of the button */
+            background-color: #007bff; /* Button background color */
+            border: 2px solid #007bff; /* Button border */
+            border-radius: 5px; /* Button border radius */
+            color: #fff; /* Button text color */
+            line-height: 40px; /* Center the text vertically */
+            font-size: 20px; /* Set font size */
+            font-weight: bold; /* Set font weight */
+        }
+
+        /* Adjust hover effect for the classic button */
+        .menu-btn:hover {
+            background-color: #0056b3; /* Darker background color on hover */
+        }
+
+        /* Style for the menu icon */
+        .menu-btn img {
+            width: 100%; /* Make sure the icon fills the button */
+            height: auto; /* Maintain aspect ratio */
         }
     </style>
 </head>
@@ -145,8 +169,10 @@
 
 <header>
     <h1>Luis Angel Gutiérrez Soto</h1>
-    <!-- Mobile menu button (icon only) -->
-    <img class="menu-icon" src="Images/Icon-mobile.png" alt="Menu">
+    <!-- Mobile menu button -->
+    <div class="menu-btn">
+        <img src="Images/Icon-mobile.png" alt="Menu">
+    </div>
 </header>
 
 <!-- Navigation menu below header -->
@@ -205,26 +231,30 @@
 <script>
     // JavaScript to toggle the visibility of the navigation menu
     document.addEventListener('DOMContentLoaded', function () {
-        var menuIcon = document.querySelector('.menu-icon');
+        var menuBtn = document.querySelector('.menu-btn');
         var nav = document.querySelector('.nav');
-        var body = document.querySelector('body');
 
-        // Toggle the visibility of the navigation menu when the menu icon is clicked
-        menuIcon.addEventListener('click', function () {
+        // Toggle the visibility of the navigation menu when the menu button is clicked
+        menuBtn.addEventListener('click', function () {
             nav.classList.toggle('show');
         });
 
-        // Close the navigation menu when the body is clicked outside the menu
-        body.addEventListener('click', function (event) {
-            // Check if the clicked element is not part of the navigation menu or the menu icon
-            if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
+        // Close the navigation menu when the menu button is clicked again
+        menuBtn.addEventListener('click', function () {
+            if (nav.classList.contains('show')) {
                 nav.classList.remove('show');
             }
+        });
+
+        // Close the navigation menu when a menu item is clicked
+        var navLinks = document.querySelectorAll('.nav li a');
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                nav.classList.remove('show');
+            });
         });
     });
 </script>
 
-
 </body>
 </html>
-
