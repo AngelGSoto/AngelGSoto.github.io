@@ -60,14 +60,23 @@ section h2 {
 
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {
+    /* Adjust nav styles for smaller screens */
+    .nav {
+        display: block;
+        padding: 0;
+        margin-top: 10px; /* Add some space above the nav */
+    }
+
     /* Adjust nav item styles for smaller screens */
     .nav li {
         display: block;
-        margin: 10px 0; /* Add space around nav items */
+        margin: 0;
     }
 
     /* Adjust link padding for smaller screens */
     .nav li a {
-        padding: 10px; /* Reduce padding for links */
+        display: block;
+        padding: 10px;
+        margin-bottom: 5px; /* Add space between links */
     }
 }
