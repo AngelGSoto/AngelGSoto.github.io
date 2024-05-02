@@ -140,9 +140,15 @@
             }
         }
 
+        /* Hide menu icon on larger screens */
+        @media only screen and (min-width: 960px) {
+            .menu-icon {
+                display: none;
+            }
+        }
+
         /* Style for the menu icon */
         .menu-icon {
-            display: none; /* Hide the menu icon by default */
             width: 40px; /* Adjust the width of the icon */
             height: 38px; /* Maintain aspect ratio */
             cursor: pointer;
