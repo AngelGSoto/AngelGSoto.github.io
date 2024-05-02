@@ -109,16 +109,42 @@
                 width: 150px;
             }
 
-            /* Adjust navigation menu for smaller screens */
+            /* Hide the navigation menu by default */
             .nav {
-                display: block;
+                display: none;
             }
 
-            .nav li {
+            /* Style for the menu button */
+            .menu-btn {
                 display: block;
-                margin-bottom: 10px;
+                text-align: right;
+                padding: 10px;
+                cursor: pointer;
             }
         }
+
+        /* Style for the menu overlay */
+        .overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.5); /* Black with transparency */
+            z-index: 1; /* Sit on top of everything */
+            display: none; /* Hide initially */
+        }
+
+        /* Style for the menu content */
+        .overlay-content {
+            position: fixed;
+            top: 25%; /* Center vertically */
+            width: 100%;
+            text-align: center;
+            z-index: 2; /* Sit on top of overlay */
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -127,6 +153,10 @@
         <h1>Luis Angel Gutiérrez Soto</h1>
     </header>
 
+    <!-- Menu button for small screens -->
+    <div class="menu-btn" onclick="toggleMenu()">Menu</div>
+
+    <!-- Navigation menu -->
     <ul class="nav">
         <li><a href="#home">Home</a></li>
         <li><a href="#research">Research</a></li>
@@ -177,6 +207,25 @@
         <h2>Contact</h2>
         <p>Under construction!</p>
     </section>
+
+    <!-- JavaScript for toggling the menu -->
+    <script>
+        function toggleMenu() {
+            var overlay = document.querySelector('.overlay');
+            var nav = document.querySelector('.nav');
+
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+                overlay.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+        }
+    </script>
+
+    <!-- Overlay to cover the content when the menu is open -->
+    <div class="overlay" onclick="toggleMenu()"></div>
 
 </body>
 </html>
