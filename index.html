@@ -49,6 +49,7 @@
             color: #fff; /* Text color for the header */
             padding: 20px;
             text-align: center;
+            position: relative; /* Ensure relative positioning for child elements */
         }
 
         /* Style profile picture */
@@ -136,13 +137,11 @@
         .menu-btn {
             text-align: center; /* Center the button */
             margin-top: 20px; /* Adjust top margin as needed */
-        }
-
-        @media only screen and (max-width: 959px) {
-            .menu-btn {
-                display: block;
-                cursor: pointer;
-            }
+            position: absolute; /* Position the button */
+            top: 20px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
+            cursor: pointer;
+            z-index: 1001; /* Ensure the button appears above other elements */
         }
 
         .menu-btn img {
@@ -153,6 +152,10 @@
         /* Adjust navigation menu position */
         .nav-below-header {
             margin-top: 20px; /* Adjust top margin as needed */
+            position: absolute; /* Position the menu */
+            top: 100px; /* Adjust top position as needed */
+            width: 100%; /* Full width */
+            z-index: 1000; /* Ensure the menu appears above other elements */
         }
     </style>
 </head>
@@ -160,12 +163,11 @@
 
 <header>
     <h1>Luis Angel Gutiérrez Soto</h1>
+    <!-- Mobile menu button -->
+    <div class="menu-btn">
+        <img src="menu-icon.png" alt="Menu">
+    </div>
 </header>
-
-<!-- Mobile menu button -->
-<div class="menu-btn">
-    <img src="menu-icon.png" alt="Menu">
-</div>
 
 <!-- Navigation menu below header -->
 <div class="nav-below-header">
