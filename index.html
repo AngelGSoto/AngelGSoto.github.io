@@ -6,6 +6,7 @@
     <title>Luis Angel Gutiérrez Soto</title>
     <style>
         /* CSS styles */
+
         /* Reset default margin and padding for the list */
         .nav {
             list-style-type: none;
@@ -49,6 +50,7 @@
             color: #fff; /* Text color for the header */
             padding: 20px;
             text-align: center;
+            position: relative; /* Set position to relative */
         }
 
         /* Style profile picture */
@@ -135,18 +137,13 @@
         /* Mobile menu button */
         .menu-btn {
             display: none;
+            position: absolute; /* Position the button absolutely */
+            top: 20px; /* Adjust top position as needed */
+            left: 20px; /* Adjust left position as needed */
+            cursor: pointer;
         }
 
-        @media only screen and (max-width: 959px) {
-            .menu-btn {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                cursor: pointer;
-            }
-        }
-
+        /* Adjust button icon size */
         .menu-btn img {
             width: 30px;
             height: auto;
@@ -157,12 +154,11 @@
 
 <header>
     <h1>Luis Angel Gutiérrez Soto</h1>
+    <!-- Mobile menu button -->
+    <div class="menu-btn">
+        <img src="menu-icon.png" alt="Menu">
+    </div>
 </header>
-
-<!-- Mobile menu button -->
-<div class="menu-btn">
-    <img src="menu-icon.png" alt="Menu">
-</div>
 
 <ul class="nav">
     <li><a href="#home">Home</a></li>
@@ -187,7 +183,7 @@
         <h3>About Me</h3>
         <p>I am Luis Angel Gutiérrez Soto, an astronomer with extensive experience in observational astrophysics. Currently, I am a postdoctoral researcher at the Instituto de Astrofísica de La Plata, CONICET -- UNLP, in La Plata, Argentina.</p>
         <p>Previously, I held a postdoctoral position at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG), Universidade de São Paulo, Brazil.</p>
-        <p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRYA), Universidad Nacional Autónoma de México (UNAM), Morelia, Michoacán, Mexico.</p>
+        <p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRyA-UNAM), Morelia, Michoacán, México.</p>
         <p>My academic journey began with a Bachelor of Education in Mathematics and Physics from Universidad Popular del Cesar (UPC), Valledupar, Cesar, Colombia. I also obtained a degree as a Superior Normalist with Emphasis in Spanish Language from Escuela Normal Superior María Inmaculada, Manaure, Cesar, Colombia.</p>
         <!-- Call to Action -->
         <p>Ready to collaborate? Check out my <a href="#research" style="color: #007bff;">research</a> to see some of my latest projects, or <a href="mailto:gsoto.angel@gmail.com" style="color: #007bff;">contact me</a> to discuss potential collaborations or opportunities.</p>
