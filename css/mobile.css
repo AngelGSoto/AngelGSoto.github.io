@@ -1,5 +1,28 @@
-/* Mobile-specific styles */
-/* Adjust profile picture width for smaller screens */
-.profile-picture img {
-    width: 150px;
+/* Add the provided CSS styles */
+@media only screen and (max-width: 568px) {
+    /* Style for small screens (e.g., mobile phones) */
+    .nav {
+        display: block;
+        position: absolute;
+        top: 60px; /* Adjust as needed */
+        left: 0;
+        right: 0;
+        background-color: #333; /* Background color for the menu */
+        padding: 10px 0;
+        z-index: 1; /* Sit on top of overlay */
+        text-align: center; /* Center the menu items */
+    }
+
+    /* Style for menu links */
+    .nav li {
+        display: block;
+        margin-bottom: 10px; /* Adjust spacing between links */
+    }
+
+    /* Hide the menu button on small screens */
+    .menu-btn {
+        display: none;
+    }
 }
+
+/* Add other CSS styles... */
