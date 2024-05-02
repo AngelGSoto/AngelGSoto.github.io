@@ -6,7 +6,7 @@
     text-align: center; /* Center the navigation menu */
 }
 
-/* Style links */
+/* Style list items */
 .nav li {
     display: inline-block;
     margin: 0 10px; /* Add space around nav items */
