@@ -4,6 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Angel Gutiérrez Soto</title>
+    <style>
+        /* Your existing CSS styles */
+        /* Reset default margin and padding for the list */
+        .nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Center the navigation menu */
+        }
+
+        /* Style list items */
+        .nav li {
+            display: inline-block;
+        }
+
+        /* Style links */
+        .nav li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            background-color: #f9f9f9; /* Background color for tabs */
+            border: 1px solid #ccc; /* Border for tabs */
+        }
+
+        /* Add space between tabs */
+        .nav li:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        /* Hover effect */
+        .nav li a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Style header */
+        header {
+            background-image: url('Images/mariposas.jpg'); /* Background image for the header */
+            background-size: cover; /* Ensure the image covers the entire header */
+            color: #fff; /* Text color for the header */
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style profile picture */
+        .profile-picture img {
+            width: 200px; /* Adjust the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%; /* Make the image round */
+            float: left; /* Float the image to the left */
+            margin-right: 20px; /* Add some space between the picture and text */
+        }
+
+        /* Style main content sections */
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #eee; /* Text color for sections */
+            clear: both; /* Clear the float to prevent overlapping */
+        }
+
+        /* Style section headings */
+        section h2 {
+            margin-top: 0;
+        }
+
+        /* Different background color for odd and even content sections */
+        section:nth-child(odd) {
+            background-color: rgba(30, 30, 30, 0.7); /* Darker background color for odd sections */
+        }
+
+        section:nth-child(even) {
+            background-color: rgba(20, 20, 20, 0.7); /* Even darker background color for even sections */
+        }
+
+        /* Set background image for the body */
+        body {
+            background-image: url('Images/JWT_PN_image.png'); /* Background image for the body */
+            background-size: cover; /* Ensure the image fits the entire body without cropping */
+            color: #eee; /* Text color for body */
+        }
+
+        /* Make text in the body slightly bigger and bold */
+        body p {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        /* Style the Home section title */
+        #home h2 {
+            text-align: left; /* Align the title to the left */
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="mobile.css">
 </head>
 <body>
