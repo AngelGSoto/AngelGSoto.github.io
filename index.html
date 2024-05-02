@@ -133,35 +133,11 @@
             }
         }
 
-        /* Mobile menu button */
-        .menu-btn {
-            text-align: center; /* Center the button */
-            margin-top: 20px; /* Adjust top margin as needed */
-            position: absolute; /* Position the button */
-            top: 20px; /* Adjust top position as needed */
-            right: 20px; /* Adjust right position as needed */
-            cursor: pointer;
-            z-index: 1001; /* Ensure the button appears above other elements */
-            width: auto; /* Set width of the button */
-            height: auto; /* Set height of the button */
-            background-color: #007bff; /* Button background color */
-            border: 2px solid #007bff; /* Button border */
-            border-radius: 5px; /* Button border radius */
-            color: #fff; /* Button text color */
-            line-height: 30px; /* Center the text vertically */
-            font-size: 20px; /* Set font size */
-            font-weight: bold; /* Set font weight */
-        }
-
-        /* Adjust hover effect for the classic button */
-        .menu-btn:hover {
-            background-color: #0056b3; /* Darker background color on hover */
-        }
-
         /* Style for the menu icon */
-        .menu-btn img {
-            width: 30px; /* Set the width of the icon */
+        .menu-icon {
+            width: 40px; /* Adjust the width of the icon */
             height: auto; /* Maintain aspect ratio */
+            cursor: pointer;
         }
     </style>
 </head>
@@ -169,10 +145,8 @@
 
 <header>
     <h1>Luis Angel Gutiérrez Soto</h1>
-    <!-- Mobile menu button -->
-    <div class="menu-btn">
-        <img src="Images/Icon-mobile.png" alt="Menu">
-    </div>
+    <!-- Mobile menu button (icon only) -->
+    <img class="menu-icon" src="Images/Icon-mobile.png" alt="Menu">
 </header>
 
 <!-- Navigation menu below header -->
@@ -231,11 +205,11 @@
 <script>
     // JavaScript to toggle the visibility of the navigation menu
     document.addEventListener('DOMContentLoaded', function () {
-        var menuBtn = document.querySelector('.menu-btn');
+        var menuIcon = document.querySelector('.menu-icon');
         var nav = document.querySelector('.nav');
 
-        // Toggle the visibility of the navigation menu when the menu button is clicked
-        menuBtn.addEventListener('click', function () {
+        // Toggle the visibility of the navigation menu when the menu icon is clicked
+        menuIcon.addEventListener('click', function () {
             nav.classList.toggle('show');
         });
 
@@ -251,3 +225,4 @@
 
 </body>
 </html>
+
