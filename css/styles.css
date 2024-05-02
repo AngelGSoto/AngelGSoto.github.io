@@ -1,88 +1,60 @@
-/* Reset default margin and padding for the list */
-.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center; /* Center the navigation menu */
+//* Set background image for the body */
+body {
+    background-image: url('Images/JWT_PN_image.png');
+    background-size: cover;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0; /* Remove default body padding */
+    margin: 0; /* Remove default body margin */
 }
 
-/* Style list items */
-.nav li {
-    display: inline-block;
-}
-
-/* Style links */
-.nav li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    background-color: #f9f9f9; /* Background color for tabs */
-    border: 1px solid #ccc; /* Border for tabs */
-}
-
-/* Add space between tabs */
-.nav li:not(:last-child) {
-    margin-right: 20px;
-}
-
-/* Hover effect */
-.nav li a:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-/* Style header */
+/* Adjust header styles for mobile */
 header {
-    background-image: url('Images/mariposas.jpg'); /* Background image for the header */
-    background-size: cover; /* Ensure the image covers the entire header */
-    color: #fff; /* Text color for the header */
     padding: 20px;
     text-align: center;
 }
 
-/* Style profile picture */
+/* Adjust profile picture styles for mobile */
 .profile-picture img {
-    max-width: 100%; /* Set maximum width to 100% of its container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Make the image round */
+    width: 100%; /* Adjust image width to fill container */
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Add some space below the image */
 }
 
-/* Style main content sections */
+/* Adjust text-beside-profile styles for mobile */
+.text-beside-profile {
+    text-align: justify; /* Justify text for better readability */
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+/* Adjust nav styles for mobile */
+.nav {
+    display: block;
+    text-align: center;
+}
+
+/* Adjust nav item styles for mobile */
+.nav li {
+    display: block;
+    margin-bottom: 10px; /* Add space between nav items */
+}
+
+/* Adjust section styles for mobile */
 section {
     padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #eee; /* Text color for sections */
+    margin: 0; /* Remove default margin */
 }
 
-/* Style section headings */
+/* Adjust section headings for mobile */
 section h2 {
-    margin-top: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Use a sans-serif font */
-    font-size: 24px; /* Adjust the font size as needed */
-    font-weight: bold; /* Make the title bold */
-    text-transform: uppercase; /* Convert text to uppercase for emphasis */
+    font-size: 24px;
+    text-align: center;
 }
 
-/* Different background color for odd and even content sections */
-section:nth-child(odd) {
-    background-color: rgba(30, 30, 30, 0.7); /* Darker background color for odd sections */
-}
-
-section:nth-child(even) {
-    background-color: rgba(20, 20, 20, 0.7); /* Even darker background color for even sections */
-}
-
-/* Set background image for the body */
-body {
-    background-image: url('Images/JWT_PN_image.png'); /* Background image for the body */
-    background-size: contain; /* Ensure the image fits the entire body without cropping */
-    color: #eee; /* Text color for body */
-    font-family: Arial, sans-serif; /* Use Arial or a sans-serif font */
-    font-size: 16px; /* Adjust the font size as needed */
-    line-height: 1.6; /* Set line height for better readability */
+/* Adjust link padding for mobile */
+.nav li a {
+    padding: 10px; /* Reduce padding for links */
 }
