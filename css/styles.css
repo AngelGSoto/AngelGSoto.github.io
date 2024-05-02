@@ -58,8 +58,25 @@ section h2 {
     padding: 10px 15px; /* Restore padding for links */
 }
 
-/* Media query for smaller screens */
+/* Mobile Styles */
+/* Adjust font sizes */
 @media screen and (max-width: 600px) {
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    /* Adjust padding and margins */
+    .header,
+    .footer {
+        padding: 10px;
+    }
+
+    /* Make images responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
     /* Adjust nav styles for smaller screens */
     .nav {
         display: block;
