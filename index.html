@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title style="color: #333;">Luis Angel Gutiérrez Soto</title>
+    <title>Luis Angel Gutiérrez Soto</title>
     <style>
         /* CSS styles */
         /* Reset default margin and padding for the list */
@@ -115,7 +115,7 @@
                 width: 60%;
                 background-color: #333;
                 z-index: 1000;
-                padding: auto 0;
+                padding: 10px 0;
                 box-sizing: border-box;
             }
 
@@ -133,18 +133,6 @@
                 padding: 15px; /* Adjusted padding for consistent sizing */
                 text-align: center;
             }
-            
-            /* Show menu icon on smaller screens */
-            .menu-icon {
-                display: block;
-            }
-        }
-
-        /* Hide menu icon on larger screens */
-        @media only screen and (min-width: 960px) {
-            .menu-icon {
-                display: none;
-            }
         }
 
         /* Style for the menu icon */
@@ -152,6 +140,11 @@
             width: 40px; /* Adjust the width of the icon */
             height: 38px; /* Maintain aspect ratio */
             cursor: pointer;
+        }
+
+        /* Style for the title in the header */
+        header h1 {
+            color: #333; /* Dark gray color */
         }
     </style>
 </head>
@@ -237,6 +230,7 @@
         });
     });
 </script>
+
 
 </body>
 </html>
