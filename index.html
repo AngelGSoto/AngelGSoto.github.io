@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Angel Gutiérrez Soto</title>
     <style>
+        /* CSS styles */
         /* Reset default margin and padding for the list */
         .nav {
             list-style-type: none;
@@ -101,127 +102,138 @@
             text-align: left; /* Align the title to the left */
         }
 
-        /* Style for small screens (e.g., mobile phones) */
-        @media only screen and (max-width: 568px) {
+        /* Navigation menu visibility on mobile */
+        @media only screen and (max-width: 959px) {
             .nav {
-                display: none; /* Hide the navigation menu by default */
-                position: fixed;
-                top: 0;
+                display: none;
+                position: absolute;
+                top: 60px;
                 left: 0;
-                right: 0;
-                background-color: #333; /* Background color for the menu */
+                width: 100%;
+                background-color: #333;
+                z-index: 1000;
                 padding: 10px 0;
-                text-align: center; /* Center the menu items */
+                box-sizing: border-box;
+            }
+
+            .nav.show {
+                display: block;
             }
 
             .nav li {
                 display: block;
-                margin-bottom: 10px; /* Adjust spacing between links */
+                margin: 10px 0;
             }
 
             .nav li a {
                 display: block;
-                padding: 10px 0;
+                padding: 10px;
+                text-align: center;
             }
+        }
 
+        /* Mobile menu button */
+        .menu-btn {
+            display: none;
+        }
+
+        @media only screen and (max-width: 959px) {
             .menu-btn {
-                display: block; /* Show the menu button on small screens */
-                position: fixed;
+                display: block;
+                position: absolute;
                 top: 20px;
                 right: 20px;
-                background-color: transparent;
-                color: #fff;
-                border: none;
-                font-size: 20px;
                 cursor: pointer;
-                z-index: 2; /* Sit on top of overlay */
             }
+        }
+
+        .menu-btn img {
+            width: 30px;
+            height: auto;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Luis Angel Gutiérrez Soto</h1>
-        <!-- Menu button for mobile -->
-        <button class="menu-btn">&#9776; Menu</button>
-        <!-- Navigation menu -->
-        <ul class="nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications & CV</a></li>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </header>
+<header>
+    <h1>Luis Angel Gutiérrez Soto</h1>
+</header>
 
-    <!-- Combined Home and About Me section -->
-    <section id="home">
-        <h2>Home</h2>
-        <!-- Profile picture -->
-        <div class="profile-picture">
-            <img src="Images/Luis_image.jpeg" alt="Luis Angel Gutiérrez Soto" width="200" height="200">
-        </div>
-        <!-- Text beside the profile picture -->
-        <div class="text-beside-profile">
-            <!-- Introduction -->
-            <p>Welcome to my website! I'm Luis Angel Gutiérrez Soto, an astronomer interested in science, literature, and philosophy. I was born in Valledupar, Cesar, Colombia, and grew up between Manaure, Cesar, and the Serranía del Perijá.</p>
-            <!-- About Me -->
-            <h3>About Me</h3>
-            <p>I am Luis Angel Gutiérrez Soto, an astronomer with extensive experience in observational astrophysics. Currently, I am a postdoctoral researcher at the Instituto de Astrofísica de La Plata, CONICET -- UNLP, in La Plata, Argentina.</p>
-            <p>Previously, I held a postdoctoral position at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG), Universidade de São Paulo, Brazil.</p>
-            <p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRYA), Universidad Nacional Autónoma de México (UNAM), Morelia, Michoacán, México. My bachelor's degree in Physics was obtained from Universidad de Córdoba, Montería, Córdoba, Colombia.</p>
-            <p>My research interests include the study of stellar and substellar objects through the analysis of their spectra, light curves, photometry, variability, binarity, kinematics, and magnetic activity. In particular, I focus on the observation of close binary systems and their components, such as low-mass stars, brown dwarfs, and exoplanets. I also analyze the stellar populations in open clusters, associations, and moving groups.</p>
-        </div>
-    </section>
+<ul class="nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications & CV</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
 
-    <!-- Research section -->
-    <section id="research">
-        <h2>Research</h2>
-        <p>My research interests include:</p>
-        <ul>
-            <li>Stellar and substellar astrophysics</li>
-            <li>Binary and multiple star systems</li>
-            <li>Exoplanets</li>
-            <li>Variable stars</li>
-            <li>Stellar populations</li>
-            <li>Open clusters and associations</li>
-            <li>Moving groups</li>
-        </ul>
-    </section>
+<!-- Mobile menu button -->
+<div class="menu-btn">
+    <img src="menu-icon.png" alt="Menu">
+</div>
 
-    <!-- Publications and CV section -->
-    <section id="publications">
-        <h2>Publications & CV</h2>
-        <p>Coming soon...</p>
-    </section>
+<!-- Combined Home and About Me section -->
+<section id="home">
+    <h2>Home</h2>
+    <!-- Profile picture -->
+    <div class="profile-picture">
+        <img src="Images/Luis_image.jpeg" alt="Luis Angel Gutiérrez Soto" width="200" height="200">
+    </div>
+    <!-- Text beside the profile picture -->
+    <div class="text-beside-profile">
+        <!-- Introduction -->
+        <p>Welcome to my website! I'm Luis Angel Gutiérrez Soto, an astronomer interested in science, literature, and philosophy. I was born in Valledupar, Cesar, Colombia, and grew up between Manaure, Cesar, and the Serranía del Perijá.</p>
+        <!-- About Me -->
+        <h3>About Me</h3>
+        <p>I am Luis Angel Gutiérrez Soto, an astronomer with extensive experience in observational astrophysics. Currently, I am a postdoctoral researcher at the Instituto de Astrofísica de La Plata, CONICET -- UNLP, in La Plata, Argentina.</p>
+        <p>Previously, I held a postdoctoral position at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG), Universidade de São Paulo, Brazil.</p>
+        <p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRYA), Universidad Nacional Autónoma de México (UNAM), Morelia, Michoacán, Mexico.</p>
+        <p>My academic journey began with a Bachelor of Education in Mathematics and Physics from Universidad Popular del Cesar (UPC), Valledupar, Cesar, Colombia. I also obtained a degree as a Superior Normalist with Emphasis in Spanish Language from Escuela Normal Superior María Inmaculada, Manaure, Cesar, Colombia.</p>
+        <!-- Call to Action -->
+        <p>Ready to collaborate? Check out my <a href="#research" style="color: #007bff;">research</a> to see some of my latest projects, or <a href="mailto:gsoto.angel@gmail.com" style="color: #007bff;">contact me</a> to discuss potential collaborations or opportunities.</p>
+    </div>
+</section>
 
-    <!-- Courses section -->
-    <section id="courses">
-        <h2>Courses</h2>
-        <p>Coming soon...</p>
-    </section>
+<section id="research">
+    <h2>Research</h2>
+    <p>Under construction!</p>
+</section>
 
-    <!-- Contact section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>You can reach me at:</p>
-        <p>Email: example@example.com</p>
-        <p>Phone: +1234567890</p>
-    </section>
+<section id="publications">
+    <h2>Publications & CV</h2>
+    <p>Explore my published papers and articles, as well as my <a href="Documents/cv_Luis_Angel_Gutierrez.pdf" target="_blank" style="color: #007bff;">Curriculum Vitae</a>.</p>
+</section>
 
-    <script>
-        // JavaScript to toggle the visibility of the navigation menu
-        document.addEventListener('DOMContentLoaded', function () {
-            var menuBtn = document.querySelector('.menu-btn');
-            var nav = document.querySelector('.nav');
+<section id="courses">
+    <h2>Courses</h2>
+    <p>Under construction!</p>
+</section>
 
-            // Toggle the visibility of the navigation menu when the menu button is clicked
-            menuBtn.addEventListener('click', function () {
-                nav.classList.toggle('show');
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Under construction!</p>
+</section>
+
+<script>
+    // JavaScript to toggle the visibility of the navigation menu
+    document.addEventListener('DOMContentLoaded', function () {
+        var menuBtn = document.querySelector('.menu-btn');
+        var nav = document.querySelector('.nav');
+
+        // Toggle the visibility of the navigation menu when the menu button is clicked
+        menuBtn.addEventListener('click', function () {
+            nav.classList.toggle('show');
+        });
+
+        // Close the navigation menu when a menu item is clicked
+        var navLinks = document.querySelectorAll('.nav li a');
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                nav.classList.remove('show');
             });
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
