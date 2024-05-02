@@ -57,3 +57,17 @@ section h2 {
 .nav li a {
     padding: 10px 15px; /* Restore padding for links */
 }
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    /* Adjust nav item styles for smaller screens */
+    .nav li {
+        display: block;
+        margin: 10px 0; /* Add space around nav items */
+    }
+
+    /* Adjust link padding for smaller screens */
+    .nav li a {
+        padding: 10px; /* Reduce padding for links */
+    }
+}
