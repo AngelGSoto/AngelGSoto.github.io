@@ -29,6 +29,8 @@
             transition: background-color 0.3s ease;
             background-color: #f9f9f9; /* Background color for tabs */
             border: 1px solid #ccc; /* Border for tabs */
+            display: inline-block; /* Fix for the issue */
+            width: 100%; /* Fix for the issue */
         }
 
         /* Add space between tabs */
@@ -136,7 +138,7 @@
         /* Style for the menu icon */
         .menu-icon {
             width: 40px; /* Adjust the width of the icon */
-            height: auto; /* Maintain aspect ratio */
+            height: 40px; /* Maintain aspect ratio */
             cursor: pointer;
         }
     </style>
