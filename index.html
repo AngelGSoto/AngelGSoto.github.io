@@ -162,6 +162,9 @@
         <h1>Luis Angel Gutiérrez Soto</h1>
     </header>
 
+    <!-- Add the menu button -->
+    <div class="menu-btn" onclick="toggleNav()">Menu</div>
+
     <ul class="nav">
         <li><a href="#home">Home</a></li>
         <li><a href="#research">Research</a></li>
@@ -213,27 +216,19 @@
         <p>Under construction!</p>
     </section>
 
-    <!-- Add the menu button and overlay for mobile navigation -->
-    <div class="menu-btn" onclick="toggleNav()">Menu</div>
-    <div class="overlay" id="overlay">
-        <div class="overlay-content">
-            <ul class="nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications & CV</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
+    <!-- Add the menu overlay -->
+    <div class="overlay" id="overlay" onclick="toggleNav()"></div>
 
     <script>
         // Function to toggle the navigation menu
         function toggleNav() {
+            var nav = document.querySelector('.nav');
             var overlay = document.getElementById("overlay");
-            if (overlay.style.display === "block") {
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
                 overlay.style.display = "none";
             } else {
+                nav.style.display = "block";
                 overlay.style.display = "block";
             }
         }
