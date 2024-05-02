@@ -17,11 +17,6 @@
         /* Style list items */
         .nav li {
             display: inline-block;
-            margin-right: 20px;
-        }
-
-        .nav li:last-child {
-            margin-right: 0; /* Remove margin from the last item to prevent extra space */
         }
 
         /* Style links */
@@ -36,16 +31,82 @@
             border: 1px solid #ccc; /* Border for tabs */
         }
 
+        /* Add space between tabs */
+        .nav li:not(:last-child) {
+            margin-right: 20px;
+        }
+
         /* Hover effect */
         .nav li a:hover {
             background-color: #007bff;
             color: #fff;
         }
 
+        /* Style header */
+        header {
+            background-image: url('Images/mariposas.jpg'); /* Background image for the header */
+            background-size: cover; /* Ensure the image covers the entire header */
+            color: #fff; /* Text color for the header */
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Ensure relative positioning for child elements */
+        }
+
+        /* Style profile picture */
+        .profile-picture img {
+            width: 200px; /* Adjust the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%; /* Make the image round */
+            float: left; /* Float the image to the left */
+            margin-right: 20px; /* Add some space between the picture and text */
+        }
+
+        /* Style main content sections */
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #eee; /* Text color for sections */
+            clear: both; /* Clear the float to prevent overlapping */
+        }
+
+        /* Style section headings */
+        section h2 {
+            margin-top: 0;
+        }
+
+        /* Different background color for odd and even content sections */
+        section:nth-child(odd) {
+            background-color: rgba(30, 30, 30, 0.7); /* Darker background color for odd sections */
+        }
+
+        section:nth-child(even) {
+            background-color: rgba(20, 20, 20, 0.7); /* Even darker background color for even sections */
+        }
+
+        /* Set background image for the body */
+        body {
+            background-image: url('Images/JWT_PN_image.png'); /* Background image for the body */
+            background-size: cover; /* Ensure the image fits the entire body without cropping */
+            color: #eee; /* Text color for body */
+        }
+
+        /* Make text in the body slightly bigger and bold */
+        body p {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        /* Style the Home section title */
+        #home h2 {
+            text-align: left; /* Align the title to the left */
+        }
+
         /* Navigation menu visibility on mobile */
         @media only screen and (max-width: 959px) {
             .nav {
-                display: none; /* Hide the navigation menu by default on smaller screens */
+                display: none;
                 position: absolute;
                 top: 60px;
                 left: 0;
@@ -57,7 +118,7 @@
             }
 
             .nav.show {
-                display: block; /* Show the navigation menu when the mobile menu button is clicked */
+                display: block;
             }
 
             .nav li {
@@ -74,22 +135,27 @@
 
         /* Mobile menu button */
         .menu-btn {
-            display: none; /* Hide the mobile menu button by default */
-        }
-
-        @media only screen and (max-width: 959px) {
-            .menu-btn {
-                display: block; /* Show the mobile menu button on smaller screens */
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                cursor: pointer;
-            }
+            text-align: center; /* Center the button */
+            margin-top: 20px; /* Adjust top margin as needed */
+            position: absolute; /* Position the button */
+            top: 20px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
+            cursor: pointer;
+            z-index: 1001; /* Ensure the button appears above other elements */
         }
 
         .menu-btn img {
             width: 30px;
             height: auto;
+        }
+
+        /* Adjust navigation menu position */
+        .nav-below-header {
+            margin-top: 20px; /* Adjust top margin as needed */
+            position: absolute; /* Position the menu */
+            top: 100px; /* Adjust top position as needed */
+            width: 100%; /* Full width */
+            z-index: 1000; /* Ensure the menu appears above other elements */
         }
     </style>
 </head>
@@ -97,20 +163,22 @@
 
 <header>
     <h1>Luis Angel Gutiérrez Soto</h1>
+    <!-- Mobile menu button with square box icon -->
+    <div class="menu-btn">
+        &#9635; <!-- Unicode character for a square -->
+    </div>
 </header>
 
-<!-- Mobile menu button -->
-<div class="menu-btn">
-    <img src="menu-icon.png" alt="Menu">
+<!-- Navigation menu below header -->
+<div class="nav-below-header">
+    <ul class="nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications & CV</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </div>
-
-<ul class="nav">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#publications">Publications & CV</a></li>
-    <li><a href="#courses">Courses</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
 
 <!-- Combined Home and About Me section -->
 <section id="home">
