@@ -87,4 +87,75 @@ body p {
         display: block;
         padding: 10px;
     }
+
+    /* Additional mobile styles from mobile.css */
+    #body {
+        margin: 0;
+        min-height: 1175px;
+        padding: 0;
+        width: 100%;
+        z-index: 3;
+    }
+    #body.home {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    #body.home .header div,
+    #body.home .body div,
+    #body.home .footer div,
+    #body.about .header div,
+    #body .header div,
+    #body.about .body div,
+    #body.about .footer div,
+    #body.about .section div {
+        margin: 0 auto;
+        max-width: none;
+        overflow: hidden;
+        padding: 10% 0;
+        position: relative;
+        width: 95%;
+    }
+    #body.home .header div img.satellite {
+        left: 2px;
+    }
+    /* Add other relevant styles from mobile.css here */
+    #body.home .header div h1 {
+        float: none;
+        margin: 0;
+        padding: 30% 0 10%;
+        text-align: center;
+        width: 100%;
+    }
+    #body.home .header div h2 {
+        float: none;
+        margin: 0;
+        padding: 0 0 10% 0;
+        text-align: center;
+        width: 100%;
+    }
+    #body.home .header div a.more {
+        float: none;
+        margin: 0 auto;
+        z-index: 55;
+    }
+    #body.home .header div h3 {
+        margin: 106px 0 0;
+        width: 100%;
+    }
+    #body.home .header div ul,
+    #body.home .footer div ul,
+    #body.home .footer div ul li ul {
+        margin: 0;
+        padding: 10% 0;
+        width: 100%;
+    }
+    #body.home .header div ul li:first-child,
+    #body.home .header div ul li {
+        border: none;
+        float: none;
+        margin: 10% 0;
+        width: 100%;
+    }
+    /* Add more relevant styles from mobile.css */
 }
