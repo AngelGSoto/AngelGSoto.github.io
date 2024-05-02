@@ -1,21 +1,17 @@
 /* Mobile Styles */
+@media only screen and (max-width: 600px) {
+    /* Adjust nav styles for smaller screens */
+    .nav li {
+        display: block;
+        margin: 10px 0; /* Add space above and below nav items */
+    }
 
-/* Adjust font sizes */
-body {
-    font-size: 16px; /* Adjust as needed */
-}
+    /* Adjust link padding for smaller screens */
+    .nav li a {
+        display: block;
+        padding: 10px;
+    }
 
-/* Adjust padding and margins */
-.header {
-    padding: 10px;
-}
-
-.footer {
-    padding: 10px;
-}
-
-/* Make images responsive */
-img {
-    max-width: 100%;
-    height: auto;
+    /* Additional Mobile Styles */
+    /* Add your additional mobile styles here */
 }
