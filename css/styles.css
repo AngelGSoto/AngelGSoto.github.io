@@ -10,7 +10,7 @@
     --border-radius: 8px;
 }
 
-/* Reset y estilos generales */
+/* Navigation */
 .nav {
     list-style-type: none;
     margin: 0;
@@ -39,14 +39,25 @@
     color: #fff;
 }
 
+/* Header styling */
 header {
     background-image: url('Images/mariposas.jpg');
     background-size: cover;
     color: #fff;
-    padding: 20px;
+    padding: 100px 20px;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    background: linear-gradient(45deg, var(--primary-blue), var(--secondary-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Section styling */
 section {
     padding: var(--section-padding);
     margin: 20px 0;
@@ -63,22 +74,7 @@ section:nth-child(even) {
     background-color: rgba(20, 20, 20, 0.7);
 }
 
-body {
-    background-image: url('Images/JWT_PN_image.png');
-    background-size: cover;
-    color: var(--text-light);
-}
-
-body p {
-    font-size: 1.1em;
-    font-weight: bold;
-}
-
-#home h2 {
-    text-align: left;
-}
-
-/* Sección Publicaciones Mejorada */
+/* Publication styling */
 .publications-container {
     margin: 2rem 0;
     background: var(--bg-dark);
@@ -164,36 +160,55 @@ body p {
     margin-right: auto;
 }
 
+/* LINK STYLES WITH OVERRIDES */
 .publication-links {
     display: flex;
     gap: 1.5rem;
     margin-top: 2rem;
 }
 
+/* Base link styles */
+.publication-links a {
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* General styles (overridden in academic profile) */
 .doi-link {
     color: var(--secondary-orange);
     background: rgba(255, 165, 0, 0.1);
     border: 1px solid rgba(255, 165, 0, 0.3);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.3s ease;
 }
 
 .arxiv-link {
     color: var(--tertiary-cyan);
     background: rgba(0, 204, 255, 0.1);
     border: 1px solid rgba(0, 204, 255, 0.3);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.3s ease;
 }
 
-.doi-link:hover, 
-.arxiv-link:hover {
+/* ACADEMIC PROFILE OVERRIDES */
+#Academic-Profile .publication-links .doi-link {
+    color: #FFD700 !important; /* Gold */
+    background: rgba(255, 215, 0, 0.15) !important;
+    border-color: rgba(255, 215, 0, 0.4) !important;
+}
+
+#Academic-Profile .publication-links .arxiv-link {
+    color: #00F5D4 !important; /* Cyan */
+    background: rgba(0, 245, 212, 0.15) !important;
+    border-color: rgba(0, 245, 212, 0.4) !important;
+}
+
+/* Hover effects */
+#Academic-Profile .publication-links a:hover {
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 /* Responsive Design */
@@ -217,31 +232,8 @@ body p {
         gap: 1rem;
     }
     
-    .doi-link, 
-    .arxiv-link {
+    #Academic-Profile .publication-links a {
         width: 100%;
         text-align: center;
     }
-}
-
-/* Colores ajustados para mejor contraste */
-.doi-link {
-    color: #ffd700 !important; /* Dorado brillante */
-    background: rgba(255, 215, 0, 0.2); /* Fondo dorado transparente */
-    border-color: rgba(255, 215, 0, 0.5);
-}
-
-.arxiv-link {
-    color: #00f5d4 !important; /* Cyan eléctrico */
-    background: rgba(0, 245, 212, 0.2);
-    border-color: rgba(0, 245, 212, 0.5);
-}
-
-/* Hover mejorado */
-.doi-link:hover,
-.arxiv-link:hover {
-    color: #ffffff !important; /* Blanco puro al pasar */
-    background: rgba(255, 255, 255, 0.15); /* Fondo blanco transparente */
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
