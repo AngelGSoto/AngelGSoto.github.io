@@ -225,14 +225,17 @@ body p {
 }
 
 /* Actualización de color para mejorar la visibilidad en publicaciones */
-.publication-title,
-.doi-link,
-.arxiv-link {
-    color: #ffffff !important; /* Forzamos el color blanco */
+a.publication-title,
+a.doi-link,
+a.arxiv-link,
+a.publication-title:visited,
+a.doi-link:visited,
+a.arxiv-link:visited {
+    color: #ffffff !important; /* Forzamos el color blanco para enlaces y visitados */
 }
 
-.publication-title:hover,
-.doi-link:hover,
-.arxiv-link:hover {
-    color: var(--hover-blue) !important; /* Forzamos el color de hover */
+a.publication-title:hover,
+a.doi-link:hover,
+a.arxiv-link:hover {
+    color: var(--hover-blue) !important; /* Color de hover: azul claro */
 }
