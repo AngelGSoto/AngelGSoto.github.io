@@ -223,3 +223,17 @@ body p {
         text-align: center;
     }
 }
+
+/* Actualización de color para mejorar la visibilidad en publicaciones */
+.publication-title,
+.doi-link,
+.arxiv-link {
+    color: #ffffff; /* Color blanco para mayor contraste en fondo oscuro */
+}
+
+.publication-title:hover,
+.doi-link:hover,
+.arxiv-link:hover {
+    color: var(--hover-blue); /* Color de hover: azul claro */
+}
+
