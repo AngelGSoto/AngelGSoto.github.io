@@ -1,4 +1,4 @@
-/* styles.css */
+/* Variables globales */
 :root {
     --primary-blue: #63b3ff;
     --secondary-orange: #ffa500;
@@ -10,9 +10,9 @@
     --border-radius: 8px;
 }
 
-/* Navigation */
+/* === Navegación === */
 .nav {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -23,27 +23,26 @@
     margin: 0 10px;
 }
 
-.nav li a {
+.nav a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-    background-color: #f9f9f9;
+    background: #f9f9f9;
     border: 1px solid #ccc;
+    transition: 0.3s;
 }
 
-.nav li a:hover {
-    background-color: #007bff;
-    color: #fff;
+.nav a:hover {
+    background: #007bff;
+    color: white;
 }
 
-/* Header styling */
+/* === Header === */
 header {
-    background-image: url('Images/mariposas.jpg');
-    background-size: cover;
-    color: #fff;
+    background: url('Images/mariposas.jpg') center/cover;
+    color: white;
     padding: 100px 20px;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -57,38 +56,36 @@ header h1 {
     -webkit-text-fill-color: transparent;
 }
 
-/* Section styling */
+/* === Secciones generales === */
 section {
     padding: var(--section-padding);
     margin: 20px 0;
     border-radius: var(--border-radius);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     color: var(--text-light);
 }
 
 section:nth-child(odd) {
-    background-color: rgba(30, 30, 30, 0.7);
+    background: rgba(30, 30, 30, 0.7);
 }
 
 section:nth-child(even) {
-    background-color: rgba(20, 20, 20, 0.7);
+    background: rgba(20, 20, 20, 0.7);
 }
 
-/* Publication styling */
+/* === Publicaciones === */
 .publications-container {
-    margin: 2rem 0;
     background: var(--bg-dark);
     padding: 1.5rem;
-    border-radius: var(--border-radius);
     border: 1px solid rgba(255,255,255,0.1);
 }
 
 .publication-item {
+    background: rgba(0,0,0,0.4);
+    border-left: 4px solid var(--primary-blue);
     padding: 1.5rem;
     margin: 1.5rem 0;
-    background: rgba(0, 0, 0, 0.4);
-    border-left: 4px solid var(--primary-blue);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .publication-item:hover {
@@ -110,108 +107,45 @@ section:nth-child(even) {
     font-size: 0.9em;
 }
 
-.publication-title {
-    color: var(--primary-blue);
+/* === Corrección clave para títulos de papers === */
+#Academic-Profile .publication-title {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-weight: 700;
+    background: rgba(0,0,0,0.2);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+#Academic-Profile .publication-title:hover {
+    color: #a6d2ff !important;
+    background: rgba(0,0,0,0.4);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.2em;
-    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
-.publication-title:hover {
-    color: var(--hover-blue);
-    text-decoration: underline;
-}
-
-.publication-details {
-    color: #ccc;
-    font-size: 0.95em;
-    margin-bottom: 1.2rem;
-}
-
-.publication-summary {
-    margin: 1.5rem 0;
-    padding: 1.2rem;
-    background: rgba(255,255,255,0.05);
-    border-radius: var(--border-radius);
-}
-
-.publication-summary ul {
-    padding-left: 2rem;
-    margin: 1rem 0;
-}
-
-.publication-summary li {
-    margin: 1rem 0;
-    line-height: 1.6;
-}
-
-.publication-visual {
-    margin: 2rem 0;
-    text-align: center;
-}
-
-.visual-caption {
-    font-size: 0.9em;
-    color: #aaa;
-    margin-top: 1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* LINK STYLES WITH OVERRIDES */
-.publication-links {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-/* Base link styles */
-.publication-links a {
-    text-decoration: none;
+/* === Enlaces ADS === */
+#Academic-Profile .ads-link {
+    color: #FFD700 !important;
+    background: rgba(255,215,0,0.15);
+    border: 1px solid rgba(255,215,0,0.4);
     padding: 0.8rem 1.5rem;
     border-radius: 6px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    display: inline-block;
+    transition: 0.3s;
 }
 
-/* General styles (overridden in academic profile) */
-.doi-link {
-    color: var(--secondary-orange);
-    background: rgba(255, 165, 0, 0.1);
-    border: 1px solid rgba(255, 165, 0, 0.3);
-}
-
-.arxiv-link {
-    color: var(--tertiary-cyan);
-    background: rgba(0, 204, 255, 0.1);
-    border: 1px solid rgba(0, 204, 255, 0.3);
-}
-
-/* ACADEMIC PROFILE OVERRIDES */
-#Academic-Profile .publication-links .doi-link {
-    color: #FFD700 !important; /* Gold */
-    background: rgba(255, 215, 0, 0.15) !important;
-    border-color: rgba(255, 215, 0, 0.4) !important;
-}
-
-#Academic-Profile .publication-links .arxiv-link {
-    color: #00F5D4 !important; /* Cyan */
-    background: rgba(0, 245, 212, 0.15) !important;
-    border-color: rgba(0, 245, 212, 0.4) !important;
-}
-
-/* Hover effects */
-#Academic-Profile .publication-links a:hover {
-    color: #FFFFFF !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+#Academic-Profile .ads-link:hover {
+    color: white !important;
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
     transform: translateY(-2px);
 }
 
-/* Responsive Design */
+/* === Responsive Design === */
 @media (max-width: 768px) {
     .publication-header {
         flex-direction: column;
@@ -219,55 +153,8 @@ section:nth-child(even) {
         gap: 0.8rem;
     }
     
-    .publication-title {
-        font-size: 1.1em;
-    }
-    
-    .publication-summary ul {
-        padding-left: 1.5rem;
-    }
-    
-    .publication-links {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    #Academic-Profile .publication-links a {
+    #Academic-Profile .ads-link {
         width: 100%;
         text-align: center;
     }
-}
-
-/* Estilos específicos para enlace ADS en Academic Profile */
-#Academic-Profile .ads-link {
-    color: #FFD700 !important; /* Dorado brillante */
-    background: rgba(255, 215, 0, 0.15);
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 1.5rem;
-}
-
-#Academic-Profile .ads-link:hover {
-    color: #FFFFFF !important;
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-}
-
-/* Color para el título del paper en Academic Profile */
-#Academic-Profile .publication-title {
-    color: #ffffff !important; /* Blanco brillante */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Hover effect para el título */
-#Academic-Profile .publication-title:hover {
-    color: #a6d2ff !important; /* Azul claro */
-    text-decoration: underline;
 }
