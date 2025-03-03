@@ -3,375 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luis Angel Gutiérrez Soto</title>
+    <title>Luis Angel Gutiérrez Soto - Astronomer & Researcher</title>
     <style>
-        /* CSS styles */
-        /* Reset default margin and padding for the list */
-        .nav {
-            list-style-type: none;
+        :root {
+            --primary-color: #63b3ff;
+            --secondary-color: #ffa500;
+            --background-dark: rgba(30, 30, 30, 0.85);
+            --text-light: #eee;
+        }
+
+        /* Reset y estilos base */
+        * {
             margin: 0;
             padding: 0;
-            text-align: center; /* Center the navigation menu */
+            box-sizing: border-box;
         }
 
-        /* Style list items */
-        .nav li {
-            display: inline-block;
-        }
-
-        /* Style links */
-        .nav li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            padding: 15px; /* Adjusted padding for consistent sizing */
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            background-color: #f9f9f9; /* Background color for tabs */
-            border: 1px solid #ccc; /* Border for tabs */
-            display: inline-block; /* Fix for the issue */
-            width: 100%; /* Fix for the issue */
-        }
-
-        /* Add space between tabs */
-        .nav li:not(:last-child) {
-            margin-right: 20px;
-        }
-
-        /* Hover effect */
-        .nav li a:hover {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        /* Style header */
-        header {
-            background-image: url('Images/mariposas.jpg'); /* Background image for the header */
-            background-size: cover; /* Ensure the image covers the entire header */
-            color: #fff; /* Text color for the header */
-            padding: 20px;
-            text-align: center;
-            position: relative; /* Ensure relative positioning for child elements */
-        }
-
-        /* Style profile picture */
-        .profile-picture img {
-            width: 200px; /* Adjust the width of the image */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 50%; /* Make the image round */
-            float: left; /* Float the image to the left */
-            margin-right: 20px; /* Add some space between the picture and text */
-        }
-
-        /* Style main content sections */
-        section {
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            color: #eee; /* Text color for sections */
-            clear: both; /* Clear the float to prevent overlapping */
-        }
-
-        /* Style section headings */
-        section h2 {
-            margin-top: 0;
-        }
-
-        /* Different background color for odd and even content sections */
-        section:nth-child(odd) {
-            background-color: rgba(30, 30, 30, 0.7); /* Darker background color for odd sections */
-        }
-
-        section:nth-child(even) {
-            background-color: rgba(20, 20, 20, 0.7); /* Even darker background color for even sections */
-        }
-
-        /* Set background image for the body */
         body {
-            background-image: url('Images/JWT_PN_image.png'); /* Background image for the body */
-            background-size: cover; /* Ensure the image fits the entire body without cropping */
-            color: #eee; /* Text color for body */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: url('Images/JWT_PN_image.png') fixed;
+            color: var(--text-light);
         }
 
-        /* Make text in the body slightly bigger and bold */
-        body p {
-            font-size: 1.1em;
-            font-weight: bold;
+        /* Header */
+        header {
+            background: url('Images/mariposas.jpg') center/cover;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
         }
 
-        /* Style the Home section title */
-        #home h2 {
-            text-align: left; /* Align the title to the left */
+        header h1 {
+            font-family: 'Playfair Display', sans-serif;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
         }
 
-        /* Navigation menu visibility on mobile */
-        @media only screen and (max-width: 959px) {
+        /* Navegación */
+        .nav {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.8);
+        }
+
+        .nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: var(--primary-color);
+        }
+
+        /* Secciones principales */
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            background: var(--background-dark);
+            border-radius: 10px;
+        }
+
+        /* Perfil */
+        .profile-container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .profile-picture img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+        }
+
+        /* Investigación */
+        .research-highlight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .research-image {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        /* Publicaciones */
+        .publication-item {
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background: rgba(0,0,0,0.3);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .publication-title {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .publication-title:hover {
+            text-decoration: underline;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .doi-link {
+            color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        /* Contacto */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
             .nav {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 60%;
-                background-color: #333;
+                flex-direction: column;
+                text-align: center;
+                position: fixed;
+                width: 70%;
+                height: 100vh;
+                top: 0;
+                left: -100%;
+                transition: left 0.3s ease;
                 z-index: 1000;
-                padding: auto 0;
-                box-sizing: border-box;
             }
 
             .nav.show {
-                display: block;
+                left: 0;
             }
 
-            .nav li {
-                display: block;
-                margin: 10px 0;
+            .profile-container {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .nav li a {
-                display: block;
-                padding: 15px; /* Adjusted padding for consistent sizing */
-                text-align: center;
-            }
-            
-            /* Show menu icon on smaller screens */
-            .menu-icon {
-                display: block;
+            .research-highlight {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* Hide menu icon on larger screens */
-        @media only screen and (min-width: 960px) {
-            .menu-icon {
-                display: none;
-            }
-        }
-
-        /* Style for the menu icon */
         .menu-icon {
-            width: 40px; /* Adjust the width of the icon */
-            height: 38px; /* Maintain aspect ratio */
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
             cursor: pointer;
+            display: none;
         }
 
-        /* Style for the title in the header */
-        header h1 {
-            font-family: 'Playfair Display', sans-serif; /* Change font family */
-            color: #fff; /* White color */
-            text-shadow: 2px 2px 2px #000; /* Add black border effect */
-	    font-size: 36px; /* Adjust font size */
-	    font-weight: bold; /* Make the title bold */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Luis Angel Gutiérrez Soto</h1>
+        <img class="menu-icon" src="Images/Icon-mobile.png" alt="Menú">
+    </header>
 
-<header>
-    <h1>Luis Angel Gutiérrez Soto</h1>
-    <!-- Mobile menu button (icon only) -->
-    <img class="menu-icon" src="Images/Icon-mobile.png" alt="Menu">
-</header>
+    <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#academic-profile">Academic Profile</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<!-- Navigation menu below header -->
-<div class="nav-below-header">
-    <ul class="nav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#Academic Profile">Academic Profile</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#contact">Get in Touch & Connect</a></li>
-    </ul>
-</div>
-
-<!-- Combined Home and About Me section -->
-<section id="home">
-    <h2>Home</h2>
-    <!-- Profile picture -->
-    <div class="profile-picture">
-        <img src="Images/Luis_image_edit.jpeg" alt="Luis Angel Gutiérrez Soto" width="200" height="200">
-    </div>
-    <!-- Text beside the profile picture -->
-    <div class="text-beside-profile" style="text-align: justify;">
-        <!-- Introduction -->
-        <p>Welcome to my website! I'm Luis Angel Gutiérrez Soto, an astronomer interested in science, literature, and philosophy. I was born in Valledupar, Cesar, Colombia, and grew up between Manaure, Cesar, and the Serranía del Perijá.</p>
-	
-        <p>I have extensive experience in observational astrophysics. Currently, I am a postdoctoral researcher at the Instituto de Astrofísica de La Plata, CONICET -- UNLP, in La Plata, Argentina.</p>
-        <p>Previously, I held a postdoctoral position at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG), Universidade de São Paulo, Brazil.</p>
-        <p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRYA), Universidad Nacional Autónoma de México (UNAM), Morelia, Michoacán, Mexico.</p>
-        <p>My academic journey began with a Bachelor of Education in Mathematics and Physics from Universidad Popular del Cesar (UPC), Valledupar, Cesar, Colombia. I also obtained a degree as a Superior Normalist with Emphasis in Spanish Language from Escuela Normal Superior María Inmaculada, Manaure, Cesar, Colombia.</p>
-        <!-- Call to Action -->
-        <p>Ready to collaborate? Check out my <a href="#research" style="color: #007bff;">research</a> to see some of my latest projects, or <a href="mailto:gsoto.angel@gmail.com" style="color: #007bff;">contact me</a> to discuss potential collaborations or opportunities.</p>
-    </div>
-</section>
-
-
-<section id="research" style="margin-top: 30px; padding: 20px; background-color: rgba(0, 0, 0, 0.3); border-radius: 10px;">
-    <h2 style="text-align: left; color: #fff; font-family: Arial, sans-serif; font-weight: bold; font-size: 24px; margin-bottom: 20px;">Research</h2>
-    <div style="text-align: center;">
-        <img src="Images/my-PN.png" alt="My research" style="max-width: 100%; height: auto; border-radius: 10px;">
-        <p style="font-style: italic; color: #fff; font-family: Arial, sans-serif; font-size: 16px; margin-top: 10px;">
-            My own planetary nebula. Explore the details in the <a href="https://download.ssrn.com/newast/1de3edd1-b459-4c12-8d87-c519c5e44d9e-meca.pdf?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCICdL%2F%2Bk2NezyutQMv5Ou%2FhvD3fh34nlLHaiueKJJbYwOAiB4kQvblpKewjZ7ATNJBGcN%2BDMx41PARVxjn1XoefPG8iq9BQgjEAQaDDMwODQ3NTMwMTI1NyIMMhs8FW9x030aHHeAKpoFXjmz2Qv%2FUm1boKbYLpu20OH7SnKQnDvEGp8nYtGKGY08u8GIbq1fGyuG3pbCEwRNXxeWvbEjMfglK%2B5Qm%2FYPIHryi2c91gkvSO8dKSKa4YduzsE7Kig8ryEmX797LShfmRHJcyT2BlXvuDLgXpGTHYveMAYxaflc6S9cw%2F0ftq2LHkA0VB944EwYt7Ttw9raLndW37hU%2F4jS338F%2F7f2PuJI4hscEzQI%2BMdbbXxdK9Ytss3h4q2PJmO9Q66fbH9CAv%2FLjLmJBG8iMn5D%2Fs6bZmKg5nq0AtZjZnc26yhPH7btsZGCkullT8%2FFX%2BvtrtU%2B6i4UJemmhwUw7fUShWxD4DGX5G0CXLiY13xdJVUgNSE5s9j8f97RtrH6n5hd%2BqfX%2BardLWAI3frn0s7lKjY0garUsubM7QtCVZT1ZAHscTheY0VEljzB%2FCIIxdaQhN1RX5nRFYJbt1qjY8wQULvIyx6b2KWd3Tq%2F0MN3OlsRxcS8frR8gEe1tpVf2T2LP7M2DBG922%2BZC8hvQ3yOPPMk2yWD5OeOee3RxOXOAmbrb8A2hvUfVBUxf1OJ7pnhYDYpjgmUjpF5nkAiF63VbsYGNIMh%2FgRhXPW7Sigy1XZ5heyGD9L9bpbyeqt%2B26oZHnhzCwIOYKBcfTQ920eVuOv96B1O3El600WaWiNev8iXhZqETChmt%2BtP6Lkb33t09f7OyFcfYjl5vSXH54mB6kAdwU3%2Faq6VbubS3MqRZbiETCxRfvhNKp3vvzGjBde8Plca8AvJ%2BKD7iGyhb8CYFS5EPUQRQc8jAbYUSiuaPvNdnDME3CDMFohSLomzmgs67JokKzIP7LOxFn8XwyElrSMurUXIfHcOH2AYaJLbpEeS6juiLZ74kTmutfCWMLTkwbgGOrIBSK0ZS95%2B%2FuV8oXKlJb%2BC5PwJQQDM%2BBjTlPVCkG4bizE8AN%2FlFmE7ud%2FwCfx9XCYsi93l1w0deY%2FkZ2To%2F2ZtbwIkm4Rjz7SgP5vol%2FkPImqkb16yk3OB4RhS9NMCf7aUxy%2B8aWPKnesohCZ6o9iBHoMs1BLD3MYwRIi01IH7wBSDtUoEPSo055g7sfBrftDMZbQ8QZF88h37gZo3WEV7%2FWq%2Fg6oGA3i6pJe8z2pBvBdv5g%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241017T023822Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAUPUUPRWEUL3JE36U%2F20241017%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=7f391047c26aeecb19802f7108dd885aafee75bbc06f628406784eacd685cb56&abstractId=4642275" style="color: #007bff; text-decoration: none;"> <span style="text-decoration: underline; font-weight: bold;">paper</span></a> by Gutiérrez-Soto et al. (2024).
-        </p>
-    </div>
-    
-    <div style="margin-top: 20px; text-align: justify;">
-        <p style="color: #fff; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; border: 1px solid #fff; padding: 5px;">
-            I am interested in ionized regions present in astronomical objects such as planetary nebulae and symbiotic stars. But what are planetary nebulae and symbiotic stars, you might ask? Planetary nebulae represent one of the final stages in the evolution of low to intermediate mass stars, like our Sun. The planetary nebula phase occurs when the outer shell of these stars is ejected due to thermal pulses, forming a glowing shell of ionized material that expands until it dissipates into the interstellar medium. Symbiotic stars are binary systems consisting of a cool giant star and a hot compact companion, often a white dwarf or neutron star. Material from the cool star is transferred to the compact companion, and during this process, the material becomes ionized by the hot companion, resulting in a system with ionized material.
-        </p>
-        <p style="color: #fff; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; border: 1px solid #fff; padding: 5px;">
-            I search for these kinds of objects in large photometric multi-wavelength surveys, taking advantage of their spectral features such as strong emission lines. I develop color criteria to discover new planetary nebulae. Additionally, I am interested in using machine learning and deep learning techniques to identify not only planetary nebulae and symbiotic stars but also other types of celestial objects. I also model the spectra of planetary nebulae to determine their physical properties.
-        </p>
-    </div>
-</section>
-
-
-<section id="Academic-Profile">
-    <h2>Academic Profile</h2>
-    
-    <div class="publications-container">
-        <h3>Latest Publications</h3>
-        
-        <ul class="publications-list">
-            <!-- Primer Paper -->
-            <li class="publication-item">
-                <div class="publication-header">
-                    <span class="publication-year">2025</span>
-                    <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.306F/abstract" 
-                       class="publication-title" 
-                       target="_blank" 
-                       rel="noopener">
-                        Stellar Chemistry from Multiband Photometry
-                        <span class="external-link-icon">↗</span>
-                    </a>
+    <main>
+        <!-- Sección Home -->
+        <section id="home">
+            <h2>About Me</h2>
+            <div class="profile-container">
+                <div class="profile-picture">
+                    <img src="Images/Luis_image_edit.jpeg" alt="Luis Angel Gutiérrez Soto">
                 </div>
-                
-                <div class="publication-details">
-                    <span class="publication-authors">Ferreira Lopes, C. E., <strong>Gutiérrez-Soto, L. A.</strong>, et al.</span>
-                    <span class="publication-journal">Astronomy & Astrophysics</span>
+                <div class="bio-content">
+                    <p>Welcome to my website! I'm Luis Angel Gutiérrez Soto, an astronomer interested in science, literature, and philosophy. I was born in Valledupar, Cesar, Colombia, and grew up between Manaure, Cesar, and the Serranía del Perijá.</p>
+                    <!-- Resto de tu contenido biográfico -->
                 </div>
+            </div>
+        </section>
 
-                <div class="publication-summary">
-                    <p>We developed an innovative AI-powered method to analyze 5 million stars using multi-color space photography. Key achievements:</p>
+        <!-- Sección Research -->
+        <section id="research">
+            <h2>Research</h2>
+            <div class="research-highlight">
+                <div>
+                    <img src="Images/my-PN.png" alt="Planetary Nebula Research" class="research-image">
+                    <p class="image-caption">My planetary nebula discovery (Gutiérrez-Soto et al. 2024)</p>
+                </div>
+                <div>
+                    <h3>Research Focus</h3>
                     <ul>
-                        <li class="main-feature">
-                            ★ Calculated fundamental stellar properties:
-                            <ul class="sublist">
-                                <li class="subfeature">Surface temperature</li>
-                                <li class="subfeature">Gravitational strength</li>
-                                <li class="subfeature">Metal content</li>
-                                <li class="subfeature">Chemical element distribution</li>
-                            </ul>
-                        </li>
-                        <li>🌌 Mapped metal distribution across the Milky Way</li>
-                        <li>📊 Achieved 92% accuracy compared to spectroscopic measurements</li>
+                        <li>Observational studies of ionized nebulae</li>
+                        <li>Spectroscopic analysis of stellar populations</li>
+                        <li>Machine learning applications in astrophysics</li>
                     </ul>
-                    
-                    <figure class="publication-visual">
-                        <img src="Images/distribution_ZvsR_HeH.jpg" 
-                             alt="Galactic metal distribution map" 
-                             class="research-image">
-                        <figcaption class="figure-caption">
-                            <em>Galactic Metallicity Distribution:</em>
-                            <ul class="results-list">
-                                <li>📍 Vertical axis (Z): Height above/below galactic plane (kpc)</li>
-                                <li>📍 Horizontal axis (R): Galactocentric radius (kpc)</li>
-                                <li>🎨 Color scale: Metallicity ([Fe/H]) from metal-poor (blue) to metal-rich (red)</li>
-                            </ul>
-                            <div class="key-finding">
-                                <strong>Key Discovery:</strong> Metallicity gradient of −0.06 ± 0.01 dex/kpc in the thin disk
-                            </div>
-                        </figcaption>
-                    </figure>
                 </div>
+            </div>
+        </section>
 
+        <!-- Sección Academic Profile -->
+        <section id="academic-profile">
+            <h2>Academic Profile</h2>
+            <div class="publication-item">
+                <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.306F/abstract" 
+                   class="publication-title" 
+                   target="_blank">
+                    Stellar Chemistry from Multiband Photometry ↗
+                </a>
+                <p class="authors">Ferreira Lopes, C. E., <strong>Gutiérrez-Soto, L. A.</strong>, et al.</p>
                 <div class="publication-links">
-                    <a href="https://doi.org/10.1051/0004-6361/202451491" 
-                       class="doi-link" 
-                       target="_blank" 
-                       rel="noopener">
-                        Journal Article
-                    </a>
-                    <a href="https://arxiv.org/abs/2411.18748" 
-                       class="arxiv-link" 
-                       target="_blank" 
-                       rel="noopener">
-                        Preprint (arXiv)
-                    </a>
+                    <a href="https://doi.org/10.1051/0004-6361/202451491" class="doi-link">Journal Article</a>
+                    <a href="https://arxiv.org/abs/2411.18748" class="doi-link">arXiv Preprint</a>
                 </div>
-            </li>
-        </ul>
-    </div>
+            </div>
+        </section>
 
-</section>
-    
-    <p style="font-size: 16px; color: #fff; line-height: 1.6;">
-        Explore my published papers and articles, and download my detailed 
-        <a href="Documents/cv_Luis_Angel_Gutierrez.pdf" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold;">Curriculum Vitae</a>.
-    </p>
+        <!-- Sección Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <a href="mailto:gsoto.angel@gmail.com">
+                    <img src="Images/email-icon-1.jpg" alt="Email" width="24">
+                    gsoto.angel@gmail.com
+                </a>
+                <a href="https://github.com/AngelGSoto" target="_blank">
+                    <img src="Images/GitHub-icon.png" alt="GitHub" width="24">
+                    AngelGSoto
+                </a>
+            </div>
+        </section>
+    </main>
 
-    <p style="font-size: 16px; color: #fff; line-height: 1.6;">
-        You can view my complete list of publications and research work on 
-        <a href="https://scholar.google.com/citations?user=n2eSin0AAAAJ&hl=en" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold;">Google Scholar</a>.
-    </p>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.querySelector('.menu-icon');
+            const nav = document.querySelector('.nav');
 
-    <p style="font-size: 16px; color: #fff; line-height: 1.6;">
-        Additionally, explore my research contributions via 
-        <a href="https://ui.adsabs.harvard.edu/search/q=author:(%22Guti%C3%A9rrez-Soto,%20L.%20A.%22%20OR%20%22Guti%C3%A9rrez%20Soto,%20L.%20A.%22%20OR%20%22Guti%C3%A9rrez-Soto,%20L.%22%20OR%20%22GUTIERREZ%20SOTO,%20LUIS%20ANGEL%22)&sort=date%20desc,%20bibcode%20desc" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold;">NASA ADS</a>.
-    </p>
-</section>
+            menuButton.addEventListener('click', () => {
+                nav.classList.toggle('show');
+            });
 
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', (e) => {
+                if (!nav.contains(e.target) && !menuButton.contains(e.target)) {
+                    nav.classList.remove('show');
+                }
+            });
 
-
-<section id="courses">
-    <h2>Courses</h2>
-    <p>Under construction!</p>
-</section>
-
-<section id="contact" style="color: #f0f0f0;">
-    <h2 style="color: #ffffff;">Get in Touch & Connect</h2>
-    
-    <!-- Email icon and links -->
-    <p>
-        <img src="Images/email-icon-1.jpg" alt="Email Icon" style="width: 28px; margin-right: 8px; vertical-align: middle;">
-        <a href="mailto:gsoto.angel@gmail.com" style="text-decoration: none; color: #f0f0f0;">
-            gsoto.angel@gmail.com
-        </a> /
-        <a href="mailto:gsotoangel@fcaglp.unlp.edu.ar" style="text-decoration: none; color: #f0f0f0;">
-            gsotoangel@fcaglp.unlp.edu.ar
-        </a>
-    </p>
-    
-    <!-- GitHub icon and link with new color -->
-    <p>
-        <a href="https://github.com/AngelGSoto" target="_blank" style="text-decoration: none; color: #00ccff;">
-            <img src="Images/GitHub-icon.png" alt="GitHub Icon" style="width: 28px; margin-right: 8px; vertical-align: middle;">AngelGSoto
-        </a>
-    </p>
-</section>
-
-
-
-<script>
-    // JavaScript to toggle the visibility of the navigation menu
-    document.addEventListener('DOMContentLoaded', function () {
-        var menuIcon = document.querySelector('.menu-icon');
-        var nav = document.querySelector('.nav');
-        var body = document.querySelector('body');
-
-        // Toggle the visibility of the navigation menu when the menu icon is clicked
-        menuIcon.addEventListener('click', function () {
-            nav.classList.toggle('show');
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
         });
-
-        // Close the navigation menu when the body is clicked outside the menu
-        body.addEventListener('click', function (event) {
-            // Check if the clicked element is not part of the navigation menu or the menu icon
-            if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
-                nav.classList.remove('show');
-            }
-        });
-    });
-</script>
-
+    </script>
 </body>
 </html>
