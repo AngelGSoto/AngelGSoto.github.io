@@ -237,3 +237,25 @@ section:nth-child(even) {
         text-align: center;
     }
 }
+
+/* Estilos específicos para enlace ADS en Academic Profile */
+#Academic-Profile .ads-link {
+    color: #FFD700 !important; /* Dorado brillante */
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+#Academic-Profile .ads-link:hover {
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
