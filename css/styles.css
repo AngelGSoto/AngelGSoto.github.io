@@ -228,12 +228,11 @@ body p {
 .publication-title,
 .doi-link,
 .arxiv-link {
-    color: #ffffff; /* Color blanco para mayor contraste en fondo oscuro */
+    color: #ffffff !important; /* Forzamos el color blanco */
 }
 
 .publication-title:hover,
 .doi-link:hover,
 .arxiv-link:hover {
-    color: var(--hover-blue); /* Color de hover: azul claro */
+    color: var(--hover-blue) !important; /* Forzamos el color de hover */
 }
-
