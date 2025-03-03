@@ -224,14 +224,24 @@ body p {
     }
 }
 
-.publication-title,
-.doi-link,
-.arxiv-link {
-    color: #ffffff !important; /* Color blanco para mayor contraste */
+/* Colores ajustados para mejor contraste */
+.doi-link {
+    color: #ffd700 !important; /* Dorado brillante */
+    background: rgba(255, 215, 0, 0.2); /* Fondo dorado transparente */
+    border-color: rgba(255, 215, 0, 0.5);
 }
 
-.publication-title:hover,
+.arxiv-link {
+    color: #00f5d4 !important; /* Cyan eléctrico */
+    background: rgba(0, 245, 212, 0.2);
+    border-color: rgba(0, 245, 212, 0.5);
+}
+
+/* Hover mejorado */
 .doi-link:hover,
 .arxiv-link:hover {
-    color: var(--hover-blue) !important;
+    color: #ffffff !important; /* Blanco puro al pasar */
+    background: rgba(255, 255, 255, 0.15); /* Fondo blanco transparente */
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
