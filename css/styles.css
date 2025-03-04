@@ -1,160 +1,231 @@
-/* Variables globales */
-:root {
-    --primary-blue: #63b3ff;
-    --secondary-orange: #ffa500;
-    --tertiary-cyan: #00ccff;
-    --hover-blue: #a6d2ff;
-    --bg-dark: rgba(30, 30, 30, 0.85);
-    --text-light: #eee;
-    --section-padding: 2rem;
-    --border-radius: 8px;
-}
-
-/* === Navegación === */
-.nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.nav li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
-    background: #f9f9f9;
-    border: 1px solid #ccc;
-    transition: 0.3s;
-}
-
-.nav a:hover {
-    background: #007bff;
-    color: white;
-}
-
-/* === Header === */
-header {
-    background: url('Images/mariposas.jpg') center/cover;
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-    background: linear-gradient(45deg, var(--primary-blue), var(--secondary-orange));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* === Secciones generales === */
-section {
-    padding: var(--section-padding);
-    margin: 20px 0;
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    color: var(--text-light);
-}
-
-section:nth-child(odd) {
-    background: rgba(30, 30, 30, 0.7);
-}
-
-section:nth-child(even) {
-    background: rgba(20, 20, 20, 0.7);
-}
-
-/* === Publicaciones === */
+/* === PUBLICACIONES MEJORADAS === */
 .publications-container {
-    background: var(--bg-dark);
-    padding: 1.5rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.publications-list {
+    display: grid;
+    gap: 2.5rem;
+    padding: 0;
 }
 
 .publication-item {
-    background: rgba(0,0,0,0.4);
-    border-left: 4px solid var(--primary-blue);
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    transition: transform 0.3s;
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.7), rgba(50, 50, 50, 0.3));
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.publication-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--primary-blue);
+    transition: width 0.3s ease;
 }
 
 .publication-item:hover {
-    transform: translateX(8px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.publication-item:hover::before {
+    width: 100%;
+    opacity: 0.1;
 }
 
 .publication-header {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.5rem;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .publication-year {
-    background: var(--primary-blue);
-    color: white;
-    padding: 0.4rem 1.2rem;
-    border-radius: 15px;
-    font-size: 0.9em;
+    font-size: 1.1rem;
+    color: var(--tertiary-cyan);
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--tertiary-cyan);
 }
 
-/* === Corrección clave para títulos de papers === */
-#Academic-Profile .publication-title {
-    color: white !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    font-weight: 700;
-    background: rgba(0,0,0,0.2);
-    padding: 0.3rem 0.6rem;
+.publication-title {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    flex-grow: 1;
+    position: relative;
+}
+
+.publication-title:hover {
+    color: var(--hover-blue);
+}
+
+.external-link-icon {
+    font-size: 0.8em;
+    margin-left: 0.8rem;
+    color: var(--secondary-orange);
+}
+
+.publication-details {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.publication-authors {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.publication-journal {
+    color: var(--tertiary-cyan);
+    font-weight: 500;
+}
+
+.publication-summary {
+    margin: 2rem 0;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.publication-summary p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+/* === LISTAS MEJORADAS === */
+.main-feature {
+    position: relative;
+    padding-left: 2rem;
+    margin: 1.5rem 0;
+    color: var(--text-light);
+}
+
+.main-feature::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-orange);
+    font-size: 1.2em;
+}
+
+.sublist {
+    list-style: none;
+    padding-left: 2rem;
+    margin: 1rem 0;
+}
+
+.subfeature {
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 0.8rem 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.subfeature::before {
+    content: '➤';
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+    font-size: 0.8em;
+}
+
+/* === FIGURAS CIENTÍFICAS === */
+.publication-visual {
+    margin: 2.5rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.figure-container {
+    position: relative;
+    background: black;
+    padding: 1px;
+}
+
+.research-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+}
+
+.figure-caption {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 12px 12px;
+}
+
+.figure-caption em {
+    display: block;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.results-list {
+    display: grid;
+    gap: 0.8rem;
+    padding: 0;
+}
+
+.results-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.key-finding {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: linear-gradient(90deg, rgba(99, 179, 255, 0.1), transparent);
+    border-left: 4px solid var(--primary-blue);
     border-radius: 4px;
 }
 
-#Academic-Profile .publication-title:hover {
-    color: #a6d2ff !important;
-    background: rgba(0,0,0,0.4);
-    text-decoration: none;
-    box-shadow: 0 0 10px rgba(255,255,255,0.3);
-}
-
-/* === Enlaces ADS === */
-#Academic-Profile .ads-link {
-    color: #FFD700 !important;
-    background: rgba(255,215,0,0.15);
-    border: 1px solid rgba(255,215,0,0.4);
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-#Academic-Profile .ads-link:hover {
-    color: white !important;
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.3);
-    box-shadow: 0 0 15px rgba(255,255,255,0.3);
-    transform: translateY(-2px);
-}
-
-/* === Responsive Design === */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
+    .publications-container {
+        padding: 1rem;
+    }
+    
+    .publication-item {
+        padding: 1.5rem;
+    }
+    
     .publication-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.8rem;
+        gap: 1rem;
     }
     
-    #Academic-Profile .ads-link {
-        width: 100%;
-        text-align: center;
+    .publication-title {
+        font-size: 1.2rem;
+    }
+    
+    .main-feature {
+        padding-left: 1.5rem;
     }
 }

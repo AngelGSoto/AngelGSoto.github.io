@@ -187,6 +187,19 @@ window.addEventListener('load', function() {
 });
 </script>
 
+
+// Ajuste dinámico de imágenes
+document.querySelectorAll('.research-image').forEach(img => {
+    img.onload = function() {
+        const aspectRatio = this.naturalWidth / this.naturalHeight;
+        if(aspectRatio > 1.5) {
+            this.parentElement.classList.add('wide-image');
+        } else {
+            this.parentElement.classList.add('tall-image');
+        }
+    };
+});
+
 <body>
 
 <header>

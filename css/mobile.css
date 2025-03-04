@@ -39,3 +39,22 @@ img {
         max-width: 700px;
     }
 }
+
+.wide-image .research-image {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.tall-image .research-image {
+    max-height: 600px;
+    width: auto;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .wide-image .research-image,
+    .tall-image .research-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
