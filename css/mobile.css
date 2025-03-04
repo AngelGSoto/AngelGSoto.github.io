@@ -1,139 +1,82 @@
-/* mobile.css - Estilos para dispositivos móviles */
-@media only screen and (max-width: 568px) {
-    /* Navegación Mobile */
-    .nav {
+/* mobile.css - Versión Mejorada */
+@media only screen and (max-width: 768px) { /* Ampliamos a 768px para más dispositivos */
+    /* Reset de Imágenes */
+    .research-image {
+        max-width: 100% !important;
+        width: 100vw !important; /* Ocupa el ancho completo de la pantalla */
+        height: auto !important;
         display: block;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #333;
-        padding: 10px 0;
-        z-index: 1;
-        text-align: center;
+        margin: 0 auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+        object-fit: contain;
     }
 
-    .nav li {
-        display: block;
-        margin-bottom: 10px;
+    /* Contenedor de Imágenes */
+    .publication-visual {
+        width: calc(100% + 30px) !important; /* Compensa el padding */
+        margin: 15px -15px;
+        position: relative;
+        overflow: hidden;
     }
 
-    .menu-btn {
-        display: none;
+    /* Ajustes Específicos para Figuras */
+    figure.publication-visual {
+        transform: scale(0.98); /* Compensación visual */
+        border-radius: 12px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
 
-    /* Sección de Publicaciones */
-    .publications-container {
+    /* Texto Responsivo */
+    .figure-caption {
+        font-size: 0.8em !important;
+        padding: 12px !important;
+        line-height: 1.4;
+    }
+
+    /* Sistema de Cuadrícula Adaptativo */
+    .publications-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
         padding: 0 10px;
     }
 
+    /* Ajustes Adicionales */
     .publication-item {
-        padding: 10px;
-        margin: 15px 0;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .publication-header, .publication-details {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .publication-title {
-        font-size: 1em;
-        line-height: 1.3;
-        display: inline-block;
-        width: 95%;
-    }
-
-    .external-link-icon {
-        font-size: 0.8em;
-    }
-
-    .publication-year {
-        font-size: 0.9em;
-        margin-bottom: 5px;
-    }
-
-    /* Imágenes Responsivas */
-    .research-image {
-        max-width: 100% !important;
-        height: auto !important;
-        width: 100% !important;
-        border-radius: 6px;
-    }
-
-    .publication-visual {
-        width: 100%;
+        transform: translateZ(0); /* Activar GPU para mejor render */
+        backface-visibility: hidden;
+        padding: 0;
         margin: 10px 0;
     }
 
-    /* Texto y Listas */
-    .publication-summary {
-        font-size: 0.9em;
-    }
-
-    .publication-summary ul {
-        padding-left: 15px;
-    }
-
-    .sublist {
-        padding-left: 20px;
-    }
-
-    .figure-caption {
-        font-size: 0.85em;
-        padding: 8px;
-        background: #f9f9f9;
-        border-radius: 0 0 6px 6px;
-    }
-
-    .results-list li {
-        margin: 5px 0;
-    }
-
-    /* Ajustes Específicos para Texto */
-    .key-finding {
-        padding: 8px;
-        background: #fff3d6;
-        border-radius: 4px;
-        margin-top: 10px;
-        font-size: 0.85em;
-    }
-
-    .main-feature {
-        font-weight: 600;
-        color: #2c3e50;
-    }
-
-    .subfeature {
-        color: #7f8c8d;
+    .publication-header {
+        padding: 0 15px;
     }
 }
 
-/* Estilos Generales Mobile */
-body {
-    font-size: 16px;
-    line-height: 1.5;
+/* Estilos Generales Móvil */
+@media only screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Previene desbordamiento horizontal */
+    }
+
+    .publications-container {
+        max-width: 100vw;
+        overflow: hidden;
+    }
+
+    /* Ajuste de Meta Viewport Dinámico */
+    @viewport {
+        width: device-width;
+        zoom: 1.0;
+    }
 }
 
-h2 {
-    font-size: 1.5em;
-    margin: 20px 10px;
-}
-
-h3 {
-    font-size: 1.2em;
-    margin: 15px 10px;
-}
-
-/* Optimización de Espaciado */
-.publication-details {
-    margin: 8px 0;
-}
-
-.publication-authors {
-    display: block;
-    margin-bottom: 5px;
-    color: #34495e;
+/* Corrección Específica para Safari iOS */
+@supports (-webkit-touch-callout: none) {
+    .research-image {
+        max-height: 60vh !important; /* Limitar altura máxima */
+        object-position: center center;
+    }
 }
