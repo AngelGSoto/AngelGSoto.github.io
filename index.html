@@ -188,17 +188,43 @@ window.addEventListener('load', function() {
 </script>
 
 
-// Ajuste dinámico de imágenes
-document.querySelectorAll('.research-image').forEach(img => {
-    img.onload = function() {
-        const aspectRatio = this.naturalWidth / this.naturalHeight;
-        if(aspectRatio > 1.5) {
-            this.parentElement.classList.add('wide-image');
-        } else {
-            this.parentElement.classList.add('tall-image');
-        }
-    };
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    // Función combinada
+    function handleImages() {
+        const images = document.querySelectorAll('.research-image');
+        
+        images.forEach(img => {
+            // Redimensionamiento
+            const containerWidth = img.parentElement.offsetWidth;
+            const aspectRatio = img.naturalWidth / img.naturalHeight;
+            
+            if(window.innerWidth > 768) {
+                img.style.width = Math.min(containerWidth * 0.9, 800) + 'px';
+            } else {
+                img.style.width = '100%';
+                img.style.height = (containerWidth / aspectRatio) + 'px';
+            }
+            
+            // Clases de relación de aspecto
+            if(aspectRatio > 1.5) {
+                img.parentElement.classList.add('wide-image');
+            } else {
+                img.parentElement.classList.add('tall-image');
+            }
+        });
+    }
+
+    // Ejecutar al cargar y al redimensionar
+    window.addEventListener('resize', handleImages);
+    window.addEventListener('load', handleImages);
+    
+    // Ejecutar inmediatamente si las imágenes ya están cargadas
+    if(document.readyState === 'complete') {
+        handleImages();
+    }
 });
+</script>
 
 <body>
 
