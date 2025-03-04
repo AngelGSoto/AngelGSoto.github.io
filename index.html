@@ -165,28 +165,6 @@
     </style>
 </head>
 
-<script>
-// Fuerza el redimensionamiento en carga
-window.addEventListener('load', function() {
-    const images = document.querySelectorAll('.research-image');
-    
-    images.forEach(img => {
-        const containerWidth = img.parentElement.offsetWidth;
-        const aspectRatio = img.naturalWidth / img.naturalHeight;
-        
-        // Ajuste para desktop
-        if(window.innerWidth > 768) {
-            img.style.width = Math.min(containerWidth * 0.9, 800) + 'px';
-        }
-        // Ajuste para móvil
-        else {
-            img.style.width = '100%';
-            img.style.height = (containerWidth / aspectRatio) + 'px';
-        }
-    });
-});
-</script>
-
 
 <script>
 window.addEventListener('DOMContentLoaded', function() {
