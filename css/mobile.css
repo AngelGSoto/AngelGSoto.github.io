@@ -1,82 +1,37 @@
-/* mobile.css - Versión Mejorada */
-@media only screen and (max-width: 768px) { /* Ampliamos a 768px para más dispositivos */
-    /* Reset de Imágenes */
+/* mobile.css - Versión Definitiva */
+@media screen and (max-width: 768px) {
+    /* Sistema de imágenes universal */
     .research-image {
+        width: 100% !important;
         max-width: 100% !important;
-        width: 100vw !important; /* Ocupa el ancho completo de la pantalla */
         height: auto !important;
         display: block;
         margin: 0 auto;
-        padding: 0 15px;
-        box-sizing: border-box;
-        object-fit: contain;
     }
 
-    /* Contenedor de Imágenes */
+    /* Contenedor especial para móviles */
     .publication-visual {
-        width: calc(100% + 30px) !important; /* Compensa el padding */
-        margin: 15px -15px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Ajustes Específicos para Figuras */
-    figure.publication-visual {
-        transform: scale(0.98); /* Compensación visual */
-        border-radius: 12px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-
-    /* Texto Responsivo */
-    .figure-caption {
-        font-size: 0.8em !important;
-        padding: 12px !important;
-        line-height: 1.4;
-    }
-
-    /* Sistema de Cuadrícula Adaptativo */
-    .publications-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 10px;
-    }
-
-    /* Ajustes Adicionales */
-    .publication-item {
-        transform: translateZ(0); /* Activar GPU para mejor render */
-        backface-visibility: hidden;
-        padding: 0;
-        margin: 10px 0;
-    }
-
-    .publication-header {
-        padding: 0 15px;
+        width: 100vw !important;
+        margin-left: -5% !important;
+        transform: scale(0.95);
     }
 }
 
-/* Estilos Generales Móvil */
-@media only screen and (max-width: 768px) {
-    body {
-        overflow-x: hidden; /* Previene desbordamiento horizontal */
-    }
-
-    .publications-container {
-        max-width: 100vw;
-        overflow: hidden;
-    }
-
-    /* Ajuste de Meta Viewport Dinámico */
-    @viewport {
-        width: device-width;
-        zoom: 1.0;
-    }
+/* Estilos para escritorio - Añade esto a tu CSS principal */
+.figure-container {
+    max-width: 80%;
+    margin: 20px auto;
+    position: relative;
 }
 
-/* Corrección Específica para Safari iOS */
-@supports (-webkit-touch-callout: none) {
-    .research-image {
-        max-height: 60vh !important; /* Limitar altura máxima */
-        object-position: center center;
-    }
+.research-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Ajuste proporcional para CV_spectra */
+img[src*="CV_spectra"] {
+    max-width: 900px; /* Límite máximo */
 }
