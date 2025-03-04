@@ -1,37 +1,41 @@
-/* mobile.css - Versión Definitiva */
-@media screen and (max-width: 768px) {
-    /* Sistema de imágenes universal */
-    .research-image {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        display: block;
-        margin: 0 auto;
-    }
+/* ===== RESET GENERAL ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
-    /* Contenedor especial para móviles */
+/* ===== SISTEMA DE IMÁGENES RESPONSIVO ===== */
+@media screen and (max-width: 768px) { /* Móviles */
     .publication-visual {
         width: 100vw !important;
         margin-left: -5% !important;
-        transform: scale(0.95);
+        transform: scale(0.98);
+    }
+
+    .research-image {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 60vh !important;
+        object-fit: contain;
     }
 }
 
-/* Estilos para escritorio - Añade esto a tu CSS principal */
-.figure-container {
-    max-width: 80%;
-    margin: 20px auto;
-    position: relative;
-}
+@media screen and (min-width: 769px) { /* Desktop */
+    .publication-visual {
+        max-width: 800px; /* Máximo para escritorio */
+        margin: 0 auto;
+    }
 
-.research-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
+    /* Ajuste específico para CV_spectra */
+    img[src*="CV_spectra"] {
+        width: 85% !important;
+        margin: 0 auto;
+    }
 
-/* Ajuste proporcional para CV_spectra */
-img[src*="CV_spectra"] {
-    max-width: 900px; /* Límite máximo */
+    /* Ajuste para la otra imagen */
+    img[src*="distribution_ZvsR_HeH"] {
+        width: 95% !important;
+        max-width: 700px;
+    }
 }

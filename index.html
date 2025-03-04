@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Luis Angel Gutiérrez Soto</title>
     <style>
         /* CSS styles */
@@ -164,6 +164,29 @@
         }
     </style>
 </head>
+
+<script>
+// Fuerza el redimensionamiento en carga
+window.addEventListener('load', function() {
+    const images = document.querySelectorAll('.research-image');
+    
+    images.forEach(img => {
+        const containerWidth = img.parentElement.offsetWidth;
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        
+        // Ajuste para desktop
+        if(window.innerWidth > 768) {
+            img.style.width = Math.min(containerWidth * 0.9, 800) + 'px';
+        }
+        // Ajuste para móvil
+        else {
+            img.style.width = '100%';
+            img.style.height = (containerWidth / aspectRatio) + 'px';
+        }
+    });
+});
+</script>
+
 <body>
 
 <header>
@@ -273,7 +296,8 @@
 	   <div class="figure-container">
             <img src="Images/CV_spectra.png" 
                  alt="Optical spectra of cataclysmic variables showing Balmer lines" 
-                 class="research-image">
+                 class="research-image"
+		 loading="lazy">
 	    </div>
             <figcaption class="figure-caption">
                 <em>CV Spectral Analysis:</em>
@@ -324,7 +348,8 @@
                     <figure class="publication-visual">
                         <img src="Images/distribution_ZvsR_HeH.jpg" 
                              alt="Galactic metal distribution map showing metallicity gradient" 
-                             class="research-image">
+                             class="research-image"
+			     loading="lazy">
                         <figcaption class="figure-caption">
                             <em>Galactic Metallicity Distribution:</em>
                             <ul class="results-list">
