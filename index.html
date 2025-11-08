@@ -2,547 +2,619 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Luis Angel Gutiérrez Soto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Angel Gutiérrez Soto - Astrophysicist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CSS styles */
-        /* Reset default margin and padding for the list */
-        .nav {
-            list-style-type: none;
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            text-align: center; /* Center the navigation menu */
+            box-sizing: border-box;
         }
 
-        /* Style list items */
-        .nav li {
-            display: inline-block;
-        }
-
-        /* Style links */
-        .nav li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            padding: 15px; /* Adjusted padding for consistent sizing */
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            background-color: #f9f9f9; /* Background color for tabs */
-            border: 1px solid #ccc; /* Border for tabs */
-            display: inline-block; /* Fix for the issue */
-            width: 100%; /* Fix for the issue */
-        }
-
-        /* Add space between tabs */
-        .nav li:not(:last-child) {
-            margin-right: 20px;
-        }
-
-        /* Hover effect */
-        .nav li a:hover {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        /* Style header */
-        header {
-            background-image: url('Images/mariposas.jpg'); /* Background image for the header */
-            background-size: cover; /* Ensure the image covers the entire header */
-            color: #fff; /* Text color for the header */
-            padding: 20px;
-            text-align: center;
-            position: relative; /* Ensure relative positioning for child elements */
-        }
-
-        /* Style profile picture */
-        .profile-picture img {
-            width: 200px; /* Adjust the width of the image */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 50%; /* Make the image round */
-            float: left; /* Float the image to the left */
-            margin-right: 20px; /* Add some space between the picture and text */
-        }
-
-        /* Style main content sections */
-        section {
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            color: #eee; /* Text color for sections */
-            clear: both; /* Clear the float to prevent overlapping */
-        }
-
-        /* Style section headings */
-        section h2 {
-            margin-top: 0;
-        }
-
-        /* Different background color for odd and even content sections */
-        section:nth-child(odd) {
-            background-color: rgba(30, 30, 30, 0.7); /* Darker background color for odd sections */
-        }
-
-        section:nth-child(even) {
-            background-color: rgba(20, 20, 20, 0.7); /* Even darker background color for even sections */
-        }
-
-        /* Set background image for the body */
         body {
-            background-image: url('Images/JWT_PN_image.png'); /* Background image for the body */
-            background-size: cover; /* Ensure the image fits the entire body without cropping */
-            color: #eee; /* Text color for body */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background-attachment: fixed;
         }
 
-        /* Make text in the body slightly bigger and bold */
-        body p {
-            font-size: 1.1em;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('Images/mariposas.jpg') center/cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation */
+        .nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-list a:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section-dark {
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-dark h2 {
+            color: white;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 0.5rem auto;
+        }
+
+        /* Home Section */
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-picture {
+            flex: 0 0 250px;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            border-radius: 50%;
+            border: 5px solid var(--secondary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .profile-text {
+            flex: 1;
+            text-align: justify;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .stat-number {
+            font-size: 2rem;
             font-weight: bold;
+            color: var(--primary);
         }
 
-        /* Style the Home section title */
-        #home h2 {
-            text-align: left; /* Align the title to the left */
+        /* Research Section */
+        .research-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        /* Navigation menu visibility on mobile */
-        @media only screen and (max-width: 959px) {
-            .nav {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 60%;
-                background-color: #333;
-                z-index: 1000;
-                padding: auto 0;
-                box-sizing: border-box;
-            }
+        .research-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
 
-            .nav.show {
-                display: block;
-            }
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
 
-            .nav li {
-                display: block;
-                margin: 10px 0;
-            }
+        .research-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
 
-            .nav li a {
-                display: block;
-                padding: 15px; /* Adjusted padding for consistent sizing */
+        /* Publications */
+        .publication-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .publication-year {
+            background: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .publication-title {
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .publication-title:hover {
+            color: var(--secondary);
+        }
+
+        .publication-authors {
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* Academic Links */
+        .academic-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .academic-link-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--dark);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .academic-link-card:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--secondary);
+        }
+
+        /* Contact Section */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
                 text-align: center;
             }
             
-            /* Show menu icon on smaller screens */
-            .menu-icon {
-                display: block;
+            .nav-list {
+                flex-direction: column;
+                gap: 0.5rem;
             }
-        }
-
-        /* Hide menu icon on larger screens */
-        @media only screen and (min-width: 960px) {
-            .menu-icon {
-                display: none;
+            
+            h1 {
+                font-size: 2rem;
             }
-        }
-
-        /* Style for the menu icon */
-        .menu-icon {
-            width: 40px; /* Adjust the width of the icon */
-            height: 38px; /* Maintain aspect ratio */
-            cursor: pointer;
-        }
-
-        /* Style for the title in the header */
-        header h1 {
-            font-family: 'Playfair Display', sans-serif; /* Change font family */
-            color: #fff; /* White color */
-            text-shadow: 2px 2px 2px #000; /* Add black border effect */
-	    font-size: 36px; /* Adjust font size */
-	    font-weight: bold; /* Make the title bold */
         }
     </style>
 </head>
-
-
-<script>
-window.addEventListener('DOMContentLoaded', function() {
-    // Función combinada
-    function handleImages() {
-        const images = document.querySelectorAll('.research-image');
-        
-        images.forEach(img => {
-            // Redimensionamiento
-            const containerWidth = img.parentElement.offsetWidth;
-            const aspectRatio = img.naturalWidth / img.naturalHeight;
-            
-            if(window.innerWidth > 768) {
-                img.style.width = Math.min(containerWidth * 0.9, 800) + 'px';
-            } else {
-                img.style.width = '100%';
-                img.style.height = (containerWidth / aspectRatio) + 'px';
-            }
-            
-            // Clases de relación de aspecto
-            if(aspectRatio > 1.5) {
-                img.parentElement.classList.add('wide-image');
-            } else {
-                img.parentElement.classList.add('tall-image');
-            }
-        });
-    }
-
-    // Ejecutar al cargar y al redimensionar
-    window.addEventListener('resize', handleImages);
-    window.addEventListener('load', handleImages);
-    
-    // Ejecutar inmediatamente si las imágenes ya están cargadas
-    if(document.readyState === 'complete') {
-        handleImages();
-    }
-});
-</script>
-
 <body>
-
-<header>
-    <h1>Luis Angel Gutiérrez Soto</h1>
-    <!-- Mobile menu button (icon only) -->
-    <img class="menu-icon" src="Images/Icon-mobile.png" alt="Menu">
-</header>
-
-<!-- Navigation menu below header -->
-<div class="nav-below-header">
-    <ul class="nav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#Academic-Profile">Academic Profile</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#contact">Get in Touch & Connect</a></li>
-    </ul>
-</div>
-
-<!-- Combined Home and About Me section -->
-<section id="home">
-    <h2>Home</h2>
-    <!-- Profile picture -->
-    <div class="profile-picture">
-        <img src="Images/Luis_image_edit.jpeg" alt="Luis Angel Gutiérrez Soto" width="200" height="200">
-    </div>
-    <!-- Text beside the profile picture -->
-    <div class="text-beside-profile" style="text-align: justify;">
-        <!-- Introduction -->
-        <p>Welcome to my website! I'm Luis Angel Gutiérrez Soto, an astronomer interested in science, literature, and philosophy. I was born in Valledupar, Cesar, Colombia, and grew up between Manaure, Cesar, and the Serranía del Perijá.</p>
-	
-        <p>I have extensive experience in observational astrophysics. Currently, I am a postdoctoral researcher at the Instituto de Astrofísica de La Plata, CONICET -- UNLP, in La Plata, Argentina.</p>
-        <p>Previously, I held a postdoctoral position at the Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG), Universidade de São Paulo, Brazil.</p>
-        <p>I completed my Ph.D. in Astronomy at Observatório do Valongo, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil. My master's degree in Astrophysics was obtained from Centro de Radioastronomía y Astrofísica (CRYA), Universidad Nacional Autónoma de México (UNAM), Morelia, Michoacán, Mexico.</p>
-        <p>My academic journey began with a Bachelor of Education in Mathematics and Physics from Universidad Popular del Cesar (UPC), Valledupar, Cesar, Colombia. I also obtained a degree as a Superior Normalist with Emphasis in Spanish Language from Escuela Normal Superior María Inmaculada, Manaure, Cesar, Colombia.</p>
-        <!-- Call to Action -->
-        <p>Ready to collaborate? Check out my <a href="#research" style="color: #007bff;">research</a> to see some of my latest projects, or <a href="mailto:gsoto.angel@gmail.com" style="color: #007bff;">contact me</a> to discuss potential collaborations or opportunities.</p>
-    </div>
-</section>
-
-
-<section id="research" style="margin-top: 30px; padding: 20px; background-color: rgba(0, 0, 0, 0.3); border-radius: 10px;">
-    <h2 style="text-align: left; color: #fff; font-family: Arial, sans-serif; font-weight: bold; font-size: 24px; margin-bottom: 20px;">Research</h2>
-    <div style="text-align: center;">
-        <img src="Images/my-PN.png" alt="My research" style="max-width: 100%; height: auto; border-radius: 10px;">
-        <p style="font-style: italic; color: #fff; font-family: Arial, sans-serif; font-size: 16px; margin-top: 10px;">
-            My own planetary nebula. Explore the details in the <a href="https://arxiv.org/abs/2505.18308" style="color: #007bff; text-decoration: none;"> <span style="text-decoration: underline; font-weight: bold;">paper</span></a> by Gutiérrez-Soto et al. (2024).
-        </p>
-    </div>
-    
-    <div style="margin-top: 20px; text-align: justify;">
-        <p style="color: #fff; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; border: 1px solid #fff; padding: 5px;">
-            I am interested in ionized regions present in astronomical objects such as planetary nebulae and symbiotic stars. But what are planetary nebulae and symbiotic stars, you might ask? Planetary nebulae represent one of the final stages in the evolution of low to intermediate mass stars, like our Sun. The planetary nebula phase occurs when the outer shell of these stars is ejected due to thermal pulses, forming a glowing shell of ionized material that expands until it dissipates into the interstellar medium. Symbiotic stars are binary systems consisting of a cool giant star and a hot compact companion, often a white dwarf or neutron star. Material from the cool star is transferred to the compact companion, and during this process, the material becomes ionized by the hot companion, resulting in a system with ionized material.
-        </p>
-        <p style="color: #fff; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; border: 1px solid #fff; padding: 5px;">
-            I search for these kinds of objects in large photometric multi-wavelength surveys, taking advantage of their spectral features such as strong emission lines. I develop color criteria to discover new planetary nebulae. Additionally, I am interested in using machine learning and deep learning techniques to identify not only planetary nebulae and symbiotic stars but also other types of celestial objects. I also model the spectra of planetary nebulae to determine their physical properties.
-        </p>
-    </div>
-</section>
-
-<section id="Academic-Profile">
-    <h2>Academic Profile</h2>
-    
-    <div class="publications-container">
-        <h3>Latest Publications</h3>
-        
-        <ul class="publications-list">
-            <!-- Hα Excess Paper -->
-<li class="publication-item">
-    <div class="publication-header">
-        <span class="publication-year">2025</span>
-        <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...695A.104G/abstract" 
-           class="publication-title" 
-           target="_blank" 
-           rel="noopener">
-            Mapping Hα-Excess Candidate Point Sources in the Southern Hemisphere Using S-PLUS Data 
-            <span class="external-link-icon" aria-label="opens in new window">↗</span>
-        </a>
-    </div>
-    
-    <div class="publication-details">
-        <span class="publication-authors">
-            <strong>Gutiérrez-Soto, L. A.</strong>, Lopes de Oliveira, R., Akras, S., et al.
-        </span>
-        <span class="publication-journal">
-            Astronomy & Astrophysics
-        </span>
-    </div>
-
-    <div class="publication-summary">
-        <p>Novel methodology combining S-PLUS 12-band photometry with machine learning for classification of Hα-excess sources:</p>
-        <ul>
-            <li class="main-feature">
-                ★ Key innovations:
-                <ul class="sublist">
-                    <li class="subfeature">UMAP + HDBSCAN clustering</li>
-                    <li class="subfeature">Random Forest classification with infrared data</li>
-                    <li class="subfeature">New optimized color-color diagrams</li>
-                </ul>
-            </li>
-            <li class="main-feature">
-                ★ Catalog results:
-                <ul class="sublist">
-                    <li class="subfeature">6,956 J0660-excess sources identified</li>
-                    <li class="subfeature">Effective separation of Galactic/extragalactic sources</li>
-                    <li class="subfeature">Improved CV/QSO distinction</li>
-                </ul>
-            </li>
-        </ul>
-        
-        <figure class="publication-visual">
-    <div class="figure-container">
-        <img src="Images/alpha_espectro.png"  
-             alt="Hα-excess CV spectrum with S-PLUS photometry" 
-             class="research-image"
-             loading="lazy">  
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Luis Angel Gutiérrez Soto</h1>
+                <p class="subtitle">Astrophysicist & Data Scientist</p>
+                <p>Postdoctoral Researcher at Instituto de Astrofísica de La Plata</p>
+            </div>
         </div>
-            <figcaption class="figure-caption">
-                <em>Spectroscopic Validation:</em>
-                <ul class="results-list">
-                    <li>🔭 SDSS spectrum of CV J113722.24+014858.5</li>
-                    <li>📊 S-PLUS photometry overlay (12 filters)</li>
-                    <li>📍 Hα emission at 6563Å (dashed line)</li>
-                </ul>
-                <div class="key-finding">
-                    <strong>Significance:</strong> First systematic identification of Hα-excess sources in the Southern Hemisphere.
-                </div>
-            </figcaption>
-        </figure>
-    </div>
-</li>
+    </header>
 
-            <!-- S-PLUS CVs Paper -->
-            <li class="publication-item">
-                <div class="publication-header">
-                    <span class="publication-year">2025</span>
-                    <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...981L...1L/abstract" 
-                       class="publication-title" 
-                       target="_blank" 
-                       rel="noopener">
-                        The S-PLUS 12-band Photometry as a Powerful Tool for Discovery and Classification: Ten Cataclysmic Variables in a Proof-of-concept Study
-                        <span class="external-link-icon" aria-label="opens in new window">↗</span>
-                    </a>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#research"><i class="fas fa-search"></i> Research</a></li>
+                <li><a href="#publications"><i class="fas fa-file-alt"></i> Publications</a></li>
+                <li><a href="#academic"><i class="fas fa-graduation-cap"></i> Academic Profile</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <h2>About Me</h2>
+            <div class="profile-container">
+                <div class="profile-picture">
+                    <img src="Images/Luis_image_edit.jpeg" alt="Luis Angel Gutiérrez Soto">
+                </div>
+                <div class="profile-text">
+                    <p>Welcome! I'm Luis Angel Gutiérrez Soto, an astrophysicist passionate about understanding the universe through observational data and machine learning. Born in Valledupar, Colombia, my academic journey has taken me across Latin America, enriching my perspective on science and collaboration.</p>
+                    
+                    <p>Currently, I'm a postdoctoral researcher at the Instituto de Astrofísica de La Plata (CONICET-UNLP), where I focus on identifying planetary nebulae and symbiotic stars using multi-band photometric surveys and developing machine learning classification algorithms.</p>
+                    
+                    <p>My research bridges traditional astronomical observation with modern data science techniques, working with large surveys like S-PLUS and J-PAS to uncover hidden celestial objects and understand stellar evolution processes.</p>
+                </div>
+            </div>
+            
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <div class="stat-number">19+</div>
+                    <div class="stat-label">Refereed Publications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Postdoc Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Countries Research Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Conference Presentations</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section-dark">
+            <h2>Research Interests</h2>
+            
+            <div class="research-highlights">
+                <div class="research-card">
+                    <img src="Images/my-PN.png" alt="Planetary Nebula Research" class="research-image">
+                    <h3>Planetary Nebulae</h3>
+                    <p>Studying the final stages of stellar evolution through identification and analysis of planetary nebulae in large photometric surveys.</p>
                 </div>
                 
-                <div class="publication-details">
-                    <span class="publication-authors">
-                        Lopes de Oliveira, R., de Araújo, A. S., Krabbe, A. C., 
-                        Mendes de Oliveira, C. L., Mukai, K., 
-                        <strong>Gutiérrez-Soto, L. A.</strong>, et al.
-                    </span>
-                    <span class="publication-journal">
-                        The Astrophysical Journal Letters, Vol. 981, Issue 1
-                    </span>
+                <div class="research-card">
+                    <img src="Images/CV_spectra.png" alt="Machine Learning Applications" class="research-image">
+                    <h3>Machine Learning in Astronomy</h3>
+                    <p>Developing classification algorithms to identify emission-line objects and other celestial sources using multi-wavelength data.</p>
                 </div>
-
-                <div class="publication-summary">
-                    <p>Developed innovative method using S-PLUS 12-band photometry to identify cataclysmic variables (CVs), validated with Gemini spectroscopy and Swift X-ray observations. Key achievements:</p>
-                    <ul>
-                        <li class="main-feature">
-                            ★ Discovery of 10 new CV systems:
-                            <ul class="sublist">
-                                <li class="subfeature">Includes potential WZ Sge-type dwarf novae and intermediate polars</li>
-                                <li class="subfeature">Reveals objects elusive to traditional detection methods</li>
-                            </ul>
-                        </li>
-                        <li>🔭 Gemini South telescope validation with GMOS spectroscopy</li>
-                    </ul>
-                    
-                    <figure class="publication-visual">
-                        <div class="figure-container">
-                            <img src="Images/CV_spectra.png" 
-                                 alt="Optical spectra of cataclysmic variables showing Balmer lines" 
-                                 class="research-image"
-                                 style="width: 600px;"
-                                 loading="lazy">
-                        </div>
-                        <figcaption class="figure-caption">
-                            <em>CV Spectral Analysis:</em>
-                            <ul class="results-list">
-                                <li>🔍 Gemini South GMOS spectra showing Hα and Hβ emission lines</li>
-                                <li>📍 Characteristics of accreting white dwarf binary systems</li>
-                            </ul>
-                            <div class="key-finding">
-                                <strong>Significance:</strong> Complementary method to study stellar evolution and accretion physics in magnetic white dwarfs.
-                            </div>
-                        </figcaption>
-                    </figure>
+                
+                <div class="research-card">
+                    <img src="Images/distribution_ZvsR_HeH.jpg" alt="Large Surveys" class="research-image">
+                    <h3>Large Photometric Surveys</h3>
+                    <p>Working with S-PLUS, J-PAS, and other surveys to extract scientific insights from massive astronomical datasets.</p>
                 </div>
-            </li>
+            </div>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="#publications" class="academic-link-card" style="display: inline-block; width: auto;">
+                    <i class="fas fa-arrow-right"></i> Explore My Publications
+                </a>
+            </div>
+        </section>
 
-            <!-- Stellar Chemistry Paper -->
-            <li class="publication-item">
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            
+            <div class="publication-item">
                 <div class="publication-header">
                     <span class="publication-year">2025</span>
-                    <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.306F/abstract" 
-                       class="publication-title" 
-                       target="_blank" 
-                       rel="noopener">
+                    <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...695A.104G/abstract" class="publication-title" target="_blank">
+                        Mapping Hα excess candidate point sources in the Southern Hemisphere using S-PLUS data
+                    </a>
+                </div>
+                <div class="publication-authors">
+                    <strong>Gutiérrez-Soto, L. A.</strong>, Lopes de Oliveira, R., Akras, S., et al.
+                </div>
+                <div class="publication-journal">
+                    Astronomy & Astrophysics, 695, A104
+                </div>
+            </div>
+            
+            <div class="publication-item">
+                <div class="publication-header">
+                    <span class="publication-year">2025</span>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...981L...1L/abstract" class="publication-title" target="_blank">
+                        The S-PLUS 12-band Photometry as a Powerful Tool for Discovery and Classification: Ten Cataclysmic Variables
+                    </a>
+                </div>
+                <div class="publication-authors">
+                    Lopes de Oliveira, R., de Araújo, A. S., Krabbe, A. C., <strong>Gutiérrez-Soto, L. A.</strong>, et al.
+                </div>
+                <div class="publication-journal">
+                    The Astrophysical Journal Letters, 981, L1
+                </div>
+            </div>
+            
+            <div class="publication-item">
+                <div class="publication-header">
+                    <span class="publication-year">2025</span>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.306F/abstract" class="publication-title" target="_blank">
                         Stellar atmospheric parameters and chemical abundances of ~5 million stars from S-PLUS multiband photometry
-                        <span class="external-link-icon" aria-label="opens in new window">↗</span>
                     </a>
                 </div>
+                <div class="publication-authors">
+                    Ferreira Lopes, C. E., <strong>Gutiérrez-Soto, L. A.</strong>, et al.
+                </div>
+                <div class="publication-journal">
+                    Astronomy & Astrophysics, 693, A306
+                </div>
+            </div>
+            
+            <div class="academic-links">
+                <a href="https://ui.adsabs.harvard.edu/search/q=author%3A(%22Guti%C3%A9rrez-Soto%2C%20L.%20A.%22%20OR%20%22Guti%C3%A9rrez%20Soto%2C%20L.%20A.%22%20OR%20%22Guti%C3%A9rrez-Soto%2C%20L.%22%20OR%20%22GUTIERREZ%20SOTO%2C%20LUIS%20ANGEL%22)&sort=date%20desc%2C%20bibcode%20desc&p_=0" 
+                   class="academic-link-card" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    <h3>NASA ADS</h3>
+                    <p>Complete Publication List</p>
+                </a>
                 
-                <div class="publication-details">
-                    <span class="publication-authors">
-                        Ferreira Lopes, C. E., <strong>Gutiérrez-Soto, L. A.</strong>, et al.
-                    </span>
-                    <span class="publication-journal">
-                        Astronomy & Astrophysics, Vol. 693 (2025)
-                    </span>
-                </div>
+                <a href="https://scholar.google.com/citations?user=n2eSin0AAAAJ&hl=en" 
+                   class="academic-link-card" target="_blank">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Google Scholar</h3>
+                    <p>Citations & Metrics</p>
+                </a>
+                
+                <a href="Documents/cv_Luis_Angel_Gutierrez.pdf" 
+                   class="academic-link-card" target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Download CV</h3>
+                    <p>Full Curriculum Vitae</p>
+                </a>
+                
+                <a href="https://github.com/AngelGSoto" 
+                   class="academic-link-card" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Code & Projects</p>
+                </a>
+            </div>
+        </section>
 
-                <div class="publication-summary">
-                    <p>We developed an AI-powered method to analyze 5 million stars using multi-color photometry. Key achievements:</p>
-                    <ul>
-                        <li class="main-feature">
-                            ★ Calculated fundamental stellar properties:
-                            <ul class="sublist">
-                                <li class="subfeature">Surface temperature</li>
-                                <li class="subfeature">Gravitational strength</li>
-                                <li class="subfeature">Metal content</li>
-                                <li class="subfeature">Chemical element distribution</li>
-                            </ul>
-                        </li>
-                        <li>🌌 Mapped metal distribution across the Milky Way</li>
+        <!-- Academic Profile -->
+        <section id="academic" class="section-dark">
+            <h2>Academic Profile</h2>
+            
+            <div class="research-highlights">
+                <div class="research-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li><strong>Ph.D. in Astronomy</strong> - UFRJ, Brazil (2019)</li>
+                        <li><strong>M.Sc. in Astrophysics</strong> - UNAM, Mexico (2015)</li>
+                        <li><strong>B.Ed. Mathematics & Physics</strong> - UPC, Colombia (2010)</li>
+                        <li><strong>Superior Normalist</strong> - ENS María Inmaculada, Colombia (2004)</li>
                     </ul>
-                    
-                    <figure class="publication-visual">
-                        <div class="figure-container">
-                            <img src="Images/distribution_ZvsR_HeH.jpg" 
-                                 alt="Galactic metal distribution map showing metallicity gradient" 
-                                 class="research-image"
-                                 style="width: 600px;"
-                                 loading="lazy">
-                        </div>
-                        <figcaption class="figure-caption">
-                            <em>Galactic Metallicity Distribution:</em>
-                            <ul class="results-list">
-                                <li>📍 Vertical axis (Z): Height above/below galactic plane (kpc)</li>
-                                <li>📍 Horizontal axis (R): Galactocentric radius (kpc)</li>
-                                <li>🎨 Color scale: Metallicity ([Fe/H]) from metal-poor (blue) to metal-rich (red)</li>
-                            </ul>
-                            <div class="key-finding">
-                                <strong>Key Discovery:</strong> Metallicity gradient and chemical abundance patterns across 1 million stars from galactic plane to halo.
-                            </div>
-                        </figcaption>
-                    </figure>
                 </div>
-            </li>
-        </ul>
+                
+                <div class="research-card">
+                    <h3><i class="fas fa-flask"></i> Research Experience</h3>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li><strong>Postdoctoral Researcher</strong> - IALP, Argentina (2022-Present)</li>
+                        <li><strong>Postdoctoral Researcher</strong> - IAG-USP, Brazil (2020-2022)</li>
+                        <li><strong>Telescope Operator</strong> - T80-Sur, S-PLUS (2020-2024)</li>
+                    </ul>
+                </div>
+                
+                <div class="research-card">
+                    <h3><i class="fas fa-cogs"></i> Technical Skills</h3>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li><strong>Programming:</strong> Python, Fortran, ADQL, Bash</li>
+                        <li><strong>ML/AI:</strong> Scikit-learn, TensorFlow, Classification</li>
+                        <li><strong>Astronomy:</strong> Topcat, Aladin, Cloudy, Astropy</li>
+                        <li><strong>Observational:</strong> Telescope Operation, Data Reduction</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:gsoto.angel@gmail.com">gsoto.angel@gmail.com</a></p>
+                    <p><a href="mailto:gsotoangel@fcaglp.unlp.edu.ar">gsotoangel@fcaglp.unlp.edu.ar</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Instituto de Astrofísica de La Plata</p>
+                    <p>La Plata, Argentina</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Connect</h3>
+                    <p>
+                        <a href="https://github.com/AngelGSoto" target="_blank"><i class="fab fa-github"></i> GitHub</a> | 
+                        <a href="https://orcid.org/0000-0002-9891-8017" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
+                    </p>
+                </div>
+            </div>
+        </section>
     </div>
-</section>
 
-   <div class="academic-links">
-    <h4>Explore Further:</h4>
-    <ul class="link-list">
-        <li class="link-item">
-            <img src="Images/ads-icon.png" alt="NASA ADS" class="link-icon">
-            <a href="https://ui.adsabs.harvard.edu/search/q=author:(%22Guti%C3%A9rrez-Soto,%20L.%20A.%22%20OR%20%22Guti%C3%A9rrez%20Soto,%20L.%20A.%22%20OR%20%22Guti%C3%A9rrez-Soto,%20L.%22%20OR%20%22GUTIERREZ%20SOTO,%20LUIS%20ANGEL%22)&sort=date%20desc,%20bibcode%20desc" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="academic-link">
-                Full Publications List on NASA/ADS
-            </a>
-        </li>
-        
-        <li class="link-item">
-            <img src="Images/scholar-icon.png" alt="Google Scholar" class="link-icon">
-            <a href="https://scholar.google.com/citations?user=n2eSin0AAAAJ&hl=en" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="academic-link">
-                Google Scholar Profile
-            </a>
-        </li>
-        
-        <li class="link-item">
-            <img src="Images/cv-icon.png" alt="CV" class="link-icon">
-            <a href="Documents/cv_Luis_Angel_Gutierrez.pdf" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="academic-link">
-                Download Full Curriculum Vitae (PDF)
-            </a>
-        </li>
-    </ul>
-</div>
-    
-</section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Luis Angel Gutiérrez Soto. All rights reserved.</p>
+            <p>Astrophysicist & Data Scientist | Bridging Astronomy and Machine Learning</p>
+        </div>
+    </footer>
 
-<section id="courses">
-    <h2>Courses</h2>
-    <p>Under construction!</p>
-</section>
-
-<section id="contact" style="color: #f0f0f0;">
-    <h2 style="color: #ffffff;">Get in Touch & Connect</h2>
-    
-    <!-- Email icon and links -->
-    <p>
-        <img src="Images/email-icon-1.jpg" alt="Email Icon" style="width: 28px; margin-right: 8px; vertical-align: middle;">
-        <a href="mailto:gsoto.angel@gmail.com" style="text-decoration: none; color: #f0f0f0;">
-            gsoto.angel@gmail.com
-        </a> /
-        <a href="mailto:gsotoangel@fcaglp.unlp.edu.ar" style="text-decoration: none; color: #f0f0f0;">
-            gsotoangel@fcaglp.unlp.edu.ar
-        </a>
-    </p>
-    
-    <!-- GitHub icon and link with new color -->
-    <p>
-        <a href="https://github.com/AngelGSoto" target="_blank" style="text-decoration: none; color: #00ccff;">
-            <img src="Images/GitHub-icon.png" alt="GitHub Icon" style="width: 28px; margin-right: 8px; vertical-align: middle;">AngelGSoto
-        </a>
-    </p>
-</section>
-
-<script>
-    // JavaScript to toggle the visibility of the navigation menu
-    document.addEventListener('DOMContentLoaded', function () {
-        var menuIcon = document.querySelector('.menu-icon');
-        var nav = document.querySelector('.nav');
-        var body = document.querySelector('body');
-
-        // Toggle the visibility of the navigation menu when the menu icon is clicked
-        menuIcon.addEventListener('click', function () {
-            nav.classList.toggle('show');
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
 
-        // Close the navigation menu when the body is clicked outside the menu
-        body.addEventListener('click', function (event) {
-            // Check if the clicked element is not part of the navigation menu or the menu icon
-            if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
-                nav.classList.remove('show');
-            }
-        });
-    });
-</script>
+        // Add active class to current section in navigation
+        window.addEventListener('scroll', function() {
+            let sections = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('.nav-list a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
 
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
