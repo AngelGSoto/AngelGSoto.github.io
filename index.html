@@ -1,4 +1,570 @@
-<!-- Publications Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Angel Gutiérrez Soto - Astrophysicist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: 
+                linear-gradient(
+                    rgba(15, 32, 39, 0.4), 
+                    rgba(32, 58, 67, 0.5)
+                ),
+                url('Images/JWT_PN_image.png') center/cover fixed;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header with more visible butterfly background */
+        header {
+            background: 
+                linear-gradient(
+                    rgba(44, 62, 80, 0.6), 
+                    rgba(44, 62, 80, 0.5)
+                ),
+                url('Images/mariposas.jpg') center/cover;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .cultural-note {
+            font-style: italic;
+            color: #f1c40f;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* Navigation */
+        .nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-list a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Sections with less opacity for better background visibility */
+        section {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.88);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .section-dark {
+            background: rgba(44, 62, 80, 0.88);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-dark h2 {
+            color: white;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            margin: 0.8rem auto;
+            border-radius: 2px;
+        }
+
+        /* Home Section */
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-picture {
+            flex: 0 0 280px;
+            position: relative;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            border-radius: 50%;
+            border: 6px solid var(--secondary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-picture img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-text {
+            flex: 1;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--light), #ffffff);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid var(--secondary);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Research Section */
+        .research-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .research-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .research-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Publications */
+        .publication-item {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(5px);
+        }
+
+        .publication-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .publication-year {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .publication-title {
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .publication-title:hover {
+            color: var(--secondary);
+        }
+
+        .publication-authors {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Academic Links */
+        .academic-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .academic-link-card {
+            background: linear-gradient(135deg, var(--light), #ffffff);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--dark);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .academic-link-card:hover {
+            background: linear-gradient(135deg, var(--secondary), #2980b9);
+            color: white;
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--secondary);
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Contact Section */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, var(--light), #ffffff);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #1a252f);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 3px solid var(--secondary);
+        }
+
+        .footer-quote {
+            font-style: italic;
+            color: #f1c40f;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* James Webb Section */
+        .jwst-section {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .jwst-image {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin: 1.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-picture {
+                flex: 0 0 200px;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .research-highlights,
+            .academic-links,
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                min-height: 300px;
+                padding: 2rem 0;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with More Visible Butterfly Background -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Luis Angel Gutiérrez Soto</h1>
+                <p class="subtitle">Astrophysicist & Data Scientist</p>
+                <p>Exploring the Universe through Data and Machine Learning</p>
+                <p class="cultural-note">
+                    "Las mariposas amarillas" — Un homenaje a Cien Años de Soledad de Gabriel García Márquez
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#research"><i class="fas fa-search"></i> Research</a></li>
+                <li><a href="#publications"><i class="fas fa-file-alt"></i> Publications</a></li>
+                <li><a href="#academic"><i class="fas fa-graduation-cap"></i> Academic Profile</a></li>
+                <li><a href="#jwst"><i class="fas fa-star"></i> James Webb</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <h2>About Me</h2>
+            <div class="profile-container">
+                <div class="profile-picture">
+                    <img src="Images/Luis_image_edit.jpeg" alt="Luis Angel Gutiérrez Soto">
+                </div>
+                <div class="profile-text">
+                    <p>Welcome! I'm Luis Angel Gutiérrez Soto, an astrophysicist passionate about understanding the universe through observational data and machine learning. Born in Valledupar, Colombia, my academic journey has taken me across Latin America, enriching my perspective on science and collaboration.</p>
+                    
+                    <p>Currently, I'm a postdoctoral researcher at the Instituto de Astrofísica de La Plata (CONICET-UNLP), where I focus on identifying planetary nebulae and symbiotic stars using multi-band photometric surveys and developing machine learning classification algorithms.</p>
+                    
+                    <p>My research bridges traditional astronomical observation with modern data science techniques, working with large surveys like S-PLUS and J-PAS to uncover hidden celestial objects and understand stellar evolution processes.</p>
+
+                    <p>Beyond science, I find inspiration in literature and philosophy, particularly in the magical realism of Gabriel García Márquez, which reminds me that wonder and discovery exist at the intersection of science and imagination.</p>
+                </div>
+            </div>
+            
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <div class="stat-number">19+</div>
+                    <div class="stat-label">Refereed Publications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Postdoc Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Countries Research Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Conference Presentations</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- James Webb Section -->
+        <section id="jwst" class="section-dark">
+            <h2>James Webb Space Telescope</h2>
+            <div style="text-align: center;">
+                <img src="Images/JWT_PN_image.png" alt="James Webb Space Telescope Planetary Nebula" class="jwst-image" style="max-width: 800px; width: 100%;">
+                <p style="margin-top: 1rem; font-style: italic; color: #f1c40f;">
+                    Planetary Nebula observed by the James Webb Space Telescope - A glimpse into the future of Sun-like stars
+                </p>
+            </div>
+            <div style="margin-top: 2rem; text-align: justify;">
+                <p>The James Webb Space Telescope represents a new era in astronomical observation, allowing us to study planetary nebulae and other celestial objects with unprecedented detail and sensitivity. Its infrared capabilities reveal hidden structures and chemical compositions that were previously invisible to other telescopes.</p>
+                
+                <p>My research with large photometric surveys like S-PLUS complements JWST observations by identifying candidate objects for detailed study and providing contextual data across multiple wavelengths.</p>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research">
+            <h2>Research Interests</h2>
+            
+            <div class="research-highlights">
+                <div class="research-card">
+                    <img src="Images/my-PN.png" alt="Planetary Nebula Research" class="research-image">
+                    <h3>Planetary Nebulae</h3>
+                    <p>Studying the final stages of stellar evolution through identification and analysis of planetary nebulae in large photometric surveys. These beautiful cosmic objects represent the spectacular end-of-life phases of Sun-like stars.</p>
+                </div>
+                
+                <div class="research-card">
+                    <img src="Images/CV_spectra.png" alt="Machine Learning Applications" class="research-image">
+                    <h3>Machine Learning in Astronomy</h3>
+                    <p>Developing classification algorithms to identify emission-line objects and other celestial sources using multi-wavelength data. Combining traditional astronomy with cutting-edge AI techniques.</p>
+                </div>
+                
+                <div class="research-card">
+                    <img src="Images/distribution_ZvsR_HeH.jpg" alt="Large Surveys" class="research-image">
+                    <h3>Large Photometric Surveys</h3>
+                    <p>Working with S-PLUS, J-PAS, and other surveys to extract scientific insights from massive astronomical datasets. Exploring the universe through multi-band photometry and spectral analysis.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="#publications" class="academic-link-card" style="display: inline-block; width: auto; padding: 1.2rem 2.5rem;">
+                    <i class="fas fa-arrow-right"></i> Explore My Publications
+                </a>
+            </div>
+        </section>
+
+       <!-- Publications Section -->
 <section id="publications">
     <h2>Selected Publications</h2>
     
@@ -146,3 +712,147 @@
         </a>
     </div>
 </section>
+
+        <!-- Academic Profile -->
+        <section id="academic" class="section-dark">
+            <h2>Academic Profile</h2>
+            
+            <div class="research-highlights">
+                <div class="research-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <ul style="text-align: left; margin-top: 1.5rem; list-style: none;">
+                        <li style="margin-bottom: 1rem;">🎓 <strong>Ph.D. in Astronomy</strong><br>UFRJ, Brazil (2019)</li>
+                        <li style="margin-bottom: 1rem;">🔭 <strong>M.Sc. in Astrophysics</strong><br>UNAM, Mexico (2015)</li>
+                        <li style="margin-bottom: 1rem;">📚 <strong>B.Ed. Mathematics & Physics</strong><br>UPC, Colombia (2010)</li>
+                        <li>🦋 <strong>Superior Normalist</strong><br>ENS María Inmaculada, Colombia (2004)</li>
+                    </ul>
+                </div>
+                
+                <div class="research-card">
+                    <h3><i class="fas fa-flask"></i> Research Experience</h3>
+                    <ul style="text-align: left; margin-top: 1.5rem; list-style: none;">
+                        <li style="margin-bottom: 1rem;">🇦🇷 <strong>Postdoctoral Researcher</strong><br>IALP, Argentina (2022-Present)</li>
+                        <li style="margin-bottom: 1rem;">🇧🇷 <strong>Postdoctoral Researcher</strong><br>IAG-USP, Brazil (2020-2022)</li>
+                        <li>🔭 <strong>Telescope Operator</strong><br>T80-Sur, S-PLUS (2020-2024)</li>
+                    </ul>
+                </div>
+                
+                <div class="research-card">
+                    <h3><i class="fas fa-cogs"></i> Technical Skills</h3>
+                    <ul style="text-align: left; margin-top: 1.5rem; list-style: none;">
+                        <li style="margin-bottom: 0.8rem;">🐍 <strong>Programming:</strong> Python, Fortran, ADQL, Bash</li>
+                        <li style="margin-bottom: 0.8rem;">🤖 <strong>ML/AI:</strong> Scikit-learn, TensorFlow, Classification</li>
+                        <li style="margin-bottom: 0.8rem;">🌌 <strong>Astronomy:</strong> Topcat, Aladin, Cloudy, Astropy</li>
+                        <li>🔭 <strong>Observational:</strong> Telescope Operation, Data Reduction</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:gsoto.angel@gmail.com" style="color: var(--primary); text-decoration: none;">gsoto.angel@gmail.com</a></p>
+                    <p><a href="mailto:gsotoangel@fcaglp.unlp.edu.ar" style="color: var(--primary); text-decoration: none;">gsotoangel@fcaglp.unlp.edu.ar</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Instituto de Astrofísica de La Plata</p>
+                    <p>La Plata, Argentina</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Connect</h3>
+                    <p>
+                        <a href="https://github.com/AngelGSoto" target="_blank" style="color: var(--primary); text-decoration: none;">
+                            <i class="fab fa-github"></i> GitHub
+                        </a> 
+                        <br>
+                        <a href="https://orcid.org/0000-0002-9891-8017" target="_blank" style="color: var(--primary); text-decoration: none;">
+                            <i class="fab fa-orcid"></i> ORCID
+                        </a>
+                        <br>
+                        <a href="https://angelgsoto.github.io/" target="_blank" style="color: var(--primary); text-decoration: none;">
+                            <i class="fas fa-globe"></i> Personal Website
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Luis Angel Gutiérrez Soto. All rights reserved.</p>
+            <p>Astrophysicist & Data Scientist | Bridging Astronomy and Machine Learning</p>
+            <p class="footer-quote">
+                "La ciencia y la literatura no son sino dos caras de la misma moneda: la búsqueda de la verdad y la belleza en el universo."
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Add active class to current section in navigation
+        window.addEventListener('scroll', function() {
+            let sections = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('.nav-list a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.research-card, .publication-item, .stat-card');
+            elements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    element.style.transition = 'all 0.6s ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
