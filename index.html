@@ -27,9 +27,8 @@
             color: #333;
             background: 
                 linear-gradient(
-                    rgba(15, 32, 39, 0.85), 
-                    rgba(32, 58, 67, 0.85), 
-                    rgba(44, 83, 100, 0.85)
+                    rgba(15, 32, 39, 0.4), 
+                    rgba(32, 58, 67, 0.5)
                 ),
                 url('Images/JWT_PN_image.png') center/cover fixed;
             min-height: 100vh;
@@ -41,12 +40,12 @@
             padding: 0 20px;
         }
 
-        /* Header with butterfly background */
+        /* Header with more visible butterfly background */
         header {
             background: 
                 linear-gradient(
-                    rgba(44, 62, 80, 0.9), 
-                    rgba(44, 62, 80, 0.8)
+                    rgba(44, 62, 80, 0.6), 
+                    rgba(44, 62, 80, 0.5)
                 ),
                 url('Images/mariposas.jpg') center/cover;
             color: white;
@@ -54,38 +53,46 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
         }
 
         .header-content {
             position: relative;
             z-index: 2;
+            width: 100%;
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
         }
 
         .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--light);
             margin-bottom: 1rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
 
         .cultural-note {
             font-style: italic;
             color: #f1c40f;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            display: inline-block;
         }
 
         /* Navigation */
         .nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: sticky;
@@ -119,21 +126,21 @@
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
         }
 
-        /* Sections with transparent backgrounds */
+        /* Sections with less opacity for better background visibility */
         section {
             padding: 4rem 0;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.88);
             margin: 2rem 0;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .section-dark {
-            background: rgba(44, 62, 80, 0.92);
+            background: rgba(44, 62, 80, 0.88);
             color: white;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         h2 {
@@ -373,6 +380,23 @@
             font-size: 1rem;
         }
 
+        /* James Webb Section */
+        .jwst-section {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .jwst-image {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin: 1.5rem 0;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .profile-container {
@@ -398,6 +422,11 @@
             .contact-methods {
                 grid-template-columns: 1fr;
             }
+
+            header {
+                min-height: 300px;
+                padding: 2rem 0;
+            }
         }
 
         /* Custom scrollbar */
@@ -420,7 +449,7 @@
     </style>
 </head>
 <body>
-    <!-- Header with Butterfly Background -->
+    <!-- Header with More Visible Butterfly Background -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -442,6 +471,7 @@
                 <li><a href="#research"><i class="fas fa-search"></i> Research</a></li>
                 <li><a href="#publications"><i class="fas fa-file-alt"></i> Publications</a></li>
                 <li><a href="#academic"><i class="fas fa-graduation-cap"></i> Academic Profile</a></li>
+                <li><a href="#jwst"><i class="fas fa-star"></i> James Webb</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </div>
@@ -487,8 +517,24 @@
             </div>
         </section>
 
+        <!-- James Webb Section -->
+        <section id="jwst" class="section-dark">
+            <h2>James Webb Space Telescope</h2>
+            <div style="text-align: center;">
+                <img src="Images/JWT_PN_image.png" alt="James Webb Space Telescope Planetary Nebula" class="jwst-image" style="max-width: 800px; width: 100%;">
+                <p style="margin-top: 1rem; font-style: italic; color: #f1c40f;">
+                    Planetary Nebula observed by the James Webb Space Telescope - A glimpse into the future of Sun-like stars
+                </p>
+            </div>
+            <div style="margin-top: 2rem; text-align: justify;">
+                <p>The James Webb Space Telescope represents a new era in astronomical observation, allowing us to study planetary nebulae and other celestial objects with unprecedented detail and sensitivity. Its infrared capabilities reveal hidden structures and chemical compositions that were previously invisible to other telescopes.</p>
+                
+                <p>My research with large photometric surveys like S-PLUS complements JWST observations by identifying candidate objects for detailed study and providing contextual data across multiple wavelengths.</p>
+            </div>
+        </section>
+
         <!-- Research Section -->
-        <section id="research" class="section-dark">
+        <section id="research">
             <h2>Research Interests</h2>
             
             <div class="research-highlights">
