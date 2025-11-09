@@ -422,43 +422,113 @@ footer {
     font-size: 1rem;
 }
 
-/* ===== JAMES WEBB SECTION ===== */
+/* ===== JAMES WEBB SECTION - OPTIMIZED GRID LAYOUT ===== */
 .jwst-section {
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: 15px;
     margin: 2rem 0;
-    text-align: center;
 }
 
-.jwst-container {
-    text-align: center;
+.jwst-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Texto ocupa más espacio que la imagen */
+    gap: 3rem;
+    align-items: start; /* Alinea al inicio para mejor distribución */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.jwst-image {
-    max-width: 800px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin: 1.5rem auto;
-    display: block;
+.jwst-text h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: white;
 }
 
-.jwst-caption {
-    margin-top: 1rem;
-    font-style: italic;
-    color: #f1c40f;
-    text-align: center;
+.jwst-text h2::after {
+    margin: 0.8rem 0;
 }
 
 .jwst-content {
-    margin-top: 2rem;
     text-align: justify;
+    line-height: 1.7;
 }
 
 .jwst-content p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+.jwst-visual {
+    text-align: center;
+    position: relative;
+}
+
+.jwst-image {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.jwst-image:hover {
+    transform: scale(1.02);
+}
+
+.jwst-caption {
+    font-style: italic;
+    color: #f1c40f;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 0 1rem;
+}
+
+/* Responsive para JWST */
+@media (max-width: 968px) {
+    .jwst-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .jwst-text h2 {
+        text-align: center;
+    }
+    
+    .jwst-text h2::after {
+        margin: 0.8rem auto;
+    }
+    
+    .jwst-content {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .jwst-section {
+        padding: 1.5rem;
+    }
+    
+    .jwst-grid {
+        gap: 1.5rem;
+    }
+    
+    .jwst-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .jwst-section {
+        padding: 1rem;
+    }
+    
+    .jwst-caption {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+    }
 }
 
 /* ===== RESPONSIVE ===== */
