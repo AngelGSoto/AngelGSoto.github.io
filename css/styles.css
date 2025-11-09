@@ -432,6 +432,10 @@ footer {
     text-align: center;
 }
 
+.jwst-container {
+    text-align: center;
+}
+
 .jwst-image {
     max-width: 800px;
     width: 100%;
@@ -445,6 +449,16 @@ footer {
     margin-top: 1rem;
     font-style: italic;
     color: #f1c40f;
+    text-align: center;
+}
+
+.jwst-content {
+    margin-top: 2rem;
+    text-align: justify;
+}
+
+.jwst-content p {
+    margin-bottom: 1rem;
 }
 
 /* ===== RESPONSIVE ===== */
