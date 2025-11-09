@@ -433,10 +433,18 @@ footer {
 }
 
 .jwst-image {
-    max-width: 100%;
+    max-width: 800px;
+    width: 100%;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
+    display: block;
+}
+
+.jwst-caption {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #f1c40f;
 }
 
 /* ===== RESPONSIVE ===== */
