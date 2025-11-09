@@ -422,83 +422,43 @@ footer {
     font-size: 1rem;
 }
 
-/* ===== JAMES WEBB SECTION OPTIMIZED ===== */
+/* ===== JAMES WEBB SECTION ===== */
 .jwst-section {
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 2.5rem;
+    padding: 3rem;
     border-radius: 15px;
     margin: 2rem 0;
+    text-align: center;
 }
 
-.jwst-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.jwst-text h2 {
-    text-align: left;
-    margin-bottom: 1.5rem;
-}
-
-.jwst-text h2::after {
-    margin: 0.8rem 0;
-}
-
-.jwst-content {
-    text-align: justify;
-    line-height: 1.7;
-}
-
-.jwst-content p {
-    margin-bottom: 1.2rem;
-}
-
-.jwst-visual {
+.jwst-container {
     text-align: center;
 }
 
 .jwst-image {
-    max-width: 100%;
+    max-width: 800px;
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin-bottom: 1rem;
+    margin: 1.5rem auto;
+    display: block;
 }
 
 .jwst-caption {
+    margin-top: 1rem;
     font-style: italic;
     color: #f1c40f;
-    font-size: 0.95rem;
-    line-height: 1.4;
+    text-align: center;
 }
 
-/* Responsive para JWST */
-@media (max-width: 968px) {
-    .jwst-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .jwst-text h2 {
-        text-align: center;
-    }
-    
-    .jwst-text h2::after {
-        margin: 0.8rem auto;
-    }
+.jwst-content {
+    margin-top: 2rem;
+    text-align: justify;
 }
 
-@media (max-width: 768px) {
-    .jwst-section {
-        padding: 1.5rem;
-    }
-    
-    .jwst-grid {
-        gap: 1.5rem;
-    }
+.jwst-content p {
+    margin-bottom: 1rem;
 }
 
 /* ===== RESPONSIVE ===== */
