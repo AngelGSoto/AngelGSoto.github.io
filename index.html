@@ -100,6 +100,16 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.2);
             border-bottom: 3px solid var(--secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
         }
 
         .nav-list {
@@ -124,6 +134,38 @@
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-btn:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .lang-btn.active {
+            background: var(--secondary);
+            color: white;
         }
 
         /* Sections with less opacity for better background visibility */
@@ -408,9 +450,21 @@
                 flex: 0 0 200px;
             }
             
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
             .nav-list {
                 flex-direction: column;
                 gap: 0.8rem;
+                width: 100%;
+            }
+            
+            .language-switcher {
+                margin: 1rem 0 0 0;
+                justify-content: center;
+                width: 100%;
             }
             
             h1 {
@@ -453,10 +507,10 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <h1>Luis Angel Gutiérrez Soto</h1>
-                <p class="subtitle">Astrophysicist & Data Scientist</p>
-                <p>Exploring the Universe through Data and Machine Learning</p>
-                <p class="cultural-note">
+                <h1 data-i18n="name">Luis Angel Gutiérrez Soto</h1>
+                <p class="subtitle" data-i18n="subtitle">Astrophysicist & Data Scientist</p>
+                <p data-i18n="tagline">Exploring the Universe through Data and Machine Learning</p>
+                <p class="cultural-note" data-i18n="cultural-note">
                     "Las mariposas amarillas" — Un homenaje a Cien Años de Soledad de Gabriel García Márquez
                 </p>
             </div>
@@ -465,15 +519,24 @@
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="container">
+        <div class="container nav-container">
             <ul class="nav-list">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#research"><i class="fas fa-search"></i> Research</a></li>
-                <li><a href="#publications"><i class="fas fa-file-alt"></i> Publications</a></li>
-                <li><a href="#academic"><i class="fas fa-graduation-cap"></i> Academic Profile</a></li>
-                <li><a href="#jwst"><i class="fas fa-star"></i> James Webb</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i> <span data-i18n="nav.home">Home</span></a></li>
+                <li><a href="#research"><i class="fas fa-search"></i> <span data-i18n="nav.research">Research</span></a></li>
+                <li><a href="#publications"><i class="fas fa-file-alt"></i> <span data-i18n="nav.publications">Publications</span></a></li>
+                <li><a href="#academic"><i class="fas fa-graduation-cap"></i> <span data-i18n="nav.academic">Academic Profile</span></a></li>
+                <li><a href="#jwst"><i class="fas fa-star"></i> <span data-i18n="nav.jwst">James Webb</span></a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-i18n="nav.contact">Contact</span></a></li>
             </ul>
+            
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">
+                    <i class="fas fa-flag-usa"></i> EN
+                </button>
+                <button class="lang-btn" data-lang="es">
+                    <i class="fas fa-flag"></i> ES
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -481,109 +544,109 @@
     <div class="container">
         <!-- Home Section -->
         <section id="home">
-            <h2>About Me</h2>
+            <h2 data-i18n="home.title">About Me</h2>
             <div class="profile-container">
                 <div class="profile-picture">
                     <img src="Images/Luis_image_edit.jpeg" alt="Luis Angel Gutiérrez Soto">
                 </div>
                 <div class="profile-text">
-                    <p>Welcome! I'm Luis Angel Gutiérrez Soto, an astrophysicist passionate about understanding the universe through observational data and machine learning. Born in Valledupar, Colombia, my academic journey has taken me across Latin America, enriching my perspective on science and collaboration.</p>
+                    <p data-i18n="home.p1">Welcome! I'm Luis Angel Gutiérrez Soto, an astrophysicist passionate about understanding the universe through observational data and machine learning. Born in Valledupar, Colombia, my academic journey has taken me across Latin America, enriching my perspective on science and collaboration.</p>
                     
-                    <p>Currently, I'm a postdoctoral researcher at the Instituto de Astrofísica de La Plata (CONICET-UNLP), where I focus on identifying planetary nebulae and symbiotic stars using multi-band photometric surveys and developing machine learning classification algorithms.</p>
+                    <p data-i18n="home.p2">Currently, I'm a postdoctoral researcher at the Instituto de Astrofísica de La Plata (CONICET-UNLP), where I focus on identifying planetary nebulae and symbiotic stars using multi-band photometric surveys and developing machine learning classification algorithms.</p>
                     
-                    <p>My research bridges traditional astronomical observation with modern data science techniques, working with large surveys like S-PLUS and J-PAS to uncover hidden celestial objects and understand stellar evolution processes.</p>
+                    <p data-i18n="home.p3">My research bridges traditional astronomical observation with modern data science techniques, working with large surveys like S-PLUS and J-PAS to uncover hidden celestial objects and understand stellar evolution processes.</p>
 
-                    <p>Beyond science, I find inspiration in literature and philosophy, particularly in the magical realism of Gabriel García Márquez, which reminds me that wonder and discovery exist at the intersection of science and imagination.</p>
+                    <p data-i18n="home.p4">Beyond science, I find inspiration in literature and philosophy, particularly in the magical realism of Gabriel García Márquez, which reminds me that wonder and discovery exist at the intersection of science and imagination.</p>
                 </div>
             </div>
             
             <div class="quick-stats">
                 <div class="stat-card">
                     <div class="stat-number">19+</div>
-                    <div class="stat-label">Refereed Publications</div>
+                    <div class="stat-label" data-i18n="stats.publications">Refereed Publications</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">5+</div>
-                    <div class="stat-label">Years Postdoc Experience</div>
+                    <div class="stat-label" data-i18n="stats.postdoc">Years Postdoc Experience</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">3</div>
-                    <div class="stat-label">Countries Research Experience</div>
+                    <div class="stat-label" data-i18n="stats.countries">Countries Research Experience</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">10+</div>
-                    <div class="stat-label">Conference Presentations</div>
+                    <div class="stat-label" data-i18n="stats.conferences">Conference Presentations</div>
                 </div>
             </div>
         </section>
 
         <!-- James Webb Section -->
         <section id="jwst" class="section-dark">
-            <h2>James Webb Space Telescope</h2>
+            <h2 data-i18n="jwst.title">James Webb Space Telescope</h2>
             <div style="text-align: center;">
                 <img src="Images/JWT_PN_image.png" alt="James Webb Space Telescope Planetary Nebula" class="jwst-image" style="max-width: 800px; width: 100%;">
-                <p style="margin-top: 1rem; font-style: italic; color: #f1c40f;">
+                <p style="margin-top: 1rem; font-style: italic; color: #f1c40f;" data-i18n="jwst.caption">
                     Planetary Nebula observed by the James Webb Space Telescope - A glimpse into the future of Sun-like stars
                 </p>
             </div>
             <div style="margin-top: 2rem; text-align: justify;">
-                <p>The James Webb Space Telescope represents a new era in astronomical observation, allowing us to study planetary nebulae and other celestial objects with unprecedented detail and sensitivity. Its infrared capabilities reveal hidden structures and chemical compositions that were previously invisible to other telescopes.</p>
+                <p data-i18n="jwst.p1">The James Webb Space Telescope represents a new era in astronomical observation, allowing us to study planetary nebulae and other celestial objects with unprecedented detail and sensitivity. Its infrared capabilities reveal hidden structures and chemical compositions that were previously invisible to other telescopes.</p>
                 
-                <p>My research with large photometric surveys like S-PLUS complements JWST observations by identifying candidate objects for detailed study and providing contextual data across multiple wavelengths.</p>
+                <p data-i18n="jwst.p2">My research with large photometric surveys like S-PLUS complements JWST observations by identifying candidate objects for detailed study and providing contextual data across multiple wavelengths.</p>
             </div>
         </section>
 
         <!-- Research Section -->
         <section id="research">
-            <h2>Research Interests</h2>
+            <h2 data-i18n="research.title">Research Interests</h2>
             
             <div class="research-highlights">
                 <div class="research-card">
                     <img src="Images/my-PN.png" alt="Planetary Nebula Research" class="research-image">
-                    <h3>Planetary Nebulae</h3>
-                    <p>Discovering and studying planetary nebulae - the beautiful final stages of Sun-like stars - using innovative color selection methods in large surveys like Gaia and Pan-STARRS, with confirmation from LAMOST spectroscopy.</p>
+                    <h3 data-i18n="research.card1.title">Planetary Nebulae</h3>
+                    <p data-i18n="research.card1.desc">Discovering and studying planetary nebulae - the beautiful final stages of Sun-like stars - using innovative color selection methods in large surveys like Gaia and Pan-STARRS, with confirmation from LAMOST spectroscopy.</p>
                 </div>
                 
                 <div class="research-card">
                     <img src="Images/distribution_ZvsR_HeH.jpg" alt="Machine Learning Applications" class="research-image">
-                    <h3>AI for Stellar Astrophysics</h3>
-                    <p>Using artificial intelligence and S-PLUS multi-band photometry to map the chemical composition of millions of stars across the Milky Way. Our methods reveal how elements are distributed and help us understand the formation history of our galaxy.</p>
+                    <h3 data-i18n="research.card2.title">AI for Stellar Astrophysics</h3>
+                    <p data-i18n="research.card2.desc">Using artificial intelligence and S-PLUS multi-band photometry to map the chemical composition of millions of stars across the Milky Way. Our methods reveal how elements are distributed and help us understand the formation history of our galaxy.</p>
                 </div>
                 
                 <div class="research-card">
                     <img src="Images/CV_spectra.png" alt="Large Surveys" class="research-image">
-                    <h3>Rare Emission-Line Objects</h3>
-                    <p>Discovering rare cataclysmic variables by their unique colors in S-PLUS and confirming them with large telescopes like Gemini and Swift. This approach reveals hidden populations of accreting white dwarfs that are difficult to find with other methods.</p>
+                    <h3 data-i18n="research.card3.title">Rare Emission-Line Objects</h3>
+                    <p data-i18n="research.card3.desc">Discovering rare cataclysmic variables by their unique colors in S-PLUS and confirming them with large telescopes like Gemini and Swift. This approach reveals hidden populations of accreting white dwarfs that are difficult to find with other methods.</p>
                 </div>
             </div>
             
             <div style="margin-top: 3rem; text-align: center;">
                 <a href="#publications" class="academic-link-card" style="display: inline-block; width: auto; padding: 1.2rem 2.5rem;">
-                    <i class="fas fa-arrow-right"></i> Explore My Publications
+                    <i class="fas fa-arrow-right"></i> <span data-i18n="research.explore">Explore My Publications</span>
                 </a>
             </div>
         </section>
 
        <!-- Publications Section -->
 <section id="publications">
-    <h2>Selected Publications</h2>
+    <h2 data-i18n="publications.title">Selected Publications</h2>
     
     <!-- Paper 1: Hα excess with ML -->
     <div class="publication-item">
         <div class="publication-header">
             <span class="publication-year">2025</span>
-            <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...695A.104G/abstract" class="publication-title" target="_blank">
+            <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...695A.104G/abstract" class="publication-title" target="_blank" data-i18n="publications.paper1.title">
                 Mapping Hα excess candidate point sources in the Southern Hemisphere using S-PLUS data
             </a>
         </div>
-        <div class="publication-authors">
+        <div class="publication-authors" data-i18n="publications.paper1.authors">
             <strong>Gutiérrez-Soto, L. A.</strong>, Lopes de Oliveira, R., Akras, S., et al.
         </div>
-        <div class="publication-journal">
+        <div class="publication-journal" data-i18n="publications.paper1.journal">
             Astronomy & Astrophysics, 695, A104
         </div>
         <div class="publication-highlights">
-            <strong>Highlights:</strong> Machine learning classification of emission-line sources • UMAP + HDBSCAN clustering • 6,956 J0660-excess sources identified
+            <strong data-i18n="publications.highlights">Highlights:</strong> <span data-i18n="publications.paper1.highlights">Machine learning classification of emission-line sources • UMAP + HDBSCAN clustering • 6,956 J0660-excess sources identified</span>
         </div>
     </div>
     
@@ -591,18 +654,18 @@
     <div class="publication-item">
         <div class="publication-header">
             <span class="publication-year">2025</span>
-            <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...981L...1L/abstract" class="publication-title" target="_blank">
+            <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...981L...1L/abstract" class="publication-title" target="_blank" data-i18n="publications.paper2.title">
                 The S-PLUS 12-band Photometry as a Powerful Tool for Discovery and Classification: Ten Cataclysmic Variables
             </a>
         </div>
-        <div class="publication-authors">
+        <div class="publication-authors" data-i18n="publications.paper2.authors">
             Lopes de Oliveira, R., de Araújo, A. S., Krabbe, A. C.,  Mendes de Oliveira, C. L., Mukai, K., <strong>Gutiérrez-Soto, L. A.</strong>, et al.
         </div>
-        <div class="publication-journal">
+        <div class="publication-journal" data-i18n="publications.paper2.journal">
             The Astrophysical Journal Letters, 981, L1
         </div>
         <div class="publication-highlights">
-            <strong>Highlights:</strong> Discovery of 10 new CV systems • Gemini spectroscopy validation • Innovative 12-band photometric method
+            <strong data-i18n="publications.highlights">Highlights:</strong> <span data-i18n="publications.paper2.highlights">Discovery of 10 new CV systems • Gemini spectroscopy validation • Innovative 12-band photometric method</span>
         </div>
     </div>
     
@@ -611,18 +674,18 @@
     <div class="publication-item">
         <div class="publication-header">
             <span class="publication-year">2025</span>
-            <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.306F/abstract" class="publication-title" target="_blank">
+            <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.306F/abstract" class="publication-title" target="_blank" data-i18n="publications.paper3.title">
                 Stellar atmospheric parameters and chemical abundances of ~5 million stars from S-PLUS multiband photometry
             </a>
         </div>
-        <div class="publication-authors">
+        <div class="publication-authors" data-i18n="publications.paper3.authors">
             Ferreira Lopes, C. E., <strong>Gutiérrez-Soto, L. A.</strong>, et al.
         </div>
-        <div class="publication-journal">
+        <div class="publication-journal" data-i18n="publications.paper3.journal">
             Astronomy & Astrophysics, 693, A306
         </div>
         <div class="publication-highlights">
-            <strong>Highlights:</strong> Analysis of 5 million stars • Galactic metallicity mapping • AI-powered parameter determination
+            <strong data-i18n="publications.highlights">Highlights:</strong> <span data-i18n="publications.paper3.highlights">Analysis of 5 million stars • Galactic metallicity mapping • AI-powered parameter determination</span>
         </div>
     </div>
 
@@ -630,18 +693,18 @@
     <div class="publication-item">
         <div class="publication-header">
             <span class="publication-year">2024</span>
-            <a href="https://arxiv.org/abs/2505.18308" class="publication-title" target="_blank">
+            <a href="https://arxiv.org/abs/2505.18308" class="publication-title" target="_blank" data-i18n="publications.paper4.title">
                 Unveiling compact planetary nebulae: Broad-band survey analysis and LAMOST confirmation
             </a>
         </div>
-        <div class="publication-authors">
+        <div class="publication-authors" data-i18n="publications.paper4.authors">
             <strong>Gutiérrez-Soto, L. A.</strong>, Mari, M. B., Weidmann, W. A., Faifer, F. R.
         </div>
-        <div class="publication-journal">
+        <div class="publication-journal" data-i18n="publications.paper4.journal">
             New Astronomy, 109, 102207
         </div>
         <div class="publication-highlights">
-            <strong>Highlights:</strong> Novel photometric selection method • LAMOST spectroscopic confirmation • Cloudy modeling of PN properties
+            <strong data-i18n="publications.highlights">Highlights:</strong> <span data-i18n="publications.paper4.highlights">Novel photometric selection method • LAMOST spectroscopic confirmation • Cloudy modeling of PN properties</span>
         </div>
     </div>
 
@@ -649,18 +712,18 @@
 <div class="publication-item">
     <div class="publication-header">
         <span class="publication-year">2023</span>
-        <a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...674A.172E/abstract" class="publication-title" target="_blank">
+        <a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...674A.172E/abstract" class="publication-title" target="_blank" data-i18n="publications.paper5.title">
             Euclid preparation: A UV-NIR spectral atlas of compact planetary nebulae for wavelength calibration
         </a>
     </div>
-    <div class="publication-authors">
+    <div class="publication-authors" data-i18n="publications.paper5.authors">
         Euclid Collaboration; Paterson, K., Schirmer, M.,  Copin, Y., Cuillandre, J.-C., Gillard, W. <strong>Gutiérrez-Soto, L. A.</strong>, et al.
     </div>
-    <div class="publication-journal">
+    <div class="publication-journal" data-i18n="publications.paper5.journal">
         Astronomy & Astrophysics, 674, A172
     </div>
     <div class="publication-highlights">
-        <strong>Highlights:</strong> ESA Euclid Mission collaboration • Spectral atlas for NISP instrument calibration • Novel PN identification in Gaia data • 0.1-0.3 Å wavelength accuracy
+        <strong data-i18n="publications.highlights">Highlights:</strong> <span data-i18n="publications.paper5.highlights">ESA Euclid Mission collaboration • Spectral atlas for NISP instrument calibration • Novel PN identification in Gaia data • 0.1-0.3 Å wavelength accuracy</span>
     </div>
 </div>
     
@@ -668,18 +731,18 @@
     <div class="publication-item">
         <div class="publication-header">
             <span class="publication-year">2020</span>
-            <a href="https://ui.adsabs.harvard.edu/abs/2020A%26A...633A.123G/abstract" class="publication-title" target="_blank">
+            <a href="https://ui.adsabs.harvard.edu/abs/2020A%26A...633A.123G/abstract" class="publication-title" target="_blank" data-i18n="publications.paper6.title">
                 J-PLUS: Tools to identify compact planetary nebulae in the Javalambre and southern photometric local Universe surveys
             </a>
         </div>
-        <div class="publication-authors">
+        <div class="publication-authors" data-i18n="publications.paper6.authors">
             <strong>Gutiérrez-Soto, L. A.</strong>, Gonçalves, D. R., Akras, S., et al.
         </div>
-        <div class="publication-journal">
+        <div class="publication-journal" data-i18n="publications.paper6.journal">
             Astronomy & Astrophysics, 633, A123
         </div>
         <div class="publication-highlights">
-            <strong>Highlights:</strong> Foundation of PN identification methodology in 12 photometric bands (S-PLUS and J-PLUS projects) • Color-color selection criteria • Survey cross-matching
+            <strong data-i18n="publications.highlights">Highlights:</strong> <span data-i18n="publications.paper6.highlights">Foundation of PN identification methodology in 12 photometric bands (S-PLUS and J-PLUS projects) • Color-color selection criteria • Survey cross-matching</span>
         </div>
     </div>
     
@@ -689,94 +752,94 @@
         <a href="https://ui.adsabs.harvard.edu/search/q=author%3A(%22Guti%C3%A9rrez-Soto%2C%20L.%20A.%22%20OR%20%22Guti%C3%A9rrez%20Soto%2C%20L.%20A.%22%20OR%20%22Guti%C3%A9rrez-Soto%2C%20L.%22%20OR%20%22GUTIERREZ%20SOTO%2C%20LUIS%20ANGEL%22)&sort=date%20desc%2C%20bibcode%20desc&p_=0" 
            class="academic-link-card" target="_blank">
             <i class="fas fa-external-link-alt"></i>
-            <h3>NASA ADS</h3>
-            <p>Complete Publication List</p>
+            <h3 data-i18n="links.ads">NASA ADS</h3>
+            <p data-i18n="links.ads.desc">Complete Publication List</p>
         </a>
         
         <a href="https://scholar.google.com/citations?user=n2eSin0AAAAJ&hl=en" 
            class="academic-link-card" target="_blank">
             <i class="fas fa-graduation-cap"></i>
-            <h3>Google Scholar</h3>
-            <p>Citations & Metrics</p>
+            <h3 data-i18n="links.scholar">Google Scholar</h3>
+            <p data-i18n="links.scholar.desc">Citations & Metrics</p>
         </a>
         
         <a href="Documents/cv_Luis_Angel_Gutierrez.pdf" 
            class="academic-link-card" target="_blank">
             <i class="fas fa-file-pdf"></i>
-            <h3>Download CV</h3>
-            <p>Full Curriculum Vitae</p>
+            <h3 data-i18n="links.cv">Download CV</h3>
+            <p data-i18n="links.cv.desc">Full Curriculum Vitae</p>
         </a>
         
         <a href="https://github.com/AngelGSoto" 
            class="academic-link-card" target="_blank">
             <i class="fab fa-github"></i>
-            <h3>GitHub</h3>
-            <p>Code & Projects</p>
+            <h3 data-i18n="links.github">GitHub</h3>
+            <p data-i18n="links.github.desc">Code & Projects</p>
         </a>
     </div>
 </section>
 
  <!-- Academic Profile -->
 <section id="academic">
-    <h2>Academic Profile</h2>
+    <h2 data-i18n="academic.title">Academic Profile</h2>
     
     <div class="research-highlights">
         <!-- Education Card - Fixed colors -->
         <div class="research-card">
-            <h3 style="color: #2c3e50;"><i class="fas fa-graduation-cap"></i> Education</h3>
+            <h3 style="color: #2c3e50;"><i class="fas fa-graduation-cap"></i> <span data-i18n="academic.education">Education</span></h3>
             <div style="text-align: left; margin-top: 1.5rem;">
                 <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🎓 Ph.D. in Astronomy (2015-2019)</h4>
-                    <p style="margin: 0.2rem 0; color: #495057;"><strong>Observatório do Valongo</strong>, Federal University of Rio de Janeiro, Brazil</p>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.education.phd">🎓 Ph.D. in Astronomy (2015-2019)</h4>
+                    <p style="margin: 0.2rem 0; color: #495057;" data-i18n="academic.education.phd.desc"><strong>Observatório do Valongo</strong>, Federal University of Rio de Janeiro, Brazil</p>
                 </div>
                 
                 <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🔭 M.Sc. in Astrophysics (2012-2015)</h4>
-                    <p style="margin: 0.2rem 0; color: #495057;"><strong>National Autonomous University of Mexico</strong>, Mexico</p>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.education.msc">🔭 M.Sc. in Astrophysics (2012-2015)</h4>
+                    <p style="margin: 0.2rem 0; color: #495057;" data-i18n="academic.education.msc.desc"><strong>National Autonomous University of Mexico</strong>, Mexico</p>
                 </div>
                 
                 <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">📚 B.Ed. in Mathematics & Physics (2005-2010)</h4>
-                    <p style="margin: 0.2rem 0; color: #495057;"><strong>Universidad Popular del Cesar</strong>, Colombia</p>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.education.bed">📚 B.Ed. in Mathematics & Physics (2005-2010)</h4>
+                    <p style="margin: 0.2rem 0; color: #495057;" data-i18n="academic.education.bed.desc"><strong>Universidad Popular del Cesar</strong>, Colombia</p>
                 </div>
                 
                 <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🦋 Superior Normalist (2003-2004)</h4>
-                    <p style="margin: 0.2rem 0; color: #495057;"><strong>Escuela Normal Superior María Inmaculada</strong>, Colombia</p>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.education.normalist">🦋 Superior Normalist (2003-2004)</h4>
+                    <p style="margin: 0.2rem 0; color: #495057;" data-i18n="academic.education.normalist.desc"><strong>Escuela Normal Superior María Inmaculada</strong>, Colombia</p>
                 </div>
             </div>
         </div>
         
         <!-- Research Experience Card - Fixed colors -->
         <div class="research-card">
-            <h3 style="color: #2c3e50;"><i class="fas fa-flask"></i> Research Experience</h3>
+            <h3 style="color: #2c3e50;"><i class="fas fa-flask"></i> <span data-i18n="academic.experience">Research Experience</span></h3>
             <div style="text-align: left; margin-top: 1.5rem;">
                 <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🇦🇷 Postdoctoral Researcher (2022-Present)</h4>
-                    <p style="margin: 0.2rem 0; color: #495057;"><strong>Institute of Astrophysics of La Plata</strong>, CONICET-UNLP, Argentina</p>
-                    <p style="margin: 0.2rem 0; color: #6c757d; font-size: 0.9em;">Machine learning for planetary nebulae identification • S-PLUS survey</p>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.experience.argentina">🇦🇷 Postdoctoral Researcher (2022-Present)</h4>
+                    <p style="margin: 0.2rem 0; color: #495057;" data-i18n="academic.experience.argentina.desc"><strong>Institute of Astrophysics of La Plata</strong>, CONICET-UNLP, Argentina</p>
+                    <p style="margin: 0.2rem 0; color: #6c757d; font-size: 0.9em;" data-i18n="academic.experience.argentina.detail">Machine learning for planetary nebulae identification • S-PLUS survey</p>
                 </div>
                 
                 <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🇧🇷 Postdoctoral Researcher (2020-2022)</h4>
-                    <p style="margin: 0.2rem 0; color: #495057;"><strong>University of São Paulo</strong>, Brazil</p>
-                    <p style="margin: 0.2rem 0; color: #6c757d; font-size: 0.9em;">S-PLUS data analysis • Compact object identification</p>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.experience.brazil">🇧🇷 Postdoctoral Researcher (2020-2022)</h4>
+                    <p style="margin: 0.2rem 0; color: #495057;" data-i18n="academic.experience.brazil.desc"><strong>University of São Paulo</strong>, Brazil</p>
+                    <p style="margin: 0.2rem 0; color: #6c757d; font-size: 0.9em;" data-i18n="academic.experience.brazil.detail">S-PLUS data analysis • Compact object identification</p>
                 </div>
                 
                 <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🔭 Telescope Operator (2020-2024)</h4>
-                    <p style="margin: 0.2rem 0; color: #495057;"><strong>T80-Sur Telescope</strong>, S-PLUS Survey, Chile</p>
-                    <p style="margin: 0.2rem 0; color: #6c757d; font-size: 0.9em;">12-band photometric data acquisition • Instrument operation</p>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.experience.telescope">🔭 Telescope Operator (2020-2024)</h4>
+                    <p style="margin: 0.2rem 0; color: #495057;" data-i18n="academic.experience.telescope.desc"><strong>T80-Sur Telescope</strong>, S-PLUS Survey, Chile</p>
+                    <p style="margin: 0.2rem 0; color: #6c757d; font-size: 0.9em;" data-i18n="academic.experience.telescope.detail">12-band photometric data acquisition • Instrument operation</p>
                 </div>
             </div>
         </div>
         
         <!-- Technical Skills Card - Fixed colors -->
         <div class="research-card">
-            <h3 style="color: #2c3e50;"><i class="fas fa-cogs"></i> Technical Skills</h3>
+            <h3 style="color: #2c3e50;"><i class="fas fa-cogs"></i> <span data-i18n="academic.skills">Technical Skills</span></h3>
             <div style="text-align: left; margin-top: 1.5rem;">
                 <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🐍 Programming & Data Analysis</h4>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.skills.programming">🐍 Programming & Data Analysis</h4>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
                         <span style="background: #3498db; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Python (Advanced)</span>
                         <span style="background: #3498db; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Fortran</span>
@@ -788,7 +851,7 @@
                 </div>
                 
                 <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e74c3c;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🤖 Machine Learning & AI</h4>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.skills.ml">🤖 Machine Learning & AI</h4>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
                         <span style="background: #e74c3c; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Scikit-learn</span>
                         <span style="background: #e74c3c; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">TensorFlow</span>
@@ -799,7 +862,7 @@
                 </div>
                 
                 <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #2ecc71;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🌌 Astronomy Software & Tools</h4>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.skills.astronomy">🌌 Astronomy Software & Tools</h4>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
                         <span style="background: #2ecc71; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Topcat</span>
                         <span style="background: #2ecc71; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Aladin</span>
@@ -811,7 +874,7 @@
                 </div>
                 
                 <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #9b59b6;">
-                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">🔭 Observational Astronomy</h4>
+                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;" data-i18n="academic.skills.observational">🔭 Observational Astronomy</h4>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
                         <span style="background: #9b59b6; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Telescope Operation</span>
                         <span style="background: #9b59b6; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Data Reduction</span>
@@ -828,14 +891,14 @@
 
         <!-- Contact Section -->
         <section id="contact">
-            <h2>Get In Touch</h2>
+            <h2 data-i18n="contact.title">Get In Touch</h2>
             
             <div class="contact-methods">
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <h3>Email</h3>
+                    <h3 data-i18n="contact.email">Email</h3>
                     <p><a href="mailto:gsoto.angel@gmail.com" style="color: var(--primary); text-decoration: none;">gsoto.angel@gmail.com</a></p>
                     <p><a href="mailto:gsotoangel@fcaglp.unlp.edu.ar" style="color: var(--primary); text-decoration: none;">gsotoangel@fcaglp.unlp.edu.ar</a></p>
                 </div>
@@ -844,27 +907,27 @@
                     <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>Location</h3>
-                    <p>Instituto de Astrofísica de La Plata</p>
-                    <p>La Plata, Argentina</p>
+                    <h3 data-i18n="contact.location">Location</h3>
+                    <p data-i18n="contact.location.desc">Instituto de Astrofísica de La Plata</p>
+                    <p data-i18n="contact.location.city">La Plata, Argentina</p>
                 </div>
                 
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-globe"></i>
                     </div>
-                    <h3>Connect</h3>
+                    <h3 data-i18n="contact.connect">Connect</h3>
                     <p>
                         <a href="https://github.com/AngelGSoto" target="_blank" style="color: var(--primary); text-decoration: none;">
-                            <i class="fab fa-github"></i> GitHub
+                            <i class="fab fa-github"></i> <span data-i18n="contact.github">GitHub</span>
                         </a> 
                         <br>
                         <a href="https://orcid.org/0000-0002-9891-8017" target="_blank" style="color: var(--primary); text-decoration: none;">
-                            <i class="fab fa-orcid"></i> ORCID
+                            <i class="fab fa-orcid"></i> <span data-i18n="contact.orcid">ORCID</span>
                         </a>
                         <br>
                         <a href="https://angelgsoto.github.io/" target="_blank" style="color: var(--primary); text-decoration: none;">
-                            <i class="fas fa-globe"></i> Personal Website
+                            <i class="fas fa-globe"></i> <span data-i18n="contact.website">Personal Website</span>
                         </a>
                     </p>
                 </div>
@@ -875,67 +938,355 @@
     <!-- Footer -->
 <footer>
     <div class="container">
-        <p>&copy; <span id="current-year">2025</span> Luis Angel Gutiérrez Soto. All rights reserved.</p>
-        <p>Astrophysicist & Data Scientist | Bridging Astronomy and Machine Learning</p>
-        <p class="footer-quote">
+        <p>&copy; <span id="current-year">2025</span> Luis Angel Gutiérrez Soto. <span data-i18n="footer.rights">All rights reserved.</span></p>
+        <p data-i18n="footer.tagline">Astrophysicist & Data Scientist | Bridging Astronomy and Machine Learning</p>
+        <p class="footer-quote" data-i18n="footer.quote">
             "La ciencia y la literatura no son sino dos caras de la misma moneda: la búsqueda de la verdad y la belleza en el universo."
         </p>
     </div>
 </footer>
 
 <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    // Language configuration
+    const translations = {
+        en: {
+            // Header
+            "name": "Luis Angel Gutiérrez Soto",
+            "subtitle": "Astrophysicist & Data Scientist",
+            "tagline": "Exploring the Universe through Data and Machine Learning",
+            "cultural-note": "\"Las mariposas amarillas\" — A tribute to Cien Años de Soledad by Gabriel García Márquez",
+            
+            // Navigation
+            "nav.home": "Home",
+            "nav.research": "Research",
+            "nav.publications": "Publications",
+            "nav.academic": "Academic Profile",
+            "nav.jwst": "James Webb",
+            "nav.contact": "Contact",
+            
+            // Home section
+            "home.title": "About Me",
+            "home.p1": "Welcome! I'm Luis Angel Gutiérrez Soto, an astrophysicist passionate about understanding the universe through observational data and machine learning. Born in Valledupar, Colombia, my academic journey has taken me across Latin America, enriching my perspective on science and collaboration.",
+            "home.p2": "Currently, I'm a postdoctoral researcher at the Instituto de Astrofísica de La Plata (CONICET-UNLP), where I focus on identifying planetary nebulae and symbiotic stars using multi-band photometric surveys and developing machine learning classification algorithms.",
+            "home.p3": "My research bridges traditional astronomical observation with modern data science techniques, working with large surveys like S-PLUS and J-PAS to uncover hidden celestial objects and understand stellar evolution processes.",
+            "home.p4": "Beyond science, I find inspiration in literature and philosophy, particularly in the magical realism of Gabriel García Márquez, which reminds me that wonder and discovery exist at the intersection of science and imagination.",
+            
+            // Stats
+            "stats.publications": "Refereed Publications",
+            "stats.postdoc": "Years Postdoc Experience",
+            "stats.countries": "Countries Research Experience",
+            "stats.conferences": "Conference Presentations",
+            
+            // James Webb section
+            "jwst.title": "James Webb Space Telescope",
+            "jwst.caption": "Planetary Nebula observed by the James Webb Space Telescope - A glimpse into the future of Sun-like stars",
+            "jwst.p1": "The James Webb Space Telescope represents a new era in astronomical observation, allowing us to study planetary nebulae and other celestial objects with unprecedented detail and sensitivity. Its infrared capabilities reveal hidden structures and chemical compositions that were previously invisible to other telescopes.",
+            "jwst.p2": "My research with large photometric surveys like S-PLUS complements JWST observations by identifying candidate objects for detailed study and providing contextual data across multiple wavelengths.",
+            
+            // Research section
+            "research.title": "Research Interests",
+            "research.card1.title": "Planetary Nebulae",
+            "research.card1.desc": "Discovering and studying planetary nebulae - the beautiful final stages of Sun-like stars - using innovative color selection methods in large surveys like Gaia and Pan-STARRS, with confirmation from LAMOST spectroscopy.",
+            "research.card2.title": "AI for Stellar Astrophysics",
+            "research.card2.desc": "Using artificial intelligence and S-PLUS multi-band photometry to map the chemical composition of millions of stars across the Milky Way. Our methods reveal how elements are distributed and help us understand the formation history of our galaxy.",
+            "research.card3.title": "Rare Emission-Line Objects",
+            "research.card3.desc": "Discovering rare cataclysmic variables by their unique colors in S-PLUS and confirming them with large telescopes like Gemini and Swift. This approach reveals hidden populations of accreting white dwarfs that are difficult to find with other methods.",
+            "research.explore": "Explore My Publications",
+            
+            // Publications section
+            "publications.title": "Selected Publications",
+            "publications.highlights": "Highlights:",
+            
+            // Publication 1
+            "publications.paper1.title": "Mapping Hα excess candidate point sources in the Southern Hemisphere using S-PLUS data",
+            "publications.paper1.authors": "<strong>Gutiérrez-Soto, L. A.</strong>, Lopes de Oliveira, R., Akras, S., et al.",
+            "publications.paper1.journal": "Astronomy & Astrophysics, 695, A104",
+            "publications.paper1.highlights": "Machine learning classification of emission-line sources • UMAP + HDBSCAN clustering • 6,956 J0660-excess sources identified",
+            
+            // Publication 2
+            "publications.paper2.title": "The S-PLUS 12-band Photometry as a Powerful Tool for Discovery and Classification: Ten Cataclysmic Variables",
+            "publications.paper2.authors": "Lopes de Oliveira, R., de Araújo, A. S., Krabbe, A. C.,  Mendes de Oliveira, C. L., Mukai, K., <strong>Gutiérrez-Soto, L. A.</strong>, et al.",
+            "publications.paper2.journal": "The Astrophysical Journal Letters, 981, L1",
+            "publications.paper2.highlights": "Discovery of 10 new CV systems • Gemini spectroscopy validation • Innovative 12-band photometric method",
+            
+            // Publication 3
+            "publications.paper3.title": "Stellar atmospheric parameters and chemical abundances of ~5 million stars from S-PLUS multiband photometry",
+            "publications.paper3.authors": "Ferreira Lopes, C. E., <strong>Gutiérrez-Soto, L. A.</strong>, et al.",
+            "publications.paper3.journal": "Astronomy & Astrophysics, 693, A306",
+            "publications.paper3.highlights": "Analysis of 5 million stars • Galactic metallicity mapping • AI-powered parameter determination",
+            
+            // Publication 4
+            "publications.paper4.title": "Unveiling compact planetary nebulae: Broad-band survey analysis and LAMOST confirmation",
+            "publications.paper4.authors": "<strong>Gutiérrez-Soto, L. A.</strong>, Mari, M. B., Weidmann, W. A., Faifer, F. R.",
+            "publications.paper4.journal": "New Astronomy, 109, 102207",
+            "publications.paper4.highlights": "Novel photometric selection method • LAMOST spectroscopic confirmation • Cloudy modeling of PN properties",
+            
+            // Publication 5
+            "publications.paper5.title": "Euclid preparation: A UV-NIR spectral atlas of compact planetary nebulae for wavelength calibration",
+            "publications.paper5.authors": "Euclid Collaboration; Paterson, K., Schirmer, M.,  Copin, Y., Cuillandre, J.-C., Gillard, W. <strong>Gutiérrez-Soto, L. A.</strong>, et al.",
+            "publications.paper5.journal": "Astronomy & Astrophysics, 674, A172",
+            "publications.paper5.highlights": "ESA Euclid Mission collaboration • Spectral atlas for NISP instrument calibration • Novel PN identification in Gaia data • 0.1-0.3 Å wavelength accuracy",
+            
+            // Publication 6
+            "publications.paper6.title": "J-PLUS: Tools to identify compact planetary nebulae in the Javalambre and southern photometric local Universe surveys",
+            "publications.paper6.authors": "<strong>Gutiérrez-Soto, L. A.</strong>, Gonçalves, D. R., Akras, S., et al.",
+            "publications.paper6.journal": "Astronomy & Astrophysics, 633, A123",
+            "publications.paper6.highlights": "Foundation of PN identification methodology in 12 photometric bands (S-PLUS and J-PLUS projects) • Color-color selection criteria • Survey cross-matching",
+            
+            // Links
+            "links.ads": "NASA ADS",
+            "links.ads.desc": "Complete Publication List",
+            "links.scholar": "Google Scholar",
+            "links.scholar.desc": "Citations & Metrics",
+            "links.cv": "Download CV",
+            "links.cv.desc": "Full Curriculum Vitae",
+            "links.github": "GitHub",
+            "links.github.desc": "Code & Projects",
+            
+            // Academic section
+            "academic.title": "Academic Profile",
+            "academic.education": "Education",
+            "academic.education.phd": "🎓 Ph.D. in Astronomy (2015-2019)",
+            "academic.education.phd.desc": "<strong>Observatório do Valongo</strong>, Federal University of Rio de Janeiro, Brazil",
+            "academic.education.msc": "🔭 M.Sc. in Astrophysics (2012-2015)",
+            "academic.education.msc.desc": "<strong>National Autonomous University of Mexico</strong>, Mexico",
+            "academic.education.bed": "📚 B.Ed. in Mathematics & Physics (2005-2010)",
+            "academic.education.bed.desc": "<strong>Universidad Popular del Cesar</strong>, Colombia",
+            "academic.education.normalist": "🦋 Superior Normalist (2003-2004)",
+            "academic.education.normalist.desc": "<strong>Escuela Normal Superior María Inmaculada</strong>, Colombia",
+            
+            "academic.experience": "Research Experience",
+            "academic.experience.argentina": "🇦🇷 Postdoctoral Researcher (2022-Present)",
+            "academic.experience.argentina.desc": "<strong>Institute of Astrophysics of La Plata</strong>, CONICET-UNLP, Argentina",
+            "academic.experience.argentina.detail": "Machine learning for planetary nebulae identification • S-PLUS survey",
+            "academic.experience.brazil": "🇧🇷 Postdoctoral Researcher (2020-2022)",
+            "academic.experience.brazil.desc": "<strong>University of São Paulo</strong>, Brazil",
+            "academic.experience.brazil.detail": "S-PLUS data analysis • Compact object identification",
+            "academic.experience.telescope": "🔭 Telescope Operator (2020-2024)",
+            "academic.experience.telescope.desc": "<strong>T80-Sur Telescope</strong>, S-PLUS Survey, Chile",
+            "academic.experience.telescope.detail": "12-band photometric data acquisition • Instrument operation",
+            
+            "academic.skills": "Technical Skills",
+            "academic.skills.programming": "🐍 Programming & Data Analysis",
+            "academic.skills.ml": "🤖 Machine Learning & AI",
+            "academic.skills.astronomy": "🌌 Astronomy Software & Tools",
+            "academic.skills.observational": "🔭 Observational Astronomy",
+            
+            // Contact section
+            "contact.title": "Get In Touch",
+            "contact.email": "Email",
+            "contact.location": "Location",
+            "contact.location.desc": "Instituto de Astrofísica de La Plata",
+            "contact.location.city": "La Plata, Argentina",
+            "contact.connect": "Connect",
+            "contact.github": "GitHub",
+            "contact.orcid": "ORCID",
+            "contact.website": "Personal Website",
+            
+            // Footer
+            "footer.rights": "All rights reserved.",
+            "footer.tagline": "Astrophysicist & Data Scientist | Bridging Astronomy and Machine Learning",
+            "footer.quote": "\"La ciencia y la literatura no son sino dos caras de la misma moneda: la búsqueda de la verdad y la belleza en el universo.\""
+        },
+        es: {
+            // Header
+            "name": "Luis Angel Gutiérrez Soto",
+            "subtitle": "Astrofísico & Científico de Datos",
+            "tagline": "Explorando el Universo a través de Datos y Aprendizaje Automático",
+            "cultural-note": "\"Las mariposas amarillas\" — Un homenaje a Cien Años de Soledad de Gabriel García Márquez",
+            
+            // Navigation
+            "nav.home": "Inicio",
+            "nav.research": "Investigación",
+            "nav.publications": "Publicaciones",
+            "nav.academic": "Perfil Académico",
+            "nav.jwst": "James Webb",
+            "nav.contact": "Contacto",
+            
+            // Home section
+            "home.title": "Sobre Mí",
+            "home.p1": "¡Bienvenido! Soy Luis Angel Gutiérrez Soto, un astrofísico apasionado por comprender el universo a través de datos observacionales y aprendizaje automático. Nacido en Valledupar, Colombia, mi trayectoria académica me ha llevado por toda América Latina, enriqueciendo mi perspectiva sobre la ciencia y la colaboración.",
+            "home.p2": "Actualmente, soy investigador postdoctoral en el Instituto de Astrofísica de La Plata (CONICET-UNLP), donde me enfoco en identificar nebulosas planetarias y estrellas simbióticas utilizando estudios fotométricos multibanda y desarrollando algoritmos de clasificación con aprendizaje automático.",
+            "home.p3": "Mi investigación conecta la observación astronómica tradicional con técnicas modernas de ciencia de datos, trabajando con grandes estudios como S-PLUS y J-PAS para descubrir objetos celestes ocultos y comprender los procesos de evolución estelar.",
+            "home.p4": "Más allá de la ciencia, encuentro inspiración en la literatura y la filosofía, particularmente en el realismo mágico de Gabriel García Márquez, que me recuerda que la maravilla y el descubrimiento existen en la intersección entre la ciencia y la imaginación.",
+            
+            // Stats
+            "stats.publications": "Publicaciones Arbitradas",
+            "stats.postdoc": "Años de Experiencia Postdoctoral",
+            "stats.countries": "Países con Experiencia de Investigación",
+            "stats.conferences": "Presentaciones en Conferencias",
+            
+            // James Webb section
+            "jwst.title": "Telescopio Espacial James Webb",
+            "jwst.caption": "Nebulosa Planetaria observada por el Telescopio Espacial James Webb - Un vistazo al futuro de estrellas similares al Sol",
+            "jwst.p1": "El Telescopio Espacial James Webb representa una nueva era en la observación astronómica, permitiéndonos estudiar nebulosas planetarias y otros objetos celestes con un detalle y sensibilidad sin precedentes. Sus capacidades infrarrojas revelan estructuras ocultas y composiciones químicas que antes eran invisibles para otros telescopios.",
+            "jwst.p2": "Mi investigación con grandes estudios fotométricos como S-PLUS complementa las observaciones del JWST identificando objetos candidatos para estudio detallado y proporcionando datos contextuales a través de múltiples longitudes de onda.",
+            
+            // Research section
+            "research.title": "Intereses de Investigación",
+            "research.card1.title": "Nebulosas Planetarias",
+            "research.card1.desc": "Descubriendo y estudiando nebulosas planetarias - las hermosas etapas finales de estrellas similares al Sol - utilizando métodos innovadores de selección por color en grandes estudios como Gaia y Pan-STARRS, con confirmación de espectroscopía LAMOST.",
+            "research.card2.title": "IA para Astrofísica Estelar",
+            "research.card2.desc": "Utilizando inteligencia artificial y fotometría multibanda de S-PLUS para mapear la composición química de millones de estrellas en la Vía Láctea. Nuestros métodos revelan cómo se distribuyen los elementos y nos ayudan a comprender la historia de formación de nuestra galaxia.",
+            "research.card3.title": "Objetos Raros con Líneas de Emisión",
+            "research.card3.desc": "Descubriendo variables cataclísmicas raras por sus colores únicos en S-PLUS y confirmándolas con grandes telescopios como Gemini y Swift. Este enfoque revela poblaciones ocultas de enanas blancas en acreción que son difíciles de encontrar con otros métodos.",
+            "research.explore": "Explorar Mis Publicaciones",
+            
+            // Publications section
+            "publications.title": "Publicaciones Seleccionadas",
+            "publications.highlights": "Destacados:",
+            
+            // Publication 1
+            "publications.paper1.title": "Mapeo de fuentes puntuales candidatas con exceso Hα en el Hemisferio Sur utilizando datos de S-PLUS",
+            "publications.paper1.authors": "<strong>Gutiérrez-Soto, L. A.</strong>, Lopes de Oliveira, R., Akras, S., et al.",
+            "publications.paper1.journal": "Astronomy & Astrophysics, 695, A104",
+            "publications.paper1.highlights": "Clasificación con aprendizaje automático de fuentes con líneas de emisión • Agrupamiento UMAP + HDBSCAN • 6,956 fuentes con exceso J0660 identificadas",
+            
+            // Publication 2
+            "publications.paper2.title": "La Fotometría de 12 Bandas de S-PLUS como una Herramienta Poderosa para el Descubrimiento y Clasificación: Diez Variables Cataclísmicas",
+            "publications.paper2.authors": "Lopes de Oliveira, R., de Araújo, A. S., Krabbe, A. C.,  Mendes de Oliveira, C. L., Mukai, K., <strong>Gutiérrez-Soto, L. A.</strong>, et al.",
+            "publications.paper2.journal": "The Astrophysical Journal Letters, 981, L1",
+            "publications.paper2.highlights": "Descubrimiento de 10 nuevos sistemas CV • Validación con espectroscopía Gemini • Método fotométrico innovador de 12 bandas",
+            
+            // Publication 3
+            "publications.paper3.title": "Parámetros atmosféricos estelares y abundancias químicas de ~5 millones de estrellas a partir de fotometría multibanda de S-PLUS",
+            "publications.paper3.authors": "Ferreira Lopes, C. E., <strong>Gutiérrez-Soto, L. A.</strong>, et al.",
+            "publications.paper3.journal": "Astronomy & Astrophysics, 693, A306",
+            "publications.paper3.highlights": "Análisis de 5 millones de estrellas • Mapeo de metalicidad galáctica • Determinación de parámetros con IA",
+            
+            // Publication 4
+            "publications.paper4.title": "Revelando nebulosas planetarias compactas: Análisis de estudios de banda ancha y confirmación con LAMOST",
+            "publications.paper4.authors": "<strong>Gutiérrez-Soto, L. A.</strong>, Mari, M. B., Weidmann, W. A., Faifer, F. R.",
+            "publications.paper4.journal": "New Astronomy, 109, 102207",
+            "publications.paper4.highlights": "Método novedoso de selección fotométrica • Confirmación espectroscópica con LAMOST • Modelado Cloudy de propiedades de NP",
+            
+            // Publication 5
+            "publications.paper5.title": "Preparación Euclid: Un atlas espectral UV-NIR de nebulosas planetarias compactas para calibración de longitud de onda",
+            "publications.paper5.authors": "Colaboración Euclid; Paterson, K., Schirmer, M.,  Copin, Y., Cuillandre, J.-C., Gillard, W. <strong>Gutiérrez-Soto, L. A.</strong>, et al.",
+            "publications.paper5.journal": "Astronomy & Astrophysics, 674, A172",
+            "publications.paper5.highlights": "Colaboración Misión Euclid de ESA • Atlas espectral para calibración del instrumento NISP • Identificación novedosa de NP en datos Gaia • Precisión de longitud de onda de 0.1-0.3 Å",
+            
+            // Publication 6
+            "publications.paper6.title": "J-PLUS: Herramientas para identificar nebulosas planetarias compactas en los estudios Javalambre y del Universo Local fotométrico del sur",
+            "publications.paper6.authors": "<strong>Gutiérrez-Soto, L. A.</strong>, Gonçalves, D. R., Akras, S., et al.",
+            "publications.paper6.journal": "Astronomy & Astrophysics, 633, A123",
+            "publications.paper6.highlights": "Fundación de la metodología de identificación de NP en 12 bandas fotométricas (proyectos S-PLUS y J-PLUS) • Criterios de selección color-color • Cruce de estudios",
+            
+            // Links
+            "links.ads": "NASA ADS",
+            "links.ads.desc": "Lista Completa de Publicaciones",
+            "links.scholar": "Google Académico",
+            "links.scholar.desc": "Citas y Métricas",
+            "links.cv": "Descargar CV",
+            "links.cv.desc": "Currículum Vitae Completo",
+            "links.github": "GitHub",
+            "links.github.desc": "Código y Proyectos",
+            
+            // Academic section
+            "academic.title": "Perfil Académico",
+            "academic.education": "Educación",
+            "academic.education.phd": "🎓 Doctorado en Astronomía (2015-2019)",
+            "academic.education.phd.desc": "<strong>Observatório do Valongo</strong>, Universidad Federal de Río de Janeiro, Brasil",
+            "academic.education.msc": "🔭 Maestría en Astrofísica (2012-2015)",
+            "academic.education.msc.desc": "<strong>Universidad Nacional Autónoma de México</strong>, México",
+            "academic.education.bed": "📚 Licenciatura en Matemáticas y Física (2005-2010)",
+            "academic.education.bed.desc": "<strong>Universidad Popular del Cesar</strong>, Colombia",
+            "academic.education.normalist": "🦋 Normalista Superior (2003-2004)",
+            "academic.education.normalist.desc": "<strong>Escuela Normal Superior María Inmaculada</strong>, Colombia",
+            
+            "academic.experience": "Experiencia de Investigación",
+            "academic.experience.argentina": "🇦🇷 Investigador Postdoctoral (2022-Presente)",
+            "academic.experience.argentina.desc": "<strong>Instituto de Astrofísica de La Plata</strong>, CONICET-UNLP, Argentina",
+            "academic.experience.argentina.detail": "Aprendizaje automático para identificación de nebulosas planetarias • Estudio S-PLUS",
+            "academic.experience.brazil": "🇧🇷 Investigador Postdoctoral (2020-2022)",
+            "academic.experience.brazil.desc": "<strong>Universidad de São Paulo</strong>, Brasil",
+            "academic.experience.brazil.detail": "Análisis de datos S-PLUS • Identificación de objetos compactos",
+            "academic.experience.telescope": "🔭 Operador de Telescopio (2020-2024)",
+            "academic.experience.telescope.desc": "<strong>Telescopio T80-Sur</strong>, Estudio S-PLUS, Chile",
+            "academic.experience.telescope.detail": "Adquisición de datos fotométricos de 12 bandas • Operación de instrumentos",
+            
+            "academic.skills": "Habilidades Técnicas",
+            "academic.skills.programming": "🐍 Programación & Análisis de Datos",
+            "academic.skills.ml": "🤖 Aprendizaje Automático & IA",
+            "academic.skills.astronomy": "🌌 Software y Herramientas de Astronomía",
+            "academic.skills.observational": "🔭 Astronomía Observacional",
+            
+            // Contact section
+            "contact.title": "Ponte en Contacto",
+            "contact.email": "Correo Electrónico",
+            "contact.location": "Ubicación",
+            "contact.location.desc": "Instituto de Astrofísica de La Plata",
+            "contact.location.city": "La Plata, Argentina",
+            "contact.connect": "Conectar",
+            "contact.github": "GitHub",
+            "contact.orcid": "ORCID",
+            "contact.website": "Sitio Web Personal",
+            
+            // Footer
+            "footer.rights": "Todos los derechos reservados.",
+            "footer.tagline": "Astrofísico & Científico de Datos | Conectando Astronomía y Aprendizaje Automático",
+            "footer.quote": "\"La ciencia y la literatura no son sino dos caras de la misma moneda: la búsqueda de la verdad y la belleza en el universo.\""
+        }
+    };
+
+    // Language switching functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get language buttons
+        const langButtons = document.querySelectorAll('.lang-btn');
+        let currentLang = 'en'; // Default language
+        
+        // Check for saved language preference
+        const savedLang = localStorage.getItem('preferred-language');
+        if (savedLang) {
+            currentLang = savedLang;
+            document.documentElement.lang = currentLang;
+        }
+        
+        // Function to switch language
+        function switchLanguage(lang) {
+            // Update active button
+            langButtons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Update all elements with data-i18n attribute
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Save language preference
+            localStorage.setItem('preferred-language', lang);
+            currentLang = lang;
+        }
+        
+        // Add click event listeners to language buttons
+        langButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                switchLanguage(lang);
             });
         });
-    });
-
-    // Add active class to current section in navigation
-    window.addEventListener('scroll', function() {
-        let sections = document.querySelectorAll('section');
-        let navLinks = document.querySelectorAll('.nav-list a');
         
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Add loading animation
-    document.addEventListener('DOMContentLoaded', function() {
-        const elements = document.querySelectorAll('.research-card, .publication-item, .stat-card');
-        elements.forEach((element, index) => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                element.style.transition = 'all 0.6s ease';
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }, index * 100);
-        });
-    });
-
-    // Update copyright year automatically
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
-
-    <script>
+        // Apply saved language on page load
+        if (savedLang && savedLang !== 'en') {
+            switchLanguage(savedLang);
+        }
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -970,18 +1321,20 @@
         });
 
         // Add loading animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.research-card, .publication-item, .stat-card');
-            elements.forEach((element, index) => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    element.style.transition = 'all 0.6s ease';
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
+        const elements = document.querySelectorAll('.research-card, .publication-item, .stat-card');
+        elements.forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                element.style.transition = 'all 0.6s ease';
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, index * 100);
         });
-    </script>
+
+        // Update copyright year automatically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    });
+</script>
 </body>
 </html>
