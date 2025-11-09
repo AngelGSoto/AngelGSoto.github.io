@@ -100,33 +100,35 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.2);
             border-bottom: 3px solid var(--secondary);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
+            flex-wrap: wrap;
         }
 
         .nav-list {
             display: flex;
             justify-content: center;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .nav-list a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 600;
-            padding: 0.7rem 1.5rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 25px;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .nav-list a:hover {
@@ -140,7 +142,7 @@
         .language-switcher {
             display: flex;
             gap: 0.5rem;
-            margin-right: 1rem;
+            margin-left: 1rem;
         }
 
         .lang-btn {
@@ -155,6 +157,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            white-space: nowrap;
         }
 
         .lang-btn:hover {
@@ -166,6 +169,13 @@
         .lang-btn.active {
             background: var(--secondary);
             color: white;
+        }
+
+        .flag {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            box-shadow: 0 0 2px rgba(0,0,0,0.3);
         }
 
         /* Sections with less opacity for better background visibility */
@@ -440,6 +450,17 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-list {
+                gap: 1rem;
+            }
+            
+            .nav-list a {
+                padding: 0.6rem 1rem;
+                font-size: 0.95rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .profile-container {
                 flex-direction: column;
@@ -450,19 +471,26 @@
                 flex: 0 0 200px;
             }
             
-            .nav {
+            .nav-container {
                 flex-direction: column;
                 gap: 1rem;
             }
             
             .nav-list {
-                flex-direction: column;
-                gap: 0.8rem;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
                 width: 100%;
             }
             
+            .nav-list a {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
             .language-switcher {
-                margin: 1rem 0 0 0;
+                margin: 0;
                 justify-content: center;
                 width: 100%;
             }
@@ -480,6 +508,30 @@
             header {
                 min-height: 300px;
                 padding: 2rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-list {
+                gap: 0.3rem;
+            }
+            
+            .nav-list a {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.85rem;
+            }
+            
+            .lang-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
             }
         }
 
@@ -531,10 +583,12 @@
             
             <div class="language-switcher">
                 <button class="lang-btn active" data-lang="en">
-                    <i class="fas fa-flag-usa"></i> EN
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjMDEyMTY2Ii8+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjYzYwMDI2Ii8+PHBhdGggZD0iTTAgMEg2MFYzMEgwVjBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0wIDBWMzBNNjAgMFYzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMzAgMFYzME0wIDE1SDYwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0zMCAxNUw0Mi41IDcuNU0zMCAxNUw0Mi41IDIyLjVNMTcuNSA3LjVMMzAgMTVNMTcuNSAyMi41TDMwIDE1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="UK Flag" class="flag">
+                    EN
                 </button>
                 <button class="lang-btn" data-lang="es">
-                    <i class="fas fa-flag"></i> ES
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjZmZjZDAwIi8+PHJlY3QgeT0iMTAiIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzAwNDhhMyIvPjxwYXRoIGQ9Ik0wIDBINjBWMzBIMFYwWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzYwMDI2IiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=" alt="Colombia Flag" class="flag">
+                    ES
                 </button>
             </div>
         </div>
