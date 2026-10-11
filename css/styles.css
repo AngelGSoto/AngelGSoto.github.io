@@ -634,3 +634,160 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent);
 }
+
+/* ===== ACCESSIBILITY AND VISUAL POLISH ===== */
+:root {
+    --primary: #17364a;
+    --secondary: #147d92;
+    --accent: #e58a55;
+    --light: #edf4f5;
+    --dark: #142b3b;
+    --gray: #566b75;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    color: #263943;
+    background:
+        linear-gradient(rgba(13, 32, 43, 0.48), rgba(13, 32, 43, 0.58)),
+        url('../Images/JWT_PN_image.png') center / cover fixed;
+}
+
+.skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2000;
+    padding: 0.75rem 1rem;
+    color: white;
+    background: var(--dark);
+    border-radius: 8px;
+    transform: translateY(-160%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+header {
+    min-height: clamp(340px, 54vh, 560px);
+    background:
+        linear-gradient(115deg, rgba(12, 35, 49, 0.88), rgba(20, 65, 78, 0.48)),
+        url('../Images/mariposas.jpg') center 48% / cover;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+}
+
+.subtitle {
+    font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+}
+
+.nav {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom-color: var(--secondary);
+}
+
+.nav-list a.active,
+.nav-list a[aria-current="location"] {
+    color: white;
+    background: var(--primary);
+}
+
+section {
+    scroll-margin-top: 6rem;
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(255, 255, 255, 0.65);
+}
+
+.profile-text {
+    text-align: left;
+    line-height: 1.8;
+}
+
+.profile-text p + p {
+    margin-top: 1rem;
+}
+
+.profile-picture img {
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.stat-card,
+.research-card,
+.publication-item,
+.academic-link-card,
+.contact-card {
+    border: 1px solid rgba(23, 54, 74, 0.1);
+}
+
+.research-card h3 {
+    margin-bottom: 0.65rem;
+    color: var(--primary);
+}
+
+.research-card p,
+.contact-card p {
+    line-height: 1.7;
+}
+
+.publication-highlights {
+    line-height: 1.75;
+}
+
+a {
+    text-underline-offset: 0.2em;
+}
+
+.nav-list a,
+.academic-link-card,
+.lang-btn {
+    transition-duration: 180ms;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    section {
+        margin: 1.25rem 0;
+        padding: 2.5rem 1.25rem;
+    }
+
+    .profile-text {
+        text-align: left;
+    }
+
+    .nav {
+        position: sticky;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

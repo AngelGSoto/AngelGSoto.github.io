@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Angel Gutiérrez Soto - Astrophysicist</title>
+    <meta name="description" content="Luis Angel Gutiérrez Soto is an astrophysicist researching planetary nebulae, stellar populations, and machine learning applications in astronomy.">
+    <meta name="theme-color" content="#142b3b">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- Header with More Visible Butterfly Background -->
     <header>
         <div class="container">
@@ -24,7 +27,7 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
         <div class="container nav-container">
             <ul class="nav-list">
                 <li><a href="#home"><i class="fas fa-home"></i> <span data-i18n="nav.home">Home</span></a></li>
@@ -36,10 +39,10 @@
             </ul>
             
             <div class="language-switcher">
-                <button class="lang-btn active" data-lang="en">
+                <button class="lang-btn active" type="button" data-lang="en" aria-pressed="true">
                     <span class="flag-emoji">🇬🇧</span> EN
                 </button>
-                <button class="lang-btn" data-lang="es">
+                <button class="lang-btn" type="button" data-lang="es" aria-pressed="false">
                     <span class="flag-emoji">🇨🇴</span> ES
                 </button>
             </div>
@@ -47,14 +50,14 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container">
+    <main class="container" id="main-content" tabindex="-1">
         <!-- Home Section -->
         <section id="home">
             <h2 data-i18n="home.title">About Me</h2>
             <div class="profile-container">
                 <div class="profile-picture">
                     <img src="Images/Luis_image_edit.jpeg" alt="Luis Angel Gutiérrez Soto">
-                </div>
+                </main>
                 <div class="profile-text">
     <p data-i18n="home.p1">Welcome! I'm Luis Angel Gutiérrez Soto, an astrophysicist passionate about understanding the universe through observational data. Born in Valledupar, Colombia, I grew up between the Serranía del Perijá, Manaure Cesar and Valledupar. My academic journey has taken me across Latin America, enriching my perspective on science and collaboration.</p>
     
@@ -787,7 +790,9 @@
         function switchLanguage(lang) {
             // Update active button
             langButtons.forEach(btn => {
-                if (btn.getAttribute('data-lang') === lang) {
+                const isSelected = btn.getAttribute('data-lang') === lang;
+                btn.setAttribute('aria-pressed', String(isSelected));
+                if (isSelected) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
@@ -849,7 +854,7 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
+                        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
                         block: 'start'
                     });
                 }
@@ -872,22 +877,12 @@
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
+                link.removeAttribute('aria-current');
                 if (link.getAttribute('href').substring(1) === current) {
                     link.classList.add('active');
+                    link.setAttribute('aria-current', 'location');
                 }
             });
-        });
-
-        // Add loading animation
-        const elements = document.querySelectorAll('.research-card, .publication-item, .stat-card');
-        elements.forEach((element, index) => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                element.style.transition = 'all 0.6s ease';
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }, index * 100);
         });
 
         // Update copyright year automatically
